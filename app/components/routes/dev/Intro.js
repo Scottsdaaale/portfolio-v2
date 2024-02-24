@@ -7,7 +7,7 @@ function Intro() {
   return (
     <div className='mb-14'>
       <div className='flex flex-row items-center justify-center'>
-        <div className='px-3'>
+        <div className=''>
           <FadeInWrapper delay={0}>
             <Image src={logoImage} alt='Logo' className='rounded-full max-w-[100px]' />
           </FadeInWrapper>

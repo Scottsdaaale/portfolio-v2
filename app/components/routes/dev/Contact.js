@@ -39,7 +39,7 @@ function ContactItem({ label, value }) {
 
 function Contact() {
   return (
-    <div className='px-3 mb-8'>
+    <div className='mb-10 px-3'>
       <h2>Contact</h2>
       <div className='flex flex-row px-5'>
         <div>

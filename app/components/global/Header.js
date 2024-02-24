@@ -45,7 +45,7 @@ const Header = () => {
             />
           </Link>
         </FadeInWrapper>
-        <FadeInWrapper delay={5300}>
+        {/* <FadeInWrapper delay={5300}>
           <Link
             href='/sandbox'
             data-tooltip-id='my-tooltip'
@@ -59,8 +59,8 @@ const Header = () => {
               className=''
             />
           </Link>
-        </FadeInWrapper>
-        <FadeInWrapper delay={5600}>
+        </FadeInWrapper> */}
+        <FadeInWrapper delay={5300}>
           <Link
             href='/blog'
             data-tooltip-id='my-tooltip'
@@ -76,7 +76,7 @@ const Header = () => {
             />
           </Link>
         </FadeInWrapper>
-        <FadeInWrapper delay={5900}>
+        <FadeInWrapper delay={5600}>
           <Link
             href='https://linktr.ee/scottsdaaale'
             data-tooltip-id='my-tooltip'

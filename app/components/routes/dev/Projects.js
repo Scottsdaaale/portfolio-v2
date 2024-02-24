@@ -10,7 +10,7 @@ function Project({ title, description, gif, githubLink }) {
   return (
     <div className='flex flex-row mb-3'>
       <div className='px-5'>
-        <h3>{title}</h3>
+        <h3 className='mb-2'>{title}</h3>
         <p>{description}</p>
       </div>
       <div>
@@ -48,7 +48,7 @@ function Projects() {
   ];
 
   return (
-    <div className='mb-8 px-3'>
+    <div className='mb-10 px-3'>
       <h2 className='mb-5'>Projects</h2>
       {projectInfo.map((info, index) => (
         <Project

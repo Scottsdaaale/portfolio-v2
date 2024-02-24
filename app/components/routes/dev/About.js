@@ -6,12 +6,12 @@ import Image from 'next/image';
 
 function About() {
   return (
-    <div className='flex flex-row items-center px-3 mb-8'>
+    <div className='flex flex-row items-center mb-10 px-3'>
       <div>
         <h2 className='mb-5'>About</h2>
         <div className='px-5'>
           <p>
-            Creative web developer with 3 years of experience. Effective
+            Creative web developer with 2 years of experience. Effective
             communicator and adept problem-solver. Spearheaded a startup from
             inception. Proficient in crafting innovative, user-friendly
             websites. Enthusiastic about designing visually captivating
