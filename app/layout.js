@@ -1,4 +1,5 @@
 import Header from "./components/global/Header";
+import { Toaster } from "@/components/ui/toaster"
 
 import "./globals.css";
 
@@ -13,6 +14,7 @@ export default function RootLayout({ children }) {
       <body>
         <Header />
         {children}
+        <Toaster />
       </body>
     </html>
   );

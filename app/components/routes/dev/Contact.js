@@ -1,18 +1,16 @@
-import React from 'react';
+'use client';
 
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useToast } from '@/components/ui/use-toast';
 
 import contactGif from '../../../assets/gifs/Contact.gif';
 
 const contactInfo = [
   {
     label: 'Email',
-    value: (
-      <Link href='mailto:ScottPetersonSE@gmail.com'>
-        ScottPetersonSE@gmail.com
-      </Link>
-    ),
+    value: 'ScottPetersonSE@gmail.com',
   },
   {
     label: 'LinkedIn',
@@ -29,17 +27,39 @@ const contactInfo = [
 ];
 
 function ContactItem({ label, value }) {
+  const { toast } = useToast()
+
+  const handleCopy = (text) => {
+    navigator.clipboard.writeText(text);
+  };
+
   return (
     <div className='mb-3'>
       <p> {label}: </p>
-      <p className='text-blue-500 hover:underline'> {value} </p>
+      {typeof value === 'string' ? (
+        <p
+          onClick={() => {
+            handleCopy(value);
+            toast({
+              title: 'Email copied to clipboard!',
+              
+            });
+          }}
+          className='text-white hover:text-blue-500 cursor-pointer'
+        >
+          {value} →
+        </p>
+      ) : (
+        <p className='text-white hover:text-blue-500'>{value} →</p>
+      )}
     </div>
   );
 }
 
 function Contact() {
+
   return (
-    <div className='mb-10 px-3'>
+    <div className='mb-10 '>
       <h2>Contact</h2>
       <div className='flex flex-row px-5'>
         <div>
