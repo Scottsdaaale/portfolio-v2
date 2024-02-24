@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 body {
   background-color: rgb(26, 26, 26);
   color: rgb(236, 236, 236);
@@ -30,6 +32,18 @@ p {
 li {
   font-size: 14px;
   color: grey;
+
+}
+ol, ul, menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Apply your desired styles for list items */
+ul {
+  list-style-type: disc; /* Use 'disc' for bullets */
+  margin-left: 1.5em; /* Adjust the margin as needed */
 }
 
 .hoverable {
