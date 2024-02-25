@@ -8,7 +8,7 @@ import FadeInWrapper from '../../common/FadeInWrapper';
 
 function Main() {
   return (
-    <div className="container mx-auto max-w-[450px]">
+    <div className="mx-auto max-w-[500px]">
       <Intro />
       <FadeInWrapper delay={5000}>
         <About />
