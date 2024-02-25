@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import BlogList from '../../components/routes/blog/BlogList';
 
 function page() {
   return (
-    <div>page</div>
-  )
+    <div>
+      <BlogList/>
+    </div>
+  );
 }
 
-export default page
+export default page;
