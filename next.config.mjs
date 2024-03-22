@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     reactStrictMode: true,
+    images: {
+      domains: ['cdn.sanity.io'],
+    },
     webpack: (config) => {
       // Add a rule to handle PDF files
       config.module.rules.push({
@@ -18,3 +21,5 @@ const nextConfig = {
   };
   
   export default nextConfig;
+
+  
