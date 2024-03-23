@@ -1,0 +1,37 @@
+.textRed {
+  color: red; /* Or any other color you prefer */
+}
+
+.highlighted {
+  background-color: yellow;
+}
+
+.codeBlock {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+  overflow-x: auto;
+}
+
+.link {
+  color: #007bff;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+ol, ul, menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  margin-bottom: 15px;
+}

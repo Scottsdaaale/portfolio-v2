@@ -1,17 +1,25 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { toKebabCase } from '../../common/toKebabCase';
 
-function BlogCard({ title, id, image }) {
+function BlogCard({ title, author, image, slug, date, alt }) {
   return (
-    <Link href={`/blog/${toKebabCase(id)}`}>
-      <div className='flex flex-col items-center justify-center w-[200px] h-48 p-5 m-1 bg-[#2b2b2b] rounded'>
-        <div className='h-20 flex items-center justify-center'>
-          <Image src={image} alt={title} className='w-14 h-14' />
-        </div>
-        <div className='text-center flex flex-col items-center justify-center'>
-          <div className=''>{title}</div>
+    <Link href={`/blog/${slug}`}>
+      <div className='flex flex-row items-center gap-3 p-4 rounded bg-[#2b2b2b] hover:bg-[#414141] transition duration-300 ease-in-out transform hover:scale-105'>
+        <Image
+          src={image}
+          alt={alt}
+          className='h-[60px] w-[60px]'
+          width={60}
+          height={60}
+        />
+        <div>
+          <h3 className='mt-2 overflow-hidden overflow-ellipsis line-clamp-3 text-pretty'>
+            {title}
+          </h3>
+          <p className='text-sm text-gray-400'>
+            {author} | {new Date(date).toLocaleDateString()}
+          </p>
         </div>
       </div>
     </Link>
