@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 function Intro() {
   return (
-    <div className='mb-14 px-3'>
+    <div className='mb-14 '>
       <div className='flex flex-row items-center justify-center'>
         <div className=''>
           <FadeInWrapper delay={0}>

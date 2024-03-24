@@ -82,6 +82,7 @@ const Header = () => {
             data-tooltip-id='my-tooltip'
             data-tooltip-content='LinkTree'
             place='bottom'
+            target='blank'
           >
             <Image
               src={externalLinkGif}

@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 function About() {
   return (
-    <div className='flex flex-row items-center mb-10 px-3'>
+    <div className='flex flex-row items-center mb-10 '>
       <div>
         <h2 className='mb-5'>About</h2>
         <div className='px-5'>

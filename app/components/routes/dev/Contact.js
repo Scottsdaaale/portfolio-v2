@@ -16,6 +16,7 @@ const contactInfo = [
     label: 'LinkedIn',
     value: (
       <Link
+        
         href='https://www.linkedin.com/in/scotty-peterson/'
         target='_blank'
         rel='noopener noreferrer'
@@ -37,7 +38,7 @@ function ContactItem({ label, value }) {
     <div className='mb-3'>
       <p> {label}: </p>
       {typeof value === 'string' ? (
-        <p
+        <h3
           onClick={() => {
             handleCopy(value);
             toast({
@@ -45,12 +46,12 @@ function ContactItem({ label, value }) {
               
             });
           }}
-          className='text-white hover:text-blue-500 cursor-pointer'
+          className='inline-block hover:text-blue-500 transition ease-in-out cursor-pointer'
         >
           {value} →
-        </p>
+        </h3>
       ) : (
-        <p className='text-white hover:text-blue-500'>{value} →</p>
+        <h3 className='inline-block hover:text-blue-500 transition ease-in-out cursor-pointer'>{value} →</h3>
       )}
     </div>
   );

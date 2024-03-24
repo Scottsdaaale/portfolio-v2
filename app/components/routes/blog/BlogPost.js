@@ -1,4 +1,5 @@
-'use client';
+'use client'
+
 import React from 'react';
 import { client } from '@/sanity/lib/client';
 import { projectId, dataset } from '@/sanity/env';
@@ -37,6 +38,11 @@ function BlogPost({ params }) {
   if (!post) {
     return <div>Let me get that for you...</div>;
   }
+
+  // Error checking and fallbacks for mainImage and title
+  const mainImageUrl = post.mainImage && post.mainImage.asset && post.mainImage.asset.url;
+  const mainImageAlt = post.mainImage && post.mainImage.alt || '';
+  const title = post.title || '';
 
   const myPortableTextComponents = {
     types: {
@@ -84,15 +90,17 @@ function BlogPost({ params }) {
   return (
     <div className=''>
       <div className='mb-5'>
-        <Image
-          src={post.mainImage.asset.url}
-          alt={post.mainImage.alt}
-          width={100}
-          height={100}
-        />
+        {mainImageUrl && (
+          <Image
+            src={mainImageUrl}
+            alt={mainImageAlt}
+            width={100}
+            height={100}
+          />
+        )}
       </div>
       <div className='mb-10'>
-        <h1>{post.title}</h1>
+        <h1>{title}</h1>
       </div>
       <div className='mb-16'>
         <PortableText value={post.body} components={myPortableTextComponents} />

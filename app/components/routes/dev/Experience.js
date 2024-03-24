@@ -31,7 +31,7 @@ function Job({
       </div>
       <div className='px-5'>
         <Link href={link} target='_blank' rel='noreferrer'>
-          <h3 className='hover:text-blue-500 transition ease-in-out mb-2'>
+          <h3 className='inline-block hover:text-blue-500 transition ease-in-out mb-2'>
             {company}
           </h3>
         </Link>
@@ -130,7 +130,7 @@ function Experience() {
   ];
 
   return (
-    <div className='mb-10 px-3'>
+    <div className='mb-10 '>
       <h2 className='mb-5'>Experience</h2>
       {jobData.map((job, index) => (
         <Job
