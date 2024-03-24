@@ -22,11 +22,7 @@ function FadeInWrapper({ children, delay }) {
     >
       {children}
     </div>)
-  // ) : ()
-  // !hasVisitedRoot ? (
-    
-  //   <>{children}</>
-  // );
+
 }
 
 export default FadeInWrapper;
