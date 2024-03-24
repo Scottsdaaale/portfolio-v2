@@ -10,18 +10,18 @@ function Main() {
   return (
     <div className="px-2 mx-auto max-w-[500px]">
       <Intro />
-      {/* <FadeInWrapper delay={5000}> */}
+      <FadeInWrapper delay={5000}>
         <About />
-      {/* </FadeInWrapper> */}
-      {/* <FadeInWrapper delay={5200}> */}
+      </FadeInWrapper>
+      <FadeInWrapper delay={5200}>
         <Experience />
-      {/* </FadeInWrapper> */}
-      {/* <FadeInWrapper delay={5400}> */}
+      </FadeInWrapper>
+      <FadeInWrapper delay={5400}>
         <Projects />
-      {/* </FadeInWrapper> */}
-      {/* <FadeInWrapper delay={5600}> */}
+      </FadeInWrapper>
+      <FadeInWrapper delay={5600}>
         <Contact />
-      {/* </FadeInWrapper> */}
+      </FadeInWrapper>
     </div>
   );
 }
