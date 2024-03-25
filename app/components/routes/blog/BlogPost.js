@@ -2,13 +2,14 @@
 
 import React from 'react';
 import { client } from '@/sanity/lib/client';
-import { projectId, dataset } from '@/sanity/env';
 import Image from 'next/image';
 import Link from 'next/link';
-import './blog.css';
 import { PortableText } from '@portabletext/react';
 import { urlForImage } from '../../../../sanity/lib/image';
 import { urlForGif } from '../../../../sanity/lib/image';
+import { motion } from 'framer-motion'
+import LoadingAnimation from '../../common/LoadingAnimation';
+import './blog.css';
 
 async function getBlogPostData(slug) {
   const query = `*[_type == "post" && slug.current == $slug][0]{ title, mainImage { asset->{ id, url }, alt }, body }`;
@@ -36,7 +37,7 @@ function BlogPost({ params }) {
   }, [params.slug]);
 
   if (!post) {
-    return <div>Let me get that for you...</div>;
+    return <div><LoadingAnimation/></div>;
   }
 
   // Error checking and fallbacks for mainImage and title
@@ -88,7 +89,11 @@ function BlogPost({ params }) {
   };
 
   return (
-    <div className=''>
+    <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.01, duration: 0.5 }}
+      >
       <div className='mb-5'>
         {mainImageUrl && (
           <Image
@@ -105,7 +110,7 @@ function BlogPost({ params }) {
       <div className='mb-16'>
         <PortableText value={post.body} components={myPortableTextComponents} />
       </div>
-    </div>
+    </motion.div>
   );
 }
 
