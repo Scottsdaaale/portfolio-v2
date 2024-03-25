@@ -56,7 +56,7 @@ function Projects() {
   ];
 
   return (
-    <div className='mb-10 px-3'>
+    <div className='mb-10 '>
       <h2 className='mb-5'>Projects</h2>
       {projectInfo.map((info, index) => (
         <Project
