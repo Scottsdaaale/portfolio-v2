@@ -1,43 +1,54 @@
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import BlogCard from './BlogCard';
+'use client'
+
 import { client } from '@/sanity/lib/client';
+import React, { useState, useEffect } from 'react';
+import BlogCard from './BlogCard';
+import { motion } from 'framer-motion';
 
-const fetchPosts = async () => {
-  const query = `*[_type == "post"] | order(publishedAt desc){
-    title,
-    slug,
-    publishedAt,
-    mainImage {
-      asset->{
-        _id,
-        url
-      },
-      alt
-    },
-    author->{
-      name
-    }
-  }`;
+function BlogList() {
+  const [posts, setPosts] = useState([]);
 
-  const cacheBust = `?cacheBust=${Date.now()}`;
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const query = `*[_type == "post"] | order(publishedAt desc){
+        title,
+        slug,
+        publishedAt,
+        mainImage {
+          asset->{
+            _id,
+            url
+          },
+          alt
+        },
+        author->{
+          name
+        }
+      }`;
 
-  try {
-    const posts = await client.fetch(query, { cache: 'no-store', cacheBust });
-    return posts;
-  } catch (error) {
-    console.error("Sanity fetch error:", error);
-    return [];
-  }
-};
+      try {
+        const data = await client.fetch(query);
+        setPosts(data);
+      } catch (error) {
+        console.error('Sanity fetch error:', error);
+        setPosts([]);
+      }
+    };
 
-async function BlogList() {
-  const blogData = await fetchPosts();
+    fetchPosts();
+  }, []);
+
   return (
     <div className='p-3 grid grid-cols-1 gap-3'>
-      {blogData.map((post) => (
-        <div key={post.slug.current}>
+      {posts.map((post, index) => (
+        <motion.div
+          key={post.slug.current}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: index * 0.1, duration: 0.5 }}
+          whileHover={{ scale: 1.01 }}
+          whileTap={{ scale: 0.9 }}
+        >
           <BlogCard
             title={post.title || ''}
             author={(post.author && post.author.name) || ''}
@@ -46,7 +57,7 @@ async function BlogList() {
             image={(post.mainImage && post.mainImage.asset && post.mainImage.asset.url) || ''}
             alt={(post.mainImage && post.mainImage.alt) || ''}
           />
-        </div>
+        </motion.div>
       ))}
     </div>
   );
