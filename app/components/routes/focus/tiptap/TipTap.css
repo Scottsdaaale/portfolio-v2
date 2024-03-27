@@ -1,0 +1,109 @@
+/* Basic editor styles */
+.tiptap > * + * {
+  margin-top: 0.75em;
+}
+
+.tiptap ul,
+.tiptap ol {
+  padding-left: 1rem; /* Ensure enough space for bullets/numbers */
+}
+
+.tiptap ul {
+  list-style-type: disc; /* Style for unordered lists */
+  padding-left: 1rem; /* Ensure enough space for bullets */
+}
+
+
+.tiptap ol {
+  list-style-type: decimal; /* Style for ordered lists */
+}
+
+.tiptap li {
+  margin-left: 1rem; /* Adjust as necessary to align list items */
+}
+
+.tiptap h2,
+.tiptap h3,
+.tiptap h4,
+.tiptap h5,
+.tiptap h6 {
+  line-height: 1.1;
+}
+
+.tiptap code {
+  background-color: rgba(97, 97, 97, 0.1);
+  color: #616161;
+}
+
+.tiptap pre {
+  background: #0D0D0D;
+  color: #FFF;
+  font-family: 'JetBrainsMono', monospace;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.tiptap pre code {
+  color: inherit;
+  padding: 0;
+  background: none;
+  font-size: 0.8rem;
+}
+
+.tiptap img {
+  max-width: 100%;
+  height: auto;
+}
+
+.tiptap blockquote {
+  padding-left: 1rem;
+  border-left: 2px solid rgba(13, 13, 13, 0.1);
+}
+
+.tiptap hr {
+  border: none;
+  border-top: 2px solid rgba(13, 13, 13, 0.1);
+  margin: 2rem 0;
+}
+
+.button-tiptap {
+  border: 1px solid grey;
+  border-radius: 100px;
+  background-color: white;
+  color: black;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 6px 12px;
+  margin: 10px 5px;
+  border-radius: 4px;
+  transition: background-color 0.3s, border-color 0.3s;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.button-tiptap:hover,
+.button-tiptap.is-active {
+  background-color: white;
+  opacity: 1;
+}
+
+
+/* Assuming the class for the Tiptap editor content is .ProseMirror */
+.ProseMirror {
+  border: 2px solid rgb(179, 179, 179); /* default border */
+  background-color: rgb(24, 24, 24);
+
+  border-radius: 8px;
+  padding: 10px; /* Add padding around the text */
+  min-height: 40vh;
+}
+
+.ProseMirror a{
+  color: #005AAD; /* Blue color for links */
+  text-decoration: underline; /* Underline for links */
+  cursor: pointer; 
+}
+
+.ProseMirror a:hover {
+  color: #1F186B; 
+}
