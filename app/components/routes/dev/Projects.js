@@ -11,14 +11,14 @@ function Project({ title, description, gif, link }) {
     <div className='flex flex-row mb-3'>
       <div className='px-5'>
         <Link href={link} target='_blank' rel='noopener noreferrer'>
-          <h3 className='inline-block hover:text-blue-500 transition ease-in-out mb-2'>{title}</h3>
+          <h3 className='inline-block hover:text-blue-500 transition ease-in-out mb-2'>
+            {title}
+          </h3>
         </Link>
         <p>{description}</p>
       </div>
       <div>
-        <Link href={link} target='_blank' rel='noopener noreferrer'>
-          <Image src={gif} alt='Project' className='max-w-[70px]' />
-        </Link>
+        <Image src={gif} alt='Project' className='max-w-[70px]' />
       </div>
     </div>
   );
@@ -26,33 +26,33 @@ function Project({ title, description, gif, link }) {
 
 function Projects() {
   const projectInfo = [
+    // {
+    //   title: 'YTP.com',
+    //   description: 'Allows users to discover new music by searching through thousands of genres. Find artists, videos, songs, and playlists.',
+    //   gif: genrescopeGif,
+    //   link: '',
+    // },
     {
-      title: 'YTP.com',
-      description: 'Allows users to discover new music by searching through thousands of genres. Find artists, videos, songs, and playlists.',
-      gif: genrescopeGif,
-      link: '',
-    },
-    {
-      title: 'GenreScope',
+      title: 'GenreScope →',
       description:
         'Allows users to discover new music by searching through thousands of genres. Find artists, videos, songs, and playlists.',
       gif: genrescopeGif,
       link: 'https://github.com/Scottsdaaale/GenreScope',
     },
     {
-      title: 'MyClip',
+      title: 'MyClip →',
       description:
         'A video game clip social media site. Features login, comment, and star rating systems.',
       gif: myclipGif,
       link: 'https://github.com/Scottsdaaale/MyClip',
     },
-    {
-      title: 'HyperTyper',
-      description:
-        'A simple speed typing app made collaboratively during my time at Flatiron School.',
-      gif: hypertyperGif,
-      link: 'https://github.com/Scottsdaaale/HyperTyper',
-    },
+    // {
+    //   title: 'HyperTyper →',
+    //   description:
+    //     'A simple speed typing app made collaboratively during my time at Flatiron School.',
+    //   gif: hypertyperGif,
+    //   link: 'https://github.com/Scottsdaaale/HyperTyper',
+    // },
   ];
 
   return (
