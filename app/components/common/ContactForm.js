@@ -78,8 +78,8 @@ function ContactForm() {
           <li>Optimization of Existing Sites</li>
         </ul>
         <p>
-          Whether you're an individual entrepreneur or a company seeking
-          comprehensive web solutions, I'm here to assist you. Let's collaborate
+          Whether you&apos;re an individual entrepreneur or a company seeking
+          comprehensive web solutions, I&apos;m here to assist you. Let&apos;s collaborate
           and transform your ideas into reality!
         </p>
       </motion.div>
