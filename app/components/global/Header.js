@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 import computerGif from '../../assets/gifs/Computer.gif';
 import bookGif from '../../assets/gifs/Book.gif';
 import externalLinkGif from '../../assets/gifs/ExternalLink.gif';
+import phoneGif from '../../assets/gifs/Phone.gif';
 
 const Header = () => {
   const [scrolling, setScrolling] = useState(false);
@@ -53,6 +54,17 @@ const Header = () => {
               />
             </motion.div>
           </Link>
+          <Link href='/contact'>
+            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+              <Image
+                src={phoneGif}
+                alt='Contact Page'
+                width='40'
+                height='40'
+                className=''
+              />
+            </motion.div>
+          </Link>
           <Link href='/blog'>
             <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
               <Image
@@ -64,6 +76,7 @@ const Header = () => {
               />
             </motion.div>
           </Link>
+
           <Link href='https://linktr.ee/scottsdaaale' target='blank'>
             <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
               <Image
