@@ -22,15 +22,24 @@
   text-decoration: underline;
 }
 
+h2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 p {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
 ol, ul, menu {
-  list-style: none;
+  /* list-style: none; */
   margin: 0;
-  padding: 0;
+  padding-left: 30px;
 }
 li {
   margin-bottom: 15px;
