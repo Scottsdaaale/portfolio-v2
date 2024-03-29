@@ -1,4 +1,4 @@
-import ContactForm from '@/app/components/common/ContactForm';
+import ContactForm from '@/app/components/routes/contact/ContactForm';
 import React from 'react';
 
 const page = () => {
