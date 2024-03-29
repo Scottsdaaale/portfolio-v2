@@ -60,7 +60,7 @@ function ContactForm() {
   return (
     <div className='mb-12'>
       <motion.div
-        className='my-12'
+        className='mb-12'
         variants={formVariants}
         initial='hidden'
         animate='visible'
