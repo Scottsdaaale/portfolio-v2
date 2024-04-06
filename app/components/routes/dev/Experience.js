@@ -43,7 +43,7 @@ function Job({
         <ul>
           {presentRoleDescription &&
             presentRoleDescription.map((description, index) => (
-              <li key={index} className='mb-1'>
+              <li key={index} className=''>
                 {description}
               </li>
             ))}
@@ -53,7 +53,7 @@ function Job({
         <p className='mb-2'>{pastRoleDuration}</p>
         <ul>
           {responsibilities.map((responsibility, index) => (
-            <li key={index} className='mb-1'>
+            <li key={index} className=''>
               {responsibility}
             </li>
           ))}
@@ -87,19 +87,19 @@ function Experience() {
       link: 'https://www.linkedin.com/company/liquid-xyz/',
       tooltipContent: 'LiquidXYZ LinkedIn',
     },
-    {
-      company: 'Woolie.tv →',
-      role: 'Co-Founder/Lead Developer',
-      duration: "'23 - present",
-      responsibilities: [
-        'Led inception and development of a captivating relaxation platform.',
-        'Drove engagement strategies, leading to substantial rise in adoption and retention rates.',
-        'Enhanced platform functionality and interface based on user feedback and analytics.',
-      ],
-      gif: woolieGif,
-      link: 'https://www.woolie.tv',
-      tooltipContent: 'Woolie.tv',
-    },
+    // {
+    //   company: 'Woolie.tv →',
+    //   role: 'Co-Founder/Lead Developer',
+    //   duration: "'23 - present",
+    //   responsibilities: [
+    //     'Led inception and development of a captivating relaxation platform.',
+    //     'Drove engagement strategies, leading to substantial rise in adoption and retention rates.',
+    //     'Enhanced platform functionality and interface based on user feedback and analytics.',
+    //   ],
+    //   gif: woolieGif,
+    //   link: 'https://www.woolie.tv',
+    //   tooltipContent: 'Woolie.tv',
+    // },
     {
       company: 'Saturo Sounds →',
       role: 'WordPress Engineer',
