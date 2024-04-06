@@ -71,7 +71,7 @@ function ContactForm() {
         <p className=''>
           I specialize in a range of services to elevate your online presence:
         </p>
-        <ul className='list-disc pl-6'>
+        <ul className=''>
           <li>Website Development</li>
           <li>Debugging and Issue Resolution</li>
           <li>Redesigns and Enhancements</li>
