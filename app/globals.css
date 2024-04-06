@@ -33,6 +33,7 @@ p {
 li {
   font-size: 14px;
   color: grey;
+  margin-bottom: 5px;
 
 }
 ol, ul, menu {
