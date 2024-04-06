@@ -19,7 +19,7 @@ function Main() {
         <About />
         <Experience />
         <Projects />
-        {/* <Contact /> */}
+        <Contact />
       </motion.div>
     </div>
   );
