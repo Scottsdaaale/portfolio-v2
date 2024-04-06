@@ -5,10 +5,13 @@ import Link from 'next/link';
 import genrescopeGif from '../../../assets/gifs/GenreScope.gif';
 import myclipGif from '../../../assets/gifs/MyClip.gif';
 import hypertyperGif from '../../../assets/gifs/HyperTyper.gif';
+import woolieGif from '../../../assets/gifs/Woolie.gif';
+import ytpGif from '../../../assets/gifs/YTP.gif';
+
 
 function Project({ title, description, gif, link }) {
   return (
-    <div className='flex flex-row mb-3'>
+    <div className='flex flex-row mb-3 items-center'>
       <div className='px-5'>
         <Link href={link} target='_blank' rel='noopener noreferrer'>
           <h3 className='inline-block hover:text-blue-500 transition ease-in-out mb-2'>
@@ -26,12 +29,18 @@ function Project({ title, description, gif, link }) {
 
 function Projects() {
   const projectInfo = [
-    // {
-    //   title: 'YTP.com',
-    //   description: 'Allows users to discover new music by searching through thousands of genres. Find artists, videos, songs, and playlists.',
-    //   gif: genrescopeGif,
-    //   link: '',
-    // },
+    {
+      title: 'YTP.com →',
+      description: 'Redesigned and built client brand new marketing site. Increased user engagement and speeds by 300%.',
+      gif: ytpGif,
+      link: '',
+    },
+    {
+      title: 'Woolie.tv →',
+      description: 'Build your own experience relaxation platform. Comfy cozy ambient videos and sounds. Build your perfect scene and chill all day long at woolie.tv.',
+      gif: woolieGif,
+      link: 'https://www.woolie.tv/',
+    },
     {
       title: 'GenreScope →',
       description:
