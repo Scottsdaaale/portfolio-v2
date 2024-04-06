@@ -46,6 +46,7 @@ const metadata = async (params) => {
 
     return {
       title: pageTitle,
+      description: metaDescription,
       openGraph: {
         title: pageTitle,
         description: metaDescription,
