@@ -1,13 +1,18 @@
-// Import cheerio library
+
+import getBlogPost from "./getBlogPost";
+
 const cheerio = require('cheerio');
 
-// Function to strip HTML tags using cheerio
-function stripHtml(html) {
-  // Load the HTML string into a cheerio instance
-  const $ = cheerio.load(html);
+function stripHtml(body) {
+  let strippedText = '';
 
-  // Get the text content of the HTML without tags
-  return $('body').text();
+  for (const block of body) {
+    const { children } = block;
+    const blockText = children.map(child => child.text).join('');
+    strippedText += blockText;
+  }
+
+  return strippedText;
 }
 
 // Function to shorten the metaDescription to 155 characters
@@ -20,40 +25,24 @@ function shortenMetaDescription(description) {
 }
 
 const fallbackDescription = shortenMetaDescription(
-  "Since 2010, we've been transforming the learning experience in the human services sector, combining expert knowledge with real-world applications. Our interactive, content-rich programs are designed to maximize knowledge retention, making professional development accessible and effective."
+  ""
 );
 
-const metadata = async (endpoint, slugParam, params) => {
-  const res = await fetch(endpoint, { cache: 'no-store' });
+const metadata = async (params) => {
+  const { slug } = params;
+  const blogPostData = await getBlogPost(slug);
 
-  if (!res.ok) {
-    throw new Error('Failed to fetch data');
-  }
+  if (blogPostData) {
+    const { title, mainImage, body } = blogPostData;
+    const pageTitle = title || 'Item Not Found';
 
-  const data = await res.json();
-  const slug = params.slug || slugParam;
-
-  const matchingData = data.find((item) => item.slug === slug);
-
-  if (matchingData) {
-    const {
-      name,
-      description,
-      image,
-      text,
-      title: fetchedTitle,
-    } = matchingData;
-
-    const pageTitle = name || fetchedTitle || 'Item Not Found';
     // Convert HTML description to plain text using cheerio
-    let metaDescription = description
-      ? stripHtml(description)
-      : text
-      ? stripHtml(text)
-      : fallbackDescription;
+    let metaDescription = stripHtml(body);
+
     // Shorten metaDescription to 155 characters
-    metaDescription = shortenMetaDescription(metaDescription);
-    const metaImage = image || '/fallback-image.jpg';
+    metaDescription = shortenMetaDescription(metaDescription) || fallbackDescription;
+
+    const metaImage = mainImage ? mainImage.asset.url : '/fallback-image.jpg';
 
     return {
       title: pageTitle,
@@ -76,7 +65,3 @@ const metadata = async (endpoint, slugParam, params) => {
 };
 
 export default metadata;
-
-//may want to pass an integer or something as a prop so that we can get x amount of description chars
-
-//this might be bad if one of the piece of data doesnt work

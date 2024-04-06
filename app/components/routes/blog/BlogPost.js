@@ -9,26 +9,27 @@ import { urlForImage } from '../../../../sanity/lib/image';
 import { urlForGif } from '../../../../sanity/lib/image';
 import { motion } from 'framer-motion'
 import LoadingAnimation from '../../common/LoadingAnimation';
+import getBlogPost from '../../common/getBlogPost';
 import './blog.css';
 
-async function getBlogPostData(slug) {
-  const query = `*[_type == "post" && slug.current == $slug][0]{ title, mainImage { asset->{ id, url }, alt }, body }`;
-  const params = { slug };
-  try {
-    const post = await client.fetch(query, params);
-    return post;
-  } catch (error) {
-    console.error('Sanity fetch error:', error);
-    return null;
-  }
-}
+// async function getBlogPostData(slug) {
+//   const query = `*[_type == "post" && slug.current == $slug][0]{ title, mainImage { asset->{ id, url }, alt }, body }`;
+//   const params = { slug };
+//   try {
+//     const post = await client.fetch(query, params);
+//     return post;
+//   } catch (error) {
+//     console.error('Sanity fetch error:', error);
+//     return null;
+//   }
+// }
 
 function BlogPost({ params }) {
   const [post, setPost] = React.useState(null);
 
   React.useEffect(() => {
     const fetchPost = async () => {
-      const postData = await getBlogPostData(params.slug, {
+      const postData = await getBlogPost(params.slug, {
         cache: 'no-store',
       });
       setPost(postData);
