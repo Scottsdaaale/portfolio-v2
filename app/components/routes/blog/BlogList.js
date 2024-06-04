@@ -39,7 +39,7 @@ function BlogList() {
   }, []);
 
   return (
-    <div className='p-3 grid grid-cols-1 gap-3'>
+    <div className='p-3 grid grid-cols-1 gap-3 px-2 xs:px-0 mx-auto max-w-[500px]'>
       {posts.map((post, index) => (
         <motion.div
           key={post.slug.current}
@@ -53,8 +53,17 @@ function BlogList() {
             title={post.title || ''}
             author={(post.author && post.author.name) || ''}
             slug={(post.slug && post.slug.current) || ''}
-            date={(post.publishedAt && new Date(post.publishedAt).toLocaleDateString()) || ''}
-            image={(post.mainImage && post.mainImage.asset && post.mainImage.asset.url) || ''}
+            date={
+              (post.publishedAt &&
+                new Date(post.publishedAt).toLocaleDateString()) ||
+              ''
+            }
+            image={
+              (post.mainImage &&
+                post.mainImage.asset &&
+                post.mainImage.asset.url) ||
+              ''
+            }
             alt={(post.mainImage && post.mainImage.alt) || ''}
           />
         </motion.div>

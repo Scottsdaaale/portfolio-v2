@@ -83,6 +83,7 @@ ul {
 
 ::-webkit-scrollbar {
   width: 8px; /* width of the scrollbar */
+  height: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
