@@ -100,7 +100,7 @@ function ContactForm() {
               message: 'First name must contain only letters',
             },
           })}
-          className='border p-2 text-black bg-gray-100'
+          className='border p-2 text-black bg-[rgb(236, 236, 236)]'
           variants={formVariants}
           initial='hidden'
           animate='visible'
@@ -125,7 +125,7 @@ function ContactForm() {
               message: 'Last name must contain only letters',
             },
           })}
-          className='border p-2 text-black bg-gray-100'
+          className='border p-2 text-black bg-[rgb(236, 236, 236)]'
           variants={formVariants}
           initial='hidden'
           animate='visible'
@@ -151,7 +151,7 @@ function ContactForm() {
               message: 'Invalid email address',
             },
           })}
-          className='border p-2 text-black bg-gray-100'
+          className='border p-2 text-black bg-[rgb(236, 236, 236)]'
           variants={formVariants}
           initial='hidden'
           animate='visible'
@@ -170,7 +170,7 @@ function ContactForm() {
         </motion.label>
         <motion.textarea
           {...register('description')}
-          className='border p-2 text-black bg-gray-100'
+          className='border p-2 text-black bg-[rgb(236, 236, 236)]'
           variants={formVariants}
           initial='hidden'
           animate='visible'
