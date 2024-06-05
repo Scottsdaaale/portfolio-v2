@@ -48,7 +48,7 @@ function Job({
               </li>
             ))}
         </ul>
-        <h1 className='mb-2 text-white'>{upArrow}</h1>
+        <div className='mb-2 text-white'>{upArrow}</div>
         <p>{pastRole}</p>
         <p className='mb-2'>{pastRoleDuration}</p>
         <ul>
