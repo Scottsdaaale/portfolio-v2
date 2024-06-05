@@ -16,16 +16,29 @@ import './blog.css';
 
 function BlogPost({ params }) {
   const [post, setPost] = React.useState(null);
+  const [error, setError] = React.useState(null);
 
-  React.useEffect(() => {
-    const fetchPost = async () => {
-      const postData = await getBlogPost(params.slug, {
-        cache: 'no-store',
-      });
-      setPost(postData);
-    };
-    fetchPost();
-  }, [params.slug]);
+React.useEffect(() => {
+  const fetchPost = async () => {
+    if (params && params.slug) {
+      const query = `*[_type == "post" && slug.current == $slug][0]{ title, mainImage { asset->{ id, url }, alt }, body }`;
+      const queryParams = { slug: params.slug };
+
+      try {
+        const post = await client.fetch(query, queryParams);
+        setPost(post);
+      } catch (error) {
+        console.error('Sanity fetch error:', error);
+        setError(error);
+      }
+    }
+  };
+  fetchPost();
+}, [params]);
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
 
   if (!post) {
     return (
@@ -96,31 +109,31 @@ function BlogPost({ params }) {
         const codeString = renderCodeContent(React.Children.toArray(children));
 
         return (
-    <div className='flex flex-col bg-[#313131]'>
-      <div className='flex justify-end m-2'>
-        <button
-          className='text-xs text-[#ececec]'
-          onClick={() => copyToClipboard(codeString)}
-        >
-          Copy
-        </button>
-      </div>
-      <div className='bg-[#070707] p-4 overflow-x-auto'>
-        <SyntaxHighlighter
-          language={language}
-          style={tomorrow}
-          customStyle={{
-            overflowX: 'auto',
-            whiteSpace: 'pre-wrap',
-            wordBreak: 'break-all',
-          }}
-        >
-          {codeString}
-        </SyntaxHighlighter>
-      </div>
-    </div>
-  );
-},
+          <div className='flex flex-col bg-[#313131]'>
+            <div className='flex justify-end m-2'>
+              <button
+                className='text-xs text-[#ececec]'
+                onClick={() => copyToClipboard(codeString)}
+              >
+                Copy
+              </button>
+            </div>
+            <div className='bg-[#070707] p-4 overflow-x-auto'>
+              <SyntaxHighlighter
+                language={language}
+                style={tomorrow}
+                customStyle={{
+                  overflowX: 'auto',
+                  whiteSpace: 'pre',
+                  wordBreak: 'break-all',
+                }}
+              >
+                {codeString}
+              </SyntaxHighlighter>
+            </div>
+          </div>
+        );
+      },
       image: ({ value }) => {
         if (!value.asset) {
           return null;
