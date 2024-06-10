@@ -82,58 +82,44 @@ React.useEffect(() => {
         </a>
       ),
       code: ({ children }) => {
-        const language = 'html'; // Specify the language of the code block
+  const renderCodeContent = (content) => {
+    return content
+      .map((child) => {
+        if (typeof child === 'string') {
+          return child;
+        } else if (React.isValidElement(child)) {
+          if (child.type === 'br') {
+            return '\n';
+          } else if (child.props.children) {
+            return renderCodeContent(React.Children.toArray(child.props.children));
+          } else {
+            return '';
+          }
+        } else {
+          return '';
+        }
+      })
+      .join('');
+  };
 
-        const renderCodeContent = (content) => {
-          return content
-            .map((child) => {
-              if (typeof child === 'string') {
-                return child;
-              } else if (React.isValidElement(child)) {
-                if (child.type.name === 'DefaultHardBreak') {
-                  return '\n';
-                } else if (child.props.children) {
-                  return renderCodeContent(
-                    React.Children.toArray(child.props.children)
-                  );
-                } else {
-                  return '';
-                }
-              } else {
-                return '';
-              }
-            })
-            .join('');
-        };
+  const codeString = renderCodeContent(React.Children.toArray(children));
 
-        const codeString = renderCodeContent(React.Children.toArray(children));
-
-        return (
-          <div className='flex flex-col bg-[#313131]'>
-            <div className='flex justify-end m-2'>
-              <button
-                className='text-xs text-[#ececec]'
-                onClick={() => copyToClipboard(codeString)}
-              >
-                Copy
-              </button>
-            </div>
-            <div className='bg-[#070707] p-4 overflow-x-auto'>
-              <SyntaxHighlighter
-                language={language}
-                style={tomorrow}
-                customStyle={{
-                  overflowX: 'auto',
-                  whiteSpace: 'pre',
-                  wordBreak: 'break-all',
-                }}
-              >
-                {codeString}
-              </SyntaxHighlighter>
-            </div>
-          </div>
-        );
-      },
+  return (
+    <div className='flex flex-col bg-[#313131]'>
+      <div className='flex justify-end m-2'>
+        <button
+          className='text-xs text-[#ececec]'
+          onClick={() => copyToClipboard(codeString)}
+        >
+          Copy
+        </button>
+      </div>
+      <pre className='bg-[#070707] p-4 overflow-x-auto text-[#ececec] whitespace-pre-wrap break-words'>
+        <code>{children}</code>
+      </pre>
+    </div>
+  );
+},
       image: ({ value }) => {
         if (!value.asset) {
           return null;
