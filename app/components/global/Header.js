@@ -31,20 +31,35 @@ const Header = () => {
     };
   }, []);
 
+  const menuItemVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.5 } },
+  };
+
   return (
     <div
       className={`sticky top-0 flex justify-end items-center p-4 mx-5 transition-opacity duration-500 ${
         scrolling ? 'opacity-50' : 'opacity-100'
-      }`}
+      } z-[9999]`}
     >
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.01, duration: 0.5 }}
+        initial='hidden'
+        animate='visible'
+        variants={{
+          visible: {
+            transition: {
+              staggerChildren: 0.2,
+            },
+          },
+        }}
       >
         <div className='flex gap-3'>
           <Link href='/'>
-            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            <motion.div
+              variants={menuItemVariants}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
               <Image
                 src={computerGif}
                 alt='Portfolio Page'
@@ -55,7 +70,11 @@ const Header = () => {
             </motion.div>
           </Link>
           <Link href='/contact'>
-            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            <motion.div
+              variants={menuItemVariants}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
               <Image
                 src={phoneGif}
                 alt='Contact Page'
@@ -66,7 +85,11 @@ const Header = () => {
             </motion.div>
           </Link>
           <Link href='/blog'>
-            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            <motion.div
+              variants={menuItemVariants}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
               <Image
                 src={bookGif}
                 alt='Blog Page'
@@ -78,7 +101,11 @@ const Header = () => {
           </Link>
 
           <Link href='https://linktr.ee/scottsdaaale' target='blank'>
-            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            <motion.div
+              variants={menuItemVariants}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
               <Image
                 src={externalLinkGif}
                 alt='Link Tree'
