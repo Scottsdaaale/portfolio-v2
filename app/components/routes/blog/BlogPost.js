@@ -15,31 +15,31 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import './blog.css';
 
-
-// async function getBlogPostData(slug) {
-//   const query = `*[_type == "post" && slug.current == $slug][0]{ title, mainImage { asset->{ id, url }, alt }, body }`;
-//   const params = { slug };
-//   try {
-//     const post = await client.fetch(query, params);
-//     return post;
-//   } catch (error) {
-//     console.error('Sanity fetch error:', error);
-//     return null;
-//   }
-// }
-
 function BlogPost({ params }) {
   const [post, setPost] = React.useState(null);
+  const [error, setError] = React.useState(null);
 
-  React.useEffect(() => {
-    const fetchPost = async () => {
-      const postData = await getBlogPost(params.slug, {
-        cache: 'no-store',
-      });
-      setPost(postData);
-    };
-    fetchPost();
-  }, [params.slug]);
+React.useEffect(() => {
+  const fetchPost = async () => {
+    if (params && params.slug) {
+      const query = `*[_type == "post" && slug.current == $slug][0]{ title, mainImage { asset->{ id, url }, alt }, body }`;
+      const queryParams = { slug: params.slug };
+
+      try {
+        const post = await client.fetch(query, queryParams);
+        setPost(post);
+      } catch (error) {
+        console.error('Sanity fetch error:', error);
+        setError(error);
+      }
+    }
+  };
+  fetchPost();
+}, [params]);
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
 
   if (!post) {
     return (
@@ -56,9 +56,6 @@ function BlogPost({ params }) {
         (child) => child.marks && child.marks.includes('code')
       )
   );
-
-  console.log(hasCodeBlock)
-  console.log(post)
 
   // Error checking and fallbacks for mainImage and title
   const mainImageUrl =
@@ -86,33 +83,29 @@ function BlogPost({ params }) {
         </a>
       ),
       code: ({ children }) => {
-        const language = 'html'; // Specify the language of the code block
+  const renderCodeContent = (content) => {
+    return content
+      .map((child) => {
+        if (typeof child === 'string') {
+          return child;
+        } else if (React.isValidElement(child)) {
+          if (child.type === 'br') {
+            return '\n';
+          } else if (child.props.children) {
+            return renderCodeContent(React.Children.toArray(child.props.children));
+          } else {
+            return '';
+          }
+        } else {
+          return '';
+        }
+      })
+      .join('');
+  };
 
-        const renderCodeContent = (content) => {
-          return content
-            .map((child) => {
-              if (typeof child === 'string') {
-                return child;
-              } else if (React.isValidElement(child)) {
-                if (child.type.name === 'DefaultHardBreak') {
-                  return '\n';
-                } else if (child.props.children) {
-                  return renderCodeContent(
-                    React.Children.toArray(child.props.children)
-                  );
-                } else {
-                  return '';
-                }
-              } else {
-                return '';
-              }
-            })
-            .join('');
-        };
+  const codeString = renderCodeContent(React.Children.toArray(children));
 
-        const codeString = renderCodeContent(React.Children.toArray(children));
-
-        return (
+  return (
     <div className='flex flex-col bg-[#313131]'>
       <div className='flex justify-end m-2'>
         <button
@@ -122,19 +115,9 @@ function BlogPost({ params }) {
           Copy
         </button>
       </div>
-      <div className='bg-[#070707] p-4 overflow-x-auto'>
-        <SyntaxHighlighter
-          language={language}
-          style={tomorrow}
-          customStyle={{
-            overflowX: 'auto',
-            whiteSpace: 'pre-wrap',
-            wordBreak: 'break-all',
-          }}
-        >
-          {codeString}
-        </SyntaxHighlighter>
-      </div>
+      <pre className='bg-[#070707] p-4 overflow-x-auto text-[#ececec] whitespace-pre-wrap break-words'>
+        <code>{children}</code>
+      </pre>
     </div>
   );
 },
