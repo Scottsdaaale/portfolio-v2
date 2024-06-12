@@ -65,13 +65,13 @@ function ContactForm() {
         initial='hidden'
         animate='visible'
       >
-        <h1 className='text-pretty'>
+        <h1 className='text-pretty mb-6'>
           Professional Web Development Services Tailored to Your Needs
         </h1>
         <p className=''>
           I specialize in a range of services to elevate your online presence:
         </p>
-        <ul className=''>
+        <ul className='my-3'>
           <li>Website Development</li>
           <li>Debugging and Issue Resolution</li>
           <li>Redesigns and Enhancements</li>
