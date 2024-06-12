@@ -1,16 +1,18 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Tooltip } from 'react-tooltip';
 
 import woolieGif from '../../../assets/gifs/Woolie.gif';
 import saturoGif from '../../../assets/gifs/Saturo.gif';
 import liquidGif from '../../../assets/gifs/Liquid.gif';
 import flatironGif from '../../../assets/gifs/Flatiron.gif';
-import certificatePdf from '../../../assets/images/FlatironCertificate.pdf';
+import certificateImage from '../../../assets/images/FlatironCertificate-1.png';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import Image from 'next/image';
 import Link from 'next/link';
+
 function Job({
   role,
   company,
@@ -23,18 +25,37 @@ function Job({
   responsibilities,
   gif,
   link,
+  isCertificate,
 }) {
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleClick = (e) => {
+    if (isCertificate) {
+      e.preventDefault();
+      setShowPopup(true);
+    }
+  };
+
   return (
     <div className='flex flex-row px-5 mb-8'>
       <div className=''>
         <Image src={gif} alt='Job' className='max-w-[70px]' />
       </div>
       <div className='px-5'>
-        <Link href={link} target='_blank' rel='noreferrer'>
-          <h3 className='inline-block hover:text-blue-500 transition ease-in-out mb-2'>
+        {isCertificate ? (
+          <div
+            className='inline-block hover:text-blue-500 transition ease-in-out mb-2 cursor-pointer'
+            onClick={handleClick}
+          >
             {company}
-          </h3>
-        </Link>
+          </div>
+        ) : (
+          <Link href={link} target='_blank' rel='noreferrer'>
+            <h3 className='inline-block hover:text-blue-500 transition ease-in-out mb-2'>
+              {company}
+            </h3>
+          </Link>
+        )}
         <p className=''>
           {role}
           {presentRole}
@@ -59,9 +80,52 @@ function Job({
           ))}
         </ul>
       </div>
+
+      <AnimatePresence>
+        {showPopup && (
+          <motion.div
+            className='fixed inset-0 z-50 flex items-center justify-center'
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              className='relative bg-white rounded-lg shadow-lg p-8 max-w-4xl'
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0 }}
+            >
+              <button
+                onClick={() => setShowPopup(false)}
+                className='absolute top-0 right-0 m-4 text-gray-500 hover:text-gray-700'
+              >
+                <svg
+                  className='h-6 w-6'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  stroke='currentColor'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth={2}
+                    d='M6 18L18 6M6 6l12 12'
+                  />
+                </svg>
+              </button>
+              <Image
+                src={certificateImage}
+                alt='Certificate'
+                className='max-w-full h-auto'
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
+
 
 function Experience() {
   const jobData = [
@@ -124,8 +188,9 @@ function Experience() {
         'Ensured accuracy and functionality of websites.',
       ],
       gif: flatironGif,
-      link: certificatePdf,
+      link: certificateImage,
       tooltipContent: 'Flatiron Certificate',
+      isCertificate: true,
     },
   ];
 
@@ -146,6 +211,7 @@ function Experience() {
           responsibilities={job.responsibilities}
           gif={job.gif}
           link={job.link}
+          isCertificate={job.isCertificate}
         />
       ))}
     </div>
