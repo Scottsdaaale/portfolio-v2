@@ -14,10 +14,12 @@ CORS(app)
 
 # Create the Limiter instance without the app
 limiter = Limiter(
-    get_remote_address,
-    app=app,
+    key_func=get_remote_address,
     default_limits=["5 per hour"]
 )
+
+# Now, initialize the limiter with the app
+limiter.init_app(app)
 
 app.config.update(
     MAIL_SERVER='smtp.gmail.com',
@@ -28,40 +30,36 @@ app.config.update(
 )
 mail = Mail(app)
 
-
 @app.route('/')
 def hello_world():
     return 'Hello, World!'
-
 
 @app.route('/send_email', methods=['POST'])
 @limiter.limit("2 per minute")  # Apply custom limit for this route
 def send_email():
     recipient = 'scottpetersonse@gmail.com'
     json_data = request.json
-
+    
     # Get first name and last name from json_data
     first_name = json_data.get('firstName', '')
     last_name = json_data.get('lastName', '')
-
+    
     # Update the subject line to include first name and last name
     subject = f'Message From Portfolio Site - {first_name} {last_name}'
-
+    
     # Format the message body
     body = "You have received a new message from your portfolio site:\n\n"
     for key, value in json_data.items():
         body += f"{key.title()}: {value}\n"
-
-    msg = Message(subject, recipients=[
-                  recipient], sender=os.environ.get('MAIL_USERNAME'))
+    
+    msg = Message(subject, recipients=[recipient], sender=os.environ.get('MAIL_USERNAME'))
     msg.body = body
-
+    
     try:
         mail.send(msg)
         return 'Email sent successfully!'
     except Exception as e:
         return str(e), 500
-
 
 if __name__ == '__main__':
     app.run(debug=True)
