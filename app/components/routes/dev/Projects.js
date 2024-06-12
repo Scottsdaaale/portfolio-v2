@@ -31,13 +31,15 @@ function Projects() {
   const projectInfo = [
     {
       title: 'YTP.com →',
-      description: 'Redesigned and built client brand new marketing site. Increased user engagement and speeds by 300%.',
+      description:
+        'Redesigned and built client brand new marketing site. Increased user engagement and speeds by 300%.',
       gif: ytpGif,
-      link: '',
+      link: 'https://www.yourtrainingprovider.com/',
     },
     {
       title: 'Woolie.tv →',
-      description: 'Build your own experience relaxation platform. Comfy cozy ambient videos and sounds. Build your perfect scene and chill all day long at woolie.tv.',
+      description:
+        'Build your own experience relaxation platform. Comfy cozy ambient videos and sounds. Build your perfect scene and chill all day long at woolie.tv.',
       gif: woolieGif,
       link: 'https://www.woolie.tv/',
     },
