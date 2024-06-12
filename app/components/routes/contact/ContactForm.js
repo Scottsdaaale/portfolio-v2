@@ -17,7 +17,7 @@ function ContactForm() {
 
     try {
       const response = await fetch(
-        'https://main.d3s7z0pnbevk6l.amplifyapp.com/send_email',
+        'https://mqschvcrma.us-east-2.awsapprunner.com/send_email',
         {
           method: 'POST',
           headers: {
