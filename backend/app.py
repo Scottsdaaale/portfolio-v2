@@ -10,6 +10,7 @@ from flask_limiter.util import get_remote_address
 load_dotenv()  # Load environment variables from .env file
 
 app = Flask(__name__)
+limiter.init_app(app)
 CORS(app)
 
 # Create the Limiter instance without the app
