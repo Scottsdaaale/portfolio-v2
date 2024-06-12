@@ -76,6 +76,7 @@ function ContactForm() {
         </p>
         <ul className='my-3'>
           <li>Website Development</li>
+          <li>All Things SEO</li>
           <li>Debugging and Issue Resolution</li>
           <li>Redesigns and Enhancements</li>
           <li>Optimization of Existing Sites</li>
