@@ -16,13 +16,16 @@ function ContactForm() {
     e.preventDefault(); // Prevent the default form submission behavior
 
     try {
-      const response = await fetch('http://127.0.0.1:5000/send_email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        'https://main.d3s7z0pnbevk6l.amplifyapp.com/send_email',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
       if (response.ok) {
         toast({
