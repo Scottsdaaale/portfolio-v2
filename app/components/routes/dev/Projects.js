@@ -32,7 +32,7 @@ function Projects() {
     {
       title: 'YTP.com →',
       description:
-        'Redesigned and built client brand new marketing site. Increased user engagement and speeds by 300%.',
+        'Redesigned and built client brand new marketing site. Increased organic traffic by 120%, doubled WOW retention, and incresed page speeds by 800%.',
       gif: ytpGif,
       link: 'https://www.yourtrainingprovider.com/',
     },
