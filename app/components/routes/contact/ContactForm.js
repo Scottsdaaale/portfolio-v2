@@ -16,13 +16,16 @@ function ContactForm() {
     e.preventDefault(); // Prevent the default form submission behavior
 
     try {
-      const response = await fetch('http://127.0.0.1:5000/send_email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        'https://mqschvcrma.us-east-2.awsapprunner.com/send_email',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
       if (response.ok) {
         toast({
@@ -73,6 +76,7 @@ function ContactForm() {
         </p>
         <ul className='my-3'>
           <li>Website Development</li>
+          <li>All Things SEO</li>
           <li>Debugging and Issue Resolution</li>
           <li>Redesigns and Enhancements</li>
           <li>Optimization of Existing Sites</li>
