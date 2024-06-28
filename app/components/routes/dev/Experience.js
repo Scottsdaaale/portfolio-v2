@@ -41,7 +41,7 @@ function Job({
       <div className=''>
         <Image src={gif} alt='Job' className='max-w-[70px]' />
       </div>
-      <div className='px-5'>
+      <div className='pl-5 sm:px-5'>
         {isCertificate ? (
           <div
             className='inline-block hover:text-blue-500 transition ease-in-out mb-2 cursor-pointer'
@@ -126,12 +126,26 @@ function Job({
   );
 }
 
-
 function Experience() {
   const jobData = [
+    // {
+    //   company: 'FSA Fresh',
+    //   role: 'Full Stack Developer',
+    //   duration: "'24-present",
+    //   gif: '',
+    //   link: 'https://www.fsafresh.com/',
+    //   responsibilities: [
+    //     'Implemented comprehensive code reviews and debugging processes, resulting in a reduction in production issues',
+    //     'Optimized front-end assets using Webpack and lazy loading, reducing page load times by 25%',
+    //     'Collaborated with cross-functional teams to develop intuitive UIs using React and Tailwind',
+    //     'Leveraged Next.js for server-side rendering and structured data markup, boosting SEO performance by 70%',
+    //     '',
+    //   ],
+    // },
+
     {
       company: 'LiquidXYZ →',
-      presentRole: 'Lead Frontend Developer',
+      presentRole: 'Full Stack Developer',
       duration: "'23 - present",
       presentRoleDescription: [
         'Led development of visually stunning websites, ensuring exceptional user experiences.',
@@ -151,27 +165,15 @@ function Experience() {
       link: 'https://www.linkedin.com/company/liquid-xyz/',
       tooltipContent: 'LiquidXYZ LinkedIn',
     },
-    // {
-    //   company: 'Woolie.tv →',
-    //   role: 'Co-Founder/Lead Developer',
-    //   duration: "'23 - present",
-    //   responsibilities: [
-    //     'Led inception and development of a captivating relaxation platform.',
-    //     'Drove engagement strategies, leading to substantial rise in adoption and retention rates.',
-    //     'Enhanced platform functionality and interface based on user feedback and analytics.',
-    //   ],
-    //   gif: woolieGif,
-    //   link: 'https://www.woolie.tv',
-    //   tooltipContent: 'Woolie.tv',
-    // },
+
     {
       company: 'Saturo Sounds →',
       role: 'WordPress Engineer',
       duration: 'Freelance | 07/2023 - 09/2023',
       responsibilities: [
-        'Redesigned music label website, creating a modern and engaging design.',
-        'Utilized Elementor Pro and custom coding for a dynamic and responsive user interface.',
-        'Simplified site management for clients through intuitive interfaces and thorough documentation, ensuring smooth updates even post-departure.',
+        'Redesigned music label website using Elementor Pro and custom PHP, resulting in a 50% increase in page views',
+        'Implemented lazy loading and CDN integration, improving site load times by 40%',
+        'Created custom WordPress plugins for music playback and event management, enhancing user experience',
       ],
       gif: saturoGif,
       link: 'https://www.saturosounds.com',
@@ -183,9 +185,10 @@ function Experience() {
       role: 'Fullstack Engineer Apprentice',
       duration: '02/2022 - 06/2022',
       responsibilities: [
-        'Developed web applications using various programming languages.',
-        'Maintained up-to-date knowledge of technology trends and products.',
-        'Ensured accuracy and functionality of websites.',
+        'Studied full-stack development technologies including CSS, HTML, JavaScript, React, Ruby, Rails, and PostgreSQL',
+        'Developed progressive web applications throughout the course, applying newly acquired skills to create increasingly complex projects',
+        'Excelled in algorithm and data structure challenges, demonstrating problem-solving skills and providing peer support',
+        'Collaborated with other students to deliver comprehensive group projects, enhancing communication and teamwork abilities',
       ],
       gif: flatironGif,
       link: certificateImage,
