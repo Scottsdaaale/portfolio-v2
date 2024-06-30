@@ -37,15 +37,6 @@ function BlogPost({ params }) {
     fetchPost();
   }, [params]);
 
-  const copyToClipboard = (text) => {
-    navigator.clipboard.writeText(text).then(() => {
-      console.log('Copied to clipboard');
-      // You could add a state here to show a "Copied!" message
-    }).catch(err => {
-      console.error('Failed to copy: ', err);
-    });
-  };
-
   if (error) {
     return <div>Error: {error.message}</div>;
   }
@@ -71,6 +62,58 @@ function BlogPost({ params }) {
   const mainImageAlt = (post.mainImage && post.mainImage.alt) || '';
   const title = post.title || '';
 
+  const CodeBlock = ({ children }) => {
+    const [copied, setCopied] = React.useState(false);
+
+    const copyToClipboard = (text) => {
+      navigator.clipboard.writeText(text).then(() => {
+        console.log('Copied to clipboard');
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000); // Reset after 6 seconds
+      }).catch(err => {
+        console.error('Failed to copy: ', err);
+      });
+    };
+
+    const renderCodeContent = (content) => {
+      return content
+        .map((child) => {
+          if (typeof child === 'string') {
+            return child;
+          } else if (React.isValidElement(child)) {
+            if (child.type === 'br') {
+              return '\n';
+            } else if (child.props.children) {
+              return renderCodeContent(React.Children.toArray(child.props.children));
+            } else {
+              return '';
+            }
+          } else {
+            return '';
+          }
+        })
+        .join('');
+    };
+
+    const codeString = renderCodeContent(React.Children.toArray(children));
+
+    return (
+      <div className='flex flex-col bg-[#313131]'>
+        <div className='flex justify-end m-2'>
+          <button
+            className='text-xs text-[#ececec]'
+            onClick={() => copyToClipboard(codeString)}
+          >
+            {copied ? 'Copied!' : 'Copy'}
+          </button>
+        </div>
+        <pre className='bg-[#070707] p-4 overflow-x-auto text-[#ececec] whitespace-pre-wrap break-words'>
+          <code>{children}</code>
+        </pre>
+      </div>
+    );
+  };
+
   const myPortableTextComponents = {
     marks: {
       Color: ({ value, children }) => (
@@ -89,45 +132,7 @@ function BlogPost({ params }) {
           {children}
         </a>
       ),
-      code: ({ children }) => {
-        const renderCodeContent = (content) => {
-          return content
-            .map((child) => {
-              if (typeof child === 'string') {
-                return child;
-              } else if (React.isValidElement(child)) {
-                if (child.type === 'br') {
-                  return '\n';
-                } else if (child.props.children) {
-                  return renderCodeContent(React.Children.toArray(child.props.children));
-                } else {
-                  return '';
-                }
-              } else {
-                return '';
-              }
-            })
-            .join('');
-        };
-
-        const codeString = renderCodeContent(React.Children.toArray(children));
-
-        return (
-          <div className='flex flex-col bg-[#313131]'>
-            <div className='flex justify-end m-2'>
-              <button
-                className='text-xs text-[#ececec]'
-                onClick={() => copyToClipboard(codeString)}
-              >
-                Copy
-              </button>
-            </div>
-            <pre className='bg-[#070707] p-4 overflow-x-auto text-[#ececec] whitespace-pre-wrap break-words'>
-              <code>{children}</code>
-            </pre>
-          </div>
-        );
-      },
+      code: ({ children }) => <CodeBlock>{children}</CodeBlock>,
       image: ({ value }) => {
         if (!value.asset) {
           return null;
@@ -168,7 +173,7 @@ function BlogPost({ params }) {
       <div className='mb-10'>
         <h1>{title}</h1>
       </div>
-      <div className='mb-16'>
+      <div className='mb-10'>
         <PortableText value={post.body} components={myPortableTextComponents} />
       </div>
       <CTA />
