@@ -1,5 +1,4 @@
-
-import getBlogPost from "./getBlogPost";
+import getBlogPost from './getBlogPost';
 
 const cheerio = require('cheerio');
 
@@ -8,7 +7,7 @@ function stripHtml(body) {
 
   for (const block of body) {
     const { children } = block;
-    const blockText = children.map(child => child.text).join('');
+    const blockText = children.map((child) => child.text).join('');
     strippedText += blockText;
   }
 
@@ -24,9 +23,7 @@ function shortenMetaDescription(description) {
   return description;
 }
 
-const fallbackDescription = shortenMetaDescription(
-  ""
-);
+const fallbackDescription = shortenMetaDescription('');
 
 const metadata = async (params) => {
   const { slug } = params;
@@ -40,9 +37,19 @@ const metadata = async (params) => {
     let metaDescription = stripHtml(body);
 
     // Shorten metaDescription to 155 characters
-    metaDescription = shortenMetaDescription(metaDescription) || fallbackDescription;
+    metaDescription =
+      shortenMetaDescription(metaDescription) || fallbackDescription;
 
     const metaImage = mainImage ? mainImage.asset.url : '/fallback-image.jpg';
+
+    // Generate favicon URLs based on the mainImage
+    const faviconUrl = mainImage ? mainImage.asset.url : '/favicon.ico';
+    const shortcutIconUrl = mainImage
+      ? `${mainImage.asset.url}`
+      : '/favicon-16x16.png';
+    const appleTouchIconUrl = mainImage
+      ? `${mainImage.asset.url}`
+      : '/apple-touch-icon.png';
 
     return {
       title: pageTitle,
@@ -52,6 +59,11 @@ const metadata = async (params) => {
         description: metaDescription,
         images: [metaImage],
       },
+      icons: {
+        icon: faviconUrl,
+        shortcut: shortcutIconUrl,
+        apple: appleTouchIconUrl,
+      },
     };
   } else {
     return {
@@ -60,6 +72,11 @@ const metadata = async (params) => {
         title: 'Item Not Found',
         description: 'No item found',
         images: ['/fallback-image.jpg'],
+      },
+      icons: {
+        icon: '/favicon.ico',
+        shortcut: '/favicon-16x16.png',
+        apple: '/apple-touch-icon.png',
       },
     };
   }
