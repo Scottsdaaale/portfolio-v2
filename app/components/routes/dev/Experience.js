@@ -130,7 +130,7 @@ function Job({
 function Experience() {
   const jobData = [
     {
-      company: 'FSA Fresh',
+      company: 'FSA Fresh →',
       role: 'Full Stack Developer',
       duration: "'24-present",
       gif: fsaFreshGif,
