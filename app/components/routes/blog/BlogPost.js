@@ -13,6 +13,7 @@ import getBlogPost from '../../common/getBlogPost';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import './blog.css';
+import CTA from '../../common/CTA';
 
 function BlogPost({ params }) {
   const [post, setPost] = React.useState(null);
@@ -170,6 +171,7 @@ function BlogPost({ params }) {
       <div className='mb-16'>
         <PortableText value={post.body} components={myPortableTextComponents} />
       </div>
+      <CTA />
     </motion.div>
   );
 }
