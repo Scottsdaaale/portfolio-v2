@@ -7,6 +7,7 @@ import woolieGif from '../../../assets/gifs/Woolie.gif';
 import saturoGif from '../../../assets/gifs/Saturo.gif';
 import liquidGif from '../../../assets/gifs/Liquid.gif';
 import flatironGif from '../../../assets/gifs/Flatiron.gif';
+import fsaFreshGif from '../../../assets/gifs/FsaFresh.gif'
 import certificateImage from '../../../assets/images/FlatironCertificate-1.png';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -128,20 +129,19 @@ function Job({
 
 function Experience() {
   const jobData = [
-    // {
-    //   company: 'FSA Fresh',
-    //   role: 'Full Stack Developer',
-    //   duration: "'24-present",
-    //   gif: '',
-    //   link: 'https://www.fsafresh.com/',
-    //   responsibilities: [
-    //     'Implemented comprehensive code reviews and debugging processes, resulting in a reduction in production issues',
-    //     'Optimized front-end assets using Webpack and lazy loading, reducing page load times by 25%',
-    //     'Collaborated with cross-functional teams to develop intuitive UIs using React and Tailwind',
-    //     'Leveraged Next.js for server-side rendering and structured data markup, boosting SEO performance by 70%',
-    //     '',
-    //   ],
-    // },
+    {
+      company: 'FSA Fresh',
+      role: 'Full Stack Developer',
+      duration: "'24-present",
+      gif: fsaFreshGif,
+      link: 'https://www.fsafresh.com/',
+      responsibilities: [
+        'Implemented comprehensive code reviews and debugging processes, resulting in a reduction in production issues',
+        'Optimized front-end assets using Webpack and lazy loading, reducing page load times by 25%',
+        'Collaborated with cross-functional teams to develop intuitive UIs using React and Tailwind',
+        'Leveraged Next.js for server-side rendering and structured data markup, boosting SEO performance by 70%',
+      ],
+    },
 
     {
       company: 'LiquidXYZ →',
