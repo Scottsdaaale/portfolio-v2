@@ -54,16 +54,10 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image.png', // Using PNG for better quality with pixelated artwork
+        url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Scott Peterson - Full Stack Developer - Pixelated Avatar',
-      },
-      {
-        url: '/og-image.jpg', // Fallback JPG version
-        width: 1200,
-        height: 630,
-        alt: 'Scott Peterson - Full Stack Developer - Pixelated Avatar',
+        alt: 'Scott Peterson - Full Stack Developer',
       },
     ],
   },
@@ -71,8 +65,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: "Scott Peterson - Full Stack Developer",
     description: "Full-stack developer building scalable business solutions with React, Next.js, Django, and AWS.",
-    images: ['/og-image.png'], // Using PNG version for Twitter too
-    creator: '@scottpeterson_dev', // Update with your actual Twitter handle
+    images: ['/og-image.png'],
+    creator: '@scottpeterson_dev',
   },
   robots: {
     index: true,
