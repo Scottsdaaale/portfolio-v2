@@ -109,6 +109,12 @@ export function Contact() {
       url: "https://www.instagram.com/scottsdaaale",
       icon: Instagram,
       description: "Follow my journey"
+    },
+    {
+      name: "Linktree",
+      url: "https://linktr.ee/scottsdaaale",
+      icon: ExternalLink,
+      description: "All my links in one place"
     }
   ];
 

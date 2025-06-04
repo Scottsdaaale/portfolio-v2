@@ -115,8 +115,8 @@ export function Resume() {
   const handlePrint = () => {
     // Create a temporary anchor element to trigger download
     const link = document.createElement('a');
-    link.href = '/Scott Peterson - Resume _ Full Stack Developer.pdf';
-    link.download = 'Scott Peterson - Resume _ Full Stack Developer.pdf';
+    link.href = '/Scotty Peterson - Resume _ Full Stack Developer.pdf';
+    link.download = 'Scotty Peterson - Resume _ Full Stack Developer.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -161,7 +161,7 @@ export function Resume() {
 
         {/* Header */}
         <div className="text-center mb-6 print:mb-4">
-          <h1 className="text-4xl font-bold mb-2 print:text-3xl text-black">Scott Peterson</h1>
+          <h1 className="text-4xl font-bold mb-2 print:text-3xl text-black">Scotty Peterson</h1>
           <h2 className="text-xl text-gray-600 mb-3 print:text-lg">Full Stack Developer</h2>
           
           <div className="flex flex-wrap justify-center gap-3 text-sm print:gap-2 print:text-xs text-black">

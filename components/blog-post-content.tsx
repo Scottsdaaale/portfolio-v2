@@ -191,7 +191,7 @@ export function BlogPostContent({
         >
           <div className="flex items-center justify-between">
             <div className="text-sm text-muted-foreground">
-              Written by <strong>Scott Peterson</strong>
+              Written by <strong>Scotty Peterson</strong>
             </div>
             <Button variant="outline" size="sm" asChild>
               <Link href="/blog">More Articles</Link>

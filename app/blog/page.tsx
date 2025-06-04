@@ -4,7 +4,7 @@ import { Navigation } from "@/components/navigation";
 import { BlogContent } from "@/components/blog-content";
 
 export const metadata: Metadata = {
-  title: "Blog - Scott Peterson | Developer, Hiker, Musician & More",
+  title: "Blog - Scotty Peterson | Developer, Hiker, Musician & More",
   description: "My thoughts on development, tech, camping, hiking, plants, music, guitar, video games, and whatever else catches my interest. Personal stories and insights from a full-stack developer who has way too many hobbies.",
   keywords: [
     "Personal Blog",
@@ -22,14 +22,14 @@ export const metadata: Metadata = {
     "Developer Life"
   ],
   openGraph: {
-    title: "Blog - Scott Peterson | Developer, Hiker, Musician & More",
+    title: "Blog - Scotty Peterson | Developer, Hiker, Musician & More",
     description: "My thoughts on development, tech, nature, music, and whatever else I'm obsessing over at the moment.",
     type: "website",
     url: "/blog",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog - Scott Peterson | Developer, Hiker, Musician & More",
+    title: "Blog - Scotty Peterson | Developer, Hiker, Musician & More",
     description: "My thoughts on development, tech, nature, music, and whatever else catches my interest.",
   },
   alternates: {

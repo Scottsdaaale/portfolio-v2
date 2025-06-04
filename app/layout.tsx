@@ -15,7 +15,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Scott Peterson - Full Stack Developer | React, Next.js, Django Expert",
+  title: "Scotty Peterson - Full Stack Developer | React, Next.js, Django Expert",
   description: "Full-stack developer specializing in scalable business solutions. Currently leading a $30K healthcare compliance platform and managing high-traffic websites. Expert in React, Next.js, Django, AWS, and modern web technologies.",
   keywords: [
     "Full Stack Developer",
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
     "Freelance Developer",
     "Software Engineer"
   ],
-  authors: [{ name: "Scott Peterson", url: "https://scottypeterson.net" }],
-  creator: "Scott Peterson",
-  publisher: "Scott Peterson",
+  authors: [{ name: "Scotty Peterson", url: "https://scottypeterson.net" }],
+  creator: "Scotty Peterson",
+  publisher: "Scotty Peterson",
   formatDetection: {
     email: false,
     address: false,
@@ -46,10 +46,10 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: "Scott Peterson - Full Stack Developer | React, Next.js, Django Expert",
+    title: "Scotty Peterson - Full Stack Developer | React, Next.js, Django Expert",
     description: "Full-stack developer specializing in scalable business solutions. Currently leading a $30K healthcare compliance platform and managing high-traffic websites.",
     url: 'https://scottypeterson.net',
-    siteName: 'Scott Peterson Portfolio',
+    siteName: 'Scotty Peterson Portfolio',
     locale: 'en_US',
     type: 'website',
     images: [
@@ -57,13 +57,13 @@ export const metadata: Metadata = {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Scott Peterson - Full Stack Developer',
+        alt: 'Scotty Peterson - Full Stack Developer',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Scott Peterson - Full Stack Developer",
+    title: "Scotty Peterson - Full Stack Developer",
     description: "Full-stack developer building scalable business solutions with React, Next.js, Django, and AWS.",
     images: ['/og-image.png'],
     creator: '@scottpeterson_dev',
@@ -102,7 +102,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              name: "Scott Peterson",
+              name: "Scotty Peterson",
               jobTitle: "Full Stack Developer",
               url: "https://scottypeterson.net",
               email: "scottpetersonSE@gmail.com",

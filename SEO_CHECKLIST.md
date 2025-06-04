@@ -1,4 +1,4 @@
-# SEO Optimization Checklist for Scott Peterson Portfolio
+# SEO Optimization Checklist for Scotty Peterson Portfolio
 
 ## ✅ Completed SEO Improvements
 

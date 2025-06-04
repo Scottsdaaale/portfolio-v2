@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ThemeToggleInstant } from "./theme-toggle-instant";
 import { trackDownloadResume } from "@/lib/analytics";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 interface NavItem {
@@ -45,9 +46,16 @@ export function Navigation() {
       <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
         <Link
           href="/"
-          className="font-bold text-xl hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
+          className="font-bold text-xl hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded flex items-center space-x-3 cursor-pointer"
         >
-          Scott Peterson
+          <Image
+            src="/Me.gif"
+            alt="Scotty Peterson"
+            width={40}
+            height={40}
+            className="rounded-full"
+          />
+          <span>Scotty Peterson</span>
         </Link>
         
         <div className="hidden md:flex items-center space-x-8">
@@ -56,7 +64,7 @@ export function Navigation() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded px-2 py-1"
+                className="text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded px-2 py-1 cursor-pointer"
               >
                 {item.label}
               </Link>
@@ -64,7 +72,7 @@ export function Navigation() {
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className="text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded px-2 py-1"
+                className="text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded px-2 py-1 cursor-pointer"
               >
                 {item.label}
               </button>
@@ -72,7 +80,7 @@ export function Navigation() {
               <Link
                 key={item.href}
                 href={item.homeLink || "/#"}
-                className="text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded px-2 py-1"
+                className="text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded px-2 py-1 cursor-pointer"
               >
                 {item.label}
               </Link>

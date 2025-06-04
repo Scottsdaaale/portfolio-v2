@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowDown, Github, Linkedin, Instagram } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Instagram, Link } from "lucide-react";
 import { trackSocialClick } from "@/lib/analytics";
 
 export function Hero() {
@@ -22,6 +22,11 @@ export function Hero() {
       name: "Instagram",
       url: "https://www.instagram.com/scottsdaaale",
       icon: Instagram,
+    },
+    {
+      name: "Linktree",
+      url: "https://linktr.ee/scottsdaaale",
+      icon: Link,
     },
   ];
 

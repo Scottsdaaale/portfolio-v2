@@ -1,7 +1,7 @@
 # Portfolio Project Rules
 
 ## 🎯 **Project Vision**
-Building a modern, minimal portfolio website with smooth animations that showcases Scott Peterson as a high-impact full-stack developer who builds solutions that actually solve business problems.
+Building a modern, minimal portfolio website with smooth animations that showcases Scotty Peterson as a high-impact full-stack developer who builds solutions that actually solve business problems.
 
 ## 🎨 **Design Principles**
 

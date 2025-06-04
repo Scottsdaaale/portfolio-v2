@@ -24,11 +24,11 @@ export default function Home() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ProfessionalService",
-            name: "Scott Peterson - Full Stack Development Services",
+            name: "Scotty Peterson - Full Stack Development Services",
             description: "Professional full-stack web development services specializing in React, Next.js, Django, and AWS solutions for businesses.",
             provider: {
               "@type": "Person",
-              name: "Scott Peterson",
+              name: "Scotty Peterson",
               jobTitle: "Full Stack Developer",
               email: "scottpetersonSE@gmail.com",
               url: "https://scottypeterson.net"
