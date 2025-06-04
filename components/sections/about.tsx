@@ -61,11 +61,11 @@ export function About() {
             <div className="space-y-4 text-muted-foreground">
               <p>
                 I started in customer service and e-commerce, spending years solving problems for real people. 
-                That experience taught me something most developers miss: <span className="text-foreground font-semibold">it's not about the code, it's about the solution</span>.
+                That experience taught me something most developers miss: <span className="text-foreground font-semibold">it&apos;s not about the code, it&apos;s about the solution</span>.
               </p>
               <p>
-                When I transitioned to development, I brought that user-focused mindset with me. I don't just build features—I solve problems. 
-                Whether it's a custom LMS because the existing one sucked, or an admin platform that pulls data from everywhere into one place that actually makes sense.
+                When I transitioned to development, I brought that user-focused mindset with me. I don&apos;t just build features—I solve problems. 
+                Whether it&apos;s a custom LMS because the existing one sucked, or an admin platform that pulls data from everywhere into one place that actually makes sense.
               </p>
               <p>
                 Plus I have this annoying habit of diving deep into anything that interests me: from guitar to audio engineering to building computers to coding. 
@@ -112,7 +112,7 @@ export function About() {
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold mb-4">What This Means For You</h3>
               <p className="text-lg text-muted-foreground mb-6">
-                You get a developer who doesn't just understand the technical side—I understand your users, your business problems, and what actually makes a solution successful.
+                You get a developer who doesn&apos;t just understand the technical side—I understand your users, your business problems, and what actually makes a solution successful.
               </p>
               <div className="flex flex-wrap justify-center gap-2">
                 <Badge variant="outline">User Experience</Badge>
