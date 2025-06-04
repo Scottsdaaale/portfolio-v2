@@ -7,6 +7,7 @@ import { CalendarDays, Clock, ArrowLeft, Share2 } from "lucide-react";
 import { formatDate } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
+import { usePathname } from "next/navigation";
 
 interface BlogPostContentProps {
   title: string;
@@ -61,6 +62,39 @@ export function BlogPostContent({
   tags, 
   children 
 }: BlogPostContentProps) {
+  const pathname = usePathname();
+
+  const handleShare = async () => {
+    const url = `${window.location.origin}${pathname}`;
+    const shareData = {
+      title: title,
+      text: description,
+      url: url,
+    };
+
+    try {
+      // Use Web Share API if available (mobile/modern browsers)
+      if (navigator.share) {
+        await navigator.share(shareData);
+      } else {
+        // Fallback: copy URL to clipboard
+        await navigator.clipboard.writeText(url);
+        // Simple feedback without external library
+        console.log("Link copied to clipboard!");
+        // You could also show a temporary message here
+      }
+    } catch (error) {
+      console.error("Could not share this post:", error);
+      // Fallback to just copying URL
+      try {
+        await navigator.clipboard.writeText(url);
+        console.log("Link copied to clipboard as fallback!");
+      } catch (clipboardError) {
+        console.error("Clipboard access failed:", clipboardError);
+      }
+    }
+  };
+
   return (
     <motion.article 
       className="pt-20"
@@ -111,7 +145,7 @@ export function BlogPostContent({
               </div>
             </div>
             
-            <Button variant="outline" size="sm">
+            <Button variant="outline" size="sm" onClick={handleShare}>
               <Share2 className="h-4 w-4 mr-2" />
               Share
             </Button>
