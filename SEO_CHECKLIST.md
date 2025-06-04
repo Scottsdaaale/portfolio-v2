@@ -21,7 +21,7 @@
 ## 🚀 Next Steps to Complete SEO Setup
 
 ### 1. Domain & Hosting Setup
-- [ ] Purchase domain: `scottpeterson.dev` (or your preferred domain)
+- [ ] Purchase domain: `scottypeterson.net` (or your preferred domain)
 - [ ] Update all URLs in the code from placeholder to actual domain
 - [ ] Set up hosting (Vercel/Netlify recommended for Next.js)
 
@@ -120,7 +120,7 @@
 
 ## 🔧 Code Updates Needed
 
-1. **Replace placeholder domain**: Update all instances of `https://scottpeterson.dev` with your actual domain
+1. **Replace placeholder domain**: Update all instances of `https://scottypeterson.net` with your actual domain
 2. **Add OG image**: Create and add `/public/og-image.jpg`
 3. **Update social handles**: Replace `@scottpeterson_dev` with actual handle
 4. **Verification codes**: Add Google Search Console verification code

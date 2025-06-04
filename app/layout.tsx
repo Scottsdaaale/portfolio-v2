@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     "Freelance Developer",
     "Software Engineer"
   ],
-  authors: [{ name: "Scott Peterson", url: "https://scottpeterson.dev" }],
+  authors: [{ name: "Scott Peterson", url: "https://scottypeterson.net" }],
   creator: "Scott Peterson",
   publisher: "Scott Peterson",
   formatDetection: {
@@ -41,23 +41,29 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://scottpeterson.dev'), // Update with your actual domain
+  metadataBase: new URL('https://scottypeterson.net'), // Updated with correct domain
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: "Scott Peterson - Full Stack Developer | React, Next.js, Django Expert",
     description: "Full-stack developer specializing in scalable business solutions. Currently leading a $30K healthcare compliance platform and managing high-traffic websites.",
-    url: 'https://scottpeterson.dev',
+    url: 'https://scottypeterson.net',
     siteName: 'Scott Peterson Portfolio',
     locale: 'en_US',
     type: 'website',
     images: [
       {
-        url: '/og-image.jpg', // You'll need to add this image
+        url: '/og-image.png', // Using PNG for better quality with pixelated artwork
         width: 1200,
         height: 630,
-        alt: 'Scott Peterson - Full Stack Developer',
+        alt: 'Scott Peterson - Full Stack Developer - Pixelated Avatar',
+      },
+      {
+        url: '/og-image.jpg', // Fallback JPG version
+        width: 1200,
+        height: 630,
+        alt: 'Scott Peterson - Full Stack Developer - Pixelated Avatar',
       },
     ],
   },
@@ -65,7 +71,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: "Scott Peterson - Full Stack Developer",
     description: "Full-stack developer building scalable business solutions with React, Next.js, Django, and AWS.",
-    images: ['/og-image.jpg'], // Same as OpenGraph image
+    images: ['/og-image.png'], // Using PNG version for Twitter too
     creator: '@scottpeterson_dev', // Update with your actual Twitter handle
   },
   robots: {
@@ -95,7 +101,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="canonical" href="https://scottpeterson.dev" />
+        <link rel="canonical" href="https://scottypeterson.net" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -104,7 +110,7 @@ export default function RootLayout({
               "@type": "Person",
               name: "Scott Peterson",
               jobTitle: "Full Stack Developer",
-              url: "https://scottpeterson.dev",
+              url: "https://scottypeterson.net",
               email: "scottpetersonSE@gmail.com",
               address: {
                 "@type": "PostalAddress",

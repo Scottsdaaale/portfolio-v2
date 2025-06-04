@@ -38,34 +38,6 @@ export function Resume() {
         "Developed high-impact web pages using JavaScript and Object-Oriented Programming principles",
         "Designed effective interfaces using HTML, CSS, XML and modern frameworks"
       ]
-    },
-    {
-      title: "E-commerce Team Member",
-      company: "Goodwill Industries International", 
-      duration: "2020 - 2022",
-      location: "Connecticut, United States",
-      type: "Full-time",
-      description: "Key team member in building e-commerce department from the ground up, contributing to becoming one of the highest earners in the country.",
-      achievements: [
-        "Helped build e-commerce department from ground up, reaching top national rankings in first year",
-        "Successfully worked within tight deadlines in fast-paced, high-growth environment",
-        "Managed client information, order tracking, and shipment monitoring using specialized software",
-        "Provided real-time information updates and account management for customer satisfaction"
-      ]
-    },
-    {
-      title: "Sales | Customer Service Representative",
-      company: "Urban Outfitters",
-      duration: "2016 - 2020", 
-      location: "New York/Chicago, United States",
-      type: "Full-time",
-      description: "Provided comprehensive customer service across multiple channels while developing problem-solving skills that later informed development approach.",
-      achievements: [
-        "Solved customer issues over phone and in-person across multiple store locations",
-        "Provided enhanced customer service throughout entire shopping experience journey",
-        "Trained as active cashier with comprehensive knowledge of operating system programs",
-        "Executed organization and merchandising according to company standards"
-      ]
     }
   ];
 
@@ -115,12 +87,12 @@ export function Resume() {
   ];
 
   const skills = {
-    frontend: ["React", "Next.js", "JavaScript (ES6+)", "TypeScript", "HTML5", "CSS3", "Tailwind CSS", "React Hooks"],
-    backend: ["Django", "Python", "Ruby on Rails", "Node.js", "REST APIs", "API Development", "PostgreSQL", "SQL"],
-    cloud: ["AWS", "Vercel", "Database Management", "Multi-tenant Architecture"], 
-    tools: ["Git", "GitHub", "VS Code", "Postman", "Jira", "Figma"],
-    specialties: ["SCORM", "LMS Architecture", "AI Integration", "E-learning (Storyline360)", "Multi-platform APIs"],
-    business: ["E-commerce", "Lead Generation", "Customer Service", "Project Management", "Analytics"]
+    frontend: ["React", "React.js", "Next.js", "NextJS", "JavaScript", "JavaScript ES6+", "TypeScript", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap", "React Hooks", "Redux", "Vue.js", "Angular"],
+    backend: ["Django", "Python", "Ruby on Rails", "Node.js", "NodeJS", "Express.js", "REST APIs", "RESTful Services", "API Development", "GraphQL", "PostgreSQL", "MySQL", "MongoDB", "SQL", "NoSQL"],
+    cloud: ["AWS", "Amazon Web Services", "EC2", "S3", "Lambda", "RDS", "Vercel", "Heroku", "Database Management", "Multi-tenant Architecture", "Cloud Computing", "Serverless"], 
+    tools: ["Git", "GitHub", "GitLab", "VS Code", "Cursor IDE", "GitHub Copilot", "Postman", "Jira", "Confluence", "Figma", "Docker", "CI/CD", "Agile", "Scrum"],
+    specialties: ["SCORM", "LMS Architecture", "LMS Development", "AI Integration", "AI Automation", "ChatGPT API", "OpenAI API", "Claude API", "Machine Learning", "Prompt Engineering", "AI-Assisted Development", "E-learning", "Storyline360", "Multi-platform APIs", "SaaS Development", "Healthcare Compliance"],
+    business: ["E-commerce", "Lead Generation", "Customer Service", "Project Management", "Analytics", "SEO", "CRO", "Digital Marketing", "Business Intelligence", "Data Analysis", "AI Process Optimization", "Workflow Automation"]
   };
 
   const education = [
@@ -141,28 +113,58 @@ export function Resume() {
   ];
 
   const handlePrint = () => {
-    window.print();
+    // Create a temporary anchor element to trigger download
+    const link = document.createElement('a');
+    link.href = '/Scott Peterson - Resume _ Full Stack Developer.pdf';
+    link.download = 'Scott Peterson - Resume _ Full Stack Developer.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
-    <>
-      {/* Floating Print Button */}
-      <Button
-        onClick={handlePrint}
-        className="fixed bottom-6 right-6 z-50 print:hidden shadow-lg"
-        size="lg"
-      >
-        <Download className="h-4 w-4 mr-2" />
-        Download PDF
-      </Button>
+    <div 
+      className="min-h-screen"
+      style={{
+        '--background': 'oklch(1 0 0)',
+        '--foreground': 'oklch(0.145 0 0)',
+        '--card': 'oklch(1 0 0)',
+        '--card-foreground': 'oklch(0.145 0 0)',
+        '--popover': 'oklch(1 0 0)',
+        '--popover-foreground': 'oklch(0.145 0 0)',
+        '--primary': 'oklch(0.205 0 0)',
+        '--primary-foreground': 'oklch(0.985 0 0)',
+        '--secondary': 'oklch(0.97 0 0)',
+        '--secondary-foreground': 'oklch(0.205 0 0)',
+        '--muted': 'oklch(0.97 0 0)',
+        '--muted-foreground': 'oklch(0.556 0 0)',
+        '--accent': 'oklch(0.97 0 0)',
+        '--accent-foreground': 'oklch(0.205 0 0)',
+        '--destructive': 'oklch(0.577 0.245 27.325)',
+        '--border': 'oklch(0.922 0 0)',
+        '--input': 'oklch(0.922 0 0)',
+        '--ring': 'oklch(0.708 0 0)',
+        backgroundColor: 'white',
+        color: 'black'
+      } as React.CSSProperties}
+    >
+      <div className="max-w-4xl mx-auto p-6 bg-white text-black print:p-0 print:max-w-none">
+        {/* Floating Print Button */}
+        <Button
+          onClick={handlePrint}
+          className="fixed bottom-6 right-6 z-50 print:hidden shadow-lg bg-black text-white hover:bg-gray-800"
+          size="lg"
+        >
+          <Download className="h-4 w-4 mr-2" />
+          Download PDF
+        </Button>
 
-      <div className="min-h-screen bg-white text-black p-6 max-w-5xl mx-auto print:p-4 print:max-w-none print:text-sm">
         {/* Header */}
         <div className="text-center mb-6 print:mb-4">
-          <h1 className="text-4xl font-bold mb-2 print:text-3xl">Scott Peterson</h1>
+          <h1 className="text-4xl font-bold mb-2 print:text-3xl text-black">Scott Peterson</h1>
           <h2 className="text-xl text-gray-600 mb-3 print:text-lg">Full Stack Developer</h2>
           
-          <div className="flex flex-wrap justify-center gap-3 text-sm print:gap-2 print:text-xs">
+          <div className="flex flex-wrap justify-center gap-3 text-sm print:gap-2 print:text-xs text-black">
             <div className="flex items-center gap-1">
               <Mail className="h-4 w-4 print:h-3 print:w-3" />
               <span>scottpetersonSE@gmail.com</span>
@@ -184,21 +186,22 @@ export function Resume() {
 
         {/* Professional Summary */}
         <section className="mb-6 print:mb-4">
-          <h3 className="text-xl font-bold mb-3 border-b-2 border-gray-200 pb-1 print:text-lg print:mb-2">Professional Summary</h3>
+          <h3 className="text-xl font-bold mb-3 border-b-2 border-gray-200 pb-1 print:text-lg print:mb-2 text-black">Professional Summary</h3>
           <p className="text-gray-700 leading-relaxed print:text-sm">
-            Full-stack developer who builds solutions that actually solve problems. Currently leading a $30K healthcare compliance platform 
-            serving 5 states while managing websites that generate thousands of monthly visitors. Unique background transitioning from 
-            customer service to development brings user-focused problem-solving to technical solutions. Specializes in building complete 
-            business solutions from concept to deployment, with expertise in React, Next.js, Django, and AWS. Proven track record of 
-            delivering high-impact projects that drive real business results.
+            Full-stack software engineer and web developer who builds scalable solutions that solve real business problems. Currently leading a $30K healthcare compliance SaaS platform 
+            serving 5 states while managing high-traffic websites generating thousands of monthly visitors. Proven expertise in modern JavaScript frameworks (React, Next.js), 
+            backend development (Django, Python), cloud infrastructure (AWS), and AI integration workflows. Unique background transitioning from customer service to software development brings 
+            user-focused problem-solving to technical solutions. Specializes in building complete end-to-end business applications from concept to production deployment, 
+            with deep experience in full-stack web development, API development, AI automation, and database design. Leverages AI-assisted development tools and prompt engineering 
+            to deliver high-impact software projects that drive measurable business results and cost savings.
           </p>
         </section>
 
         {/* Key Achievements */}
         <section className="mb-6 print:mb-4">
-          <h3 className="text-xl font-bold mb-3 border-b-2 border-gray-200 pb-1 print:text-lg print:mb-2">Key Achievements</h3>
+          <h3 className="text-xl font-bold mb-3 border-b-2 border-gray-200 pb-1 print:text-lg print:mb-2 text-black">Key Achievements</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 print:grid-cols-4 print:gap-2">
-            <Card className="print:border print:border-gray-300">
+            <Card className="print:border print:border-gray-300 bg-white border-gray-200">
               <CardContent className="p-3 print:p-2">
                 <div className="text-center">
                   <div className="text-lg font-bold text-blue-600 print:text-base">$30K</div>
@@ -206,7 +209,7 @@ export function Resume() {
                 </div>
               </CardContent>
             </Card>
-            <Card className="print:border print:border-gray-300">
+            <Card className="print:border print:border-gray-300 bg-white border-gray-200">
               <CardContent className="p-3 print:p-2">
                 <div className="text-center">
                   <div className="text-lg font-bold text-blue-600 print:text-base">Thousands</div>
@@ -214,7 +217,7 @@ export function Resume() {
                 </div>
               </CardContent>
             </Card>
-            <Card className="print:border print:border-gray-300">
+            <Card className="print:border print:border-gray-300 bg-white border-gray-200">
               <CardContent className="p-3 print:p-2">
                 <div className="text-center">
                   <div className="text-lg font-bold text-blue-600 print:text-base">Tens of K</div>
@@ -222,7 +225,7 @@ export function Resume() {
                 </div>
               </CardContent>
             </Card>
-            <Card className="print:border print:border-gray-300">
+            <Card className="print:border print:border-gray-300 bg-white border-gray-200">
               <CardContent className="p-3 print:p-2">
                 <div className="text-center">
                   <div className="text-lg font-bold text-blue-600 print:text-base">1,083+</div>
@@ -235,12 +238,12 @@ export function Resume() {
 
         {/* Professional Experience */}
         <section className="mb-6 print:mb-4">
-          <h3 className="text-xl font-bold mb-4 border-b-2 border-gray-200 pb-1 print:text-lg print:mb-3">Professional Experience</h3>
+          <h3 className="text-xl font-bold mb-4 border-b-2 border-gray-200 pb-1 print:text-lg print:mb-3 text-black">Professional Experience</h3>
           {experiences.map((exp, index) => (
             <div key={index} className="mb-6 print:mb-4 print:break-inside-avoid">
               <div className="flex justify-between items-start mb-2">
                 <div>
-                  <h4 className="text-lg font-semibold print:text-base">{exp.title}</h4>
+                  <h4 className="text-lg font-semibold print:text-base text-black">{exp.title}</h4>
                   <p className="text-gray-600 font-medium">{exp.company} • {exp.type}</p>
                 </div>
                 <div className="text-right text-sm text-gray-600">
@@ -258,21 +261,47 @@ export function Resume() {
           ))}
         </section>
 
+        {/* Early Career Highlights */}
+        <section className="mb-6 print:mb-4">
+          <h3 className="text-xl font-bold mb-4 border-b-2 border-gray-200 pb-1 print:text-lg print:mb-3 text-black">Early Career Highlights</h3>
+          <div className="print:break-inside-avoid">
+            <div className="flex justify-between items-start mb-2">
+              <div>
+                <h4 className="text-lg font-semibold print:text-base text-black">Business Operations & Customer Success</h4>
+                <p className="text-gray-600 font-medium">Goodwill Industries & Urban Outfitters</p>
+              </div>
+              <div className="text-right text-sm text-gray-600">
+                <p>2016 - 2022</p>
+                <p>New York/Connecticut</p>
+              </div>
+            </div>
+            <p className="text-gray-700 mb-3 print:text-sm print:mb-2">
+              Developed customer-focused problem-solving approach and business operations expertise that directly informs development methodology and user experience design.
+            </p>
+            <ul className="list-disc list-inside text-gray-700 text-sm space-y-1 print:text-xs print:space-y-0">
+              <li>Helped build Goodwill&apos;s e-commerce department from ground up, reaching top national rankings in first year</li>
+              <li>Successfully operated within tight deadlines in fast-paced, high-growth environment</li>
+              <li>Managed comprehensive customer service operations across multiple channels and store locations</li>
+              <li>Developed deep understanding of customer journey and user experience pain points</li>
+            </ul>
+          </div>
+        </section>
+
         {/* Technical Projects */}
         <section className="mb-6 print:mb-4">
-          <h3 className="text-xl font-bold mb-4 border-b-2 border-gray-200 pb-1 print:text-lg print:mb-3">Technical Projects</h3>
+          <h3 className="text-xl font-bold mb-4 border-b-2 border-gray-200 pb-1 print:text-lg print:mb-3 text-black">Technical Projects</h3>
           <div className="grid md:grid-cols-2 gap-4 print:grid-cols-2 print:gap-3">
             {projects.map((project, index) => (
               <div key={index} className="print:break-inside-avoid">
                 <div className="flex justify-between items-start mb-2">
-                  <h4 className="text-lg font-semibold print:text-base">{project.title}</h4>
+                  <h4 className="text-lg font-semibold print:text-base text-black">{project.title}</h4>
                   <span className="text-sm text-gray-600">{project.date}</span>
                 </div>
                 <p className="text-gray-700 mb-2 print:text-sm">{project.description}</p>
                 <div className="mb-2">
                   <div className="flex flex-wrap gap-1">
                     {project.technologies.map((tech, i) => (
-                      <Badge key={i} variant="outline" className="text-xs print:border-gray-400">
+                      <Badge key={i} variant="outline" className="text-xs print:border-gray-400 bg-white border-gray-300 text-gray-700">
                         {tech}
                       </Badge>
                     ))}
@@ -288,22 +317,31 @@ export function Resume() {
 
         {/* Technical Skills */}
         <section className="mb-6 print:mb-4">
-          <h3 className="text-xl font-bold mb-4 border-b-2 border-gray-200 pb-1 print:text-lg print:mb-3">Technical Skills</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 print:grid-cols-3 print:gap-3">
+          <h3 className="text-xl font-bold mb-4 border-b-2 border-gray-200 pb-1 print:text-lg print:mb-3 text-black">Technical Skills</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 print:grid-cols-2 print:gap-4">
             <div>
-              <h4 className="font-semibold mb-2 print:text-sm">Frontend Development</h4>
-              <div className="flex flex-wrap gap-1 mb-3">
+              <h4 className="font-semibold mb-2 print:text-sm text-black">Frontend Development</h4>
+              <div className="flex flex-wrap gap-1 mb-4">
                 {skills.frontend.map((skill, index) => (
-                  <Badge key={index} variant="outline" className="text-xs print:border-gray-400">
+                  <Badge key={index} variant="outline" className="text-xs print:border-gray-400 bg-white border-gray-300 text-gray-700">
                     {skill}
                   </Badge>
                 ))}
               </div>
               
-              <h4 className="font-semibold mb-2 print:text-sm">Backend Development</h4>
-              <div className="flex flex-wrap gap-1">
+              <h4 className="font-semibold mb-2 print:text-sm text-black">Backend Development</h4>
+              <div className="flex flex-wrap gap-1 mb-4">
                 {skills.backend.map((skill, index) => (
-                  <Badge key={index} variant="outline" className="text-xs print:border-gray-400">
+                  <Badge key={index} variant="outline" className="text-xs print:border-gray-400 bg-white border-gray-300 text-gray-700">
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+
+              <h4 className="font-semibold mb-2 print:text-sm text-black">Cloud & Infrastructure</h4>
+              <div className="flex flex-wrap gap-1">
+                {skills.cloud.map((skill, index) => (
+                  <Badge key={index} variant="outline" className="text-xs print:border-gray-400 bg-white border-gray-300 text-gray-700">
                     {skill}
                   </Badge>
                 ))}
@@ -311,39 +349,28 @@ export function Resume() {
             </div>
             
             <div>
-              <h4 className="font-semibold mb-2 print:text-sm">Cloud & Infrastructure</h4>
-              <div className="flex flex-wrap gap-1 mb-3">
-                {skills.cloud.map((skill, index) => (
-                  <Badge key={index} variant="outline" className="text-xs print:border-gray-400">
-                    {skill}
-                  </Badge>
-                ))}
-              </div>
-              
-              <h4 className="font-semibold mb-2 print:text-sm">Development Tools</h4>
-              <div className="flex flex-wrap gap-1">
+              <h4 className="font-semibold mb-2 print:text-sm text-black">Development Tools</h4>
+              <div className="flex flex-wrap gap-1 mb-4">
                 {skills.tools.map((skill, index) => (
-                  <Badge key={index} variant="outline" className="text-xs print:border-gray-400">
+                  <Badge key={index} variant="outline" className="text-xs print:border-gray-400 bg-white border-gray-300 text-gray-700">
                     {skill}
                   </Badge>
                 ))}
               </div>
-            </div>
 
-            <div className="print:block hidden">
-              <h4 className="font-semibold mb-2 print:text-sm">Specializations</h4>
-              <div className="flex flex-wrap gap-1 mb-3">
+              <h4 className="font-semibold mb-2 print:text-sm text-black">Specializations</h4>
+              <div className="flex flex-wrap gap-1 mb-4">
                 {skills.specialties.map((skill, index) => (
-                  <Badge key={index} variant="outline" className="text-xs print:border-gray-400">
+                  <Badge key={index} variant="outline" className="text-xs print:border-gray-400 bg-white border-gray-300 text-gray-700">
                     {skill}
                   </Badge>
                 ))}
               </div>
               
-              <h4 className="font-semibold mb-2 print:text-sm">Business Skills</h4>
+              <h4 className="font-semibold mb-2 print:text-sm text-black">Business Skills</h4>
               <div className="flex flex-wrap gap-1">
                 {skills.business.map((skill, index) => (
-                  <Badge key={index} variant="outline" className="text-xs print:border-gray-400">
+                  <Badge key={index} variant="outline" className="text-xs print:border-gray-400 bg-white border-gray-300 text-gray-700">
                     {skill}
                   </Badge>
                 ))}
@@ -354,12 +381,12 @@ export function Resume() {
 
         {/* Education */}
         <section className="mb-6 print:mb-4">
-          <h3 className="text-xl font-bold mb-4 border-b-2 border-gray-200 pb-1 print:text-lg print:mb-3">Education & Certifications</h3>
+          <h3 className="text-xl font-bold mb-4 border-b-2 border-gray-200 pb-1 print:text-lg print:mb-3 text-black">Education & Certifications</h3>
           {education.map((edu, index) => (
             <div key={index} className="mb-4 print:mb-3 print:break-inside-avoid">
               <div className="flex justify-between items-start mb-1">
                 <div>
-                  <h4 className="text-lg font-semibold print:text-base">{edu.degree}</h4>
+                  <h4 className="text-lg font-semibold print:text-base text-black">{edu.degree}</h4>
                   <p className="text-gray-600 font-medium">{edu.institution}</p>
                 </div>
                 <span className="text-sm text-gray-600">{edu.duration}</span>
@@ -376,9 +403,9 @@ export function Resume() {
 
         {/* Print-specific footer */}
         <div className="print:block hidden text-center text-xs text-gray-500 mt-6">
-          <p>This resume was generated from scottpeterson.dev</p>
+          <p>This resume was generated from scottypeterson.net</p>
         </div>
       </div>
-    </>
+    </div>
   );
 } 

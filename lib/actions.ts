@@ -28,7 +28,7 @@ export async function submitContactForm(formData: FormData) {
 
     // Send email using Resend
     await resend.emails.send({
-      from: 'onboarding@resend.dev', // Resend's verified default domain
+      from: 'portfolio-inquiry@resend.dev', // Resend's verified default domain
       to: 'scottsdaaale@gmail.com', // Updated to match your Resend account email
       replyTo: validatedData.email,
       subject: `Portfolio Contact: ${validatedData.subject}`,
