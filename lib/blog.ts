@@ -22,7 +22,7 @@ const blogPosts: BlogPost[] = [
     slug: 'new-haven-love-letter',
     title: 'Why New Haven is OP',
     description: 'New Haven is way better than most people think. From Westville\'s walkability to West Rock hiking trails, plus a surprisingly great food scene that nobody talks about.',
-    publishedAt: '2025-01-27',
+    publishedAt: '2025-06-04',
     tags: ['New Haven', 'Connecticut', 'City Life', 'Hiking', 'Food', 'Personal', 'Local'],
     readingTime: 7,
     content: NewHavenLoveLetter,
