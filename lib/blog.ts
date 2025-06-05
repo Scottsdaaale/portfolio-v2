@@ -19,7 +19,7 @@ export interface BlogPost {
 // This will store our blog posts - you can later move this to a CMS or markdown files
 const blogPosts: BlogPost[] = [
   {
-    slug: 'new-haven-love-letter',
+    slug: 'why-new-haven-is-op',
     title: 'Why New Haven is OP',
     description: 'New Haven is way better than most people think. From Westville\'s walkability to West Rock hiking trails, plus a surprisingly great food scene that nobody talks about.',
     publishedAt: '2025-06-04',
