@@ -2,6 +2,7 @@ import { ComponentType } from 'react';
 import WelcomeToBlog from '@/content/blog/welcome-to-my-blog';
 import AIImpostorSyndrome from '@/content/blog/ai-imposter-syndrome';
 import WhyRLCSRocks from '@/content/blog/why-rlcs-rocks';
+import NewHavenLoveLetter from '@/content/blog/new-haven-love-letter';
 
 export interface BlogPost {
   slug: string;
@@ -17,6 +18,16 @@ export interface BlogPost {
 
 // This will store our blog posts - you can later move this to a CMS or markdown files
 const blogPosts: BlogPost[] = [
+  {
+    slug: 'new-haven-love-letter',
+    title: 'A Love Letter to New Haven, CT (Yeah, Really)',
+    description: 'Why New Haven is way better than people think—from Westville\'s walkability to West Rock hiking trails, plus the surprisingly great food scene that nobody talks about.',
+    publishedAt: '2025-06-04',
+    tags: ['New Haven', 'Connecticut', 'City Life', 'Hiking', 'Food', 'Personal', 'Local'],
+    readingTime: 7,
+    content: NewHavenLoveLetter,
+    draft: false,
+  },
   {
     slug: 'why-rlcs-rocks',
     title: 'Why RLCS is the Best Esport You\'re Probably Not Watching (But Should Be)',
