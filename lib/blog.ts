@@ -20,9 +20,9 @@ export interface BlogPost {
 const blogPosts: BlogPost[] = [
   {
     slug: 'new-haven-love-letter',
-    title: 'A Love Letter to New Haven, CT (Yeah, Really)',
-    description: 'Why New Haven is way better than people think—from Westville\'s walkability to West Rock hiking trails, plus the surprisingly great food scene that nobody talks about.',
-    publishedAt: '2025-06-04',
+    title: 'Why New Haven is OP',
+    description: 'New Haven is way better than most people think. From Westville\'s walkability to West Rock hiking trails, plus a surprisingly great food scene that nobody talks about.',
+    publishedAt: '2025-01-27',
     tags: ['New Haven', 'Connecticut', 'City Life', 'Hiking', 'Food', 'Personal', 'Local'],
     readingTime: 7,
     content: NewHavenLoveLetter,
