@@ -23,7 +23,7 @@ const blogPosts: BlogPost[] = [
   {
     slug: 'my-experience-programming-with-adhd',
     title: 'My Experience Programming with ADHD',
-    description: 'An honest look at how ADHD affects my programming journey—the challenges, the unexpected advantages, and the strategies that actually work. For fellow neurodivergent developers who might be struggling.',
+    description: 'An honest look at how ADHD affects my programming journey, the challenges, the unexpected advantages, and the strategies that actually work. For fellow neurodivergent developers who might be struggling.',
     publishedAt: '2025-06-05',
     tags: ['ADHD', 'Neurodivergence', 'Personal', 'Mental Health', 'Programming', 'Productivity', 'Development'],
     readingTime: 9,
@@ -53,7 +53,7 @@ const blogPosts: BlogPost[] = [
   {
     slug: 'why-rlcs-rocks',
     title: 'Why RLCS is the Best Esport You\'re Probably Not Watching (But Should Be)',
-    description: 'A passionate but accessible introduction to Rocket League Championship Series. It\'s soccer with rocket cars, and it\'s genuinely incredible to watch—even if you\'re not a gamer.',
+    description: 'A passionate but accessible introduction to Rocket League Championship Series. It\'s soccer with rocket cars, and it\'s genuinely incredible to watch, even if you\'re not a gamer.',
     publishedAt: '2025-03-10',
     tags: ['RLCS', 'Esports', 'Rocket League', 'Gaming', 'Sports'],
     readingTime: 5,
@@ -73,7 +73,7 @@ const blogPosts: BlogPost[] = [
   {
     slug: 'welcome-to-my-blog',
     title: 'Welcome to My Corner of the Internet!',
-    description: 'An honest introduction to what this blog is really about—development, hiking, music, plants, video games, and whatever else I\'m obsessing over. Fair warning: this isn\'t your typical professional dev blog.',
+    description: 'An honest introduction to what this blog is really about: development, hiking, music, plants, video games, and whatever else I\'m obsessing over. Fair warning: this isn\'t your typical professional dev blog.',
     publishedAt: '2025-01-08',
     tags: ['Welcome', 'Personal', 'Life', 'Hobbies', 'Development'],
     readingTime: 3,
