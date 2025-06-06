@@ -75,7 +75,7 @@ export function BlogContent({ posts }: BlogContentProps) {
             className="text-xl text-muted-foreground max-w-2xl"
             variants={itemVariants}
           >
-            My thoughts on whatever catches my interest—development and tech, sure, but also camping, hiking, plants, music, guitar, video games, and whatever else I&apos;m obsessing over at the moment. Basically, this is where I write about whatever the hell I want.
+            Thoughts on development, technology, and life. Sometimes technical deep-dives, sometimes just random musings.
           </motion.p>
         </motion.div>
 

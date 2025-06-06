@@ -41,8 +41,8 @@ export function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 py-20">
-      <div className="max-w-4xl mx-auto text-center">
+    <section className="min-h-screen flex flex-col items-center justify-center px-4 py-20 pt-28">
+      <div className="max-w-4xl mx-auto text-center flex-1 flex flex-col justify-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -100,22 +100,22 @@ export function Hero() {
             ))}
           </div>
         </motion.div>
-        
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.8 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <button 
-            onClick={() => scrollToSection('about')}
-            className="focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-full p-2"
-            aria-label="Scroll to about section"
-          >
-            <ArrowDown className="h-6 w-6 animate-bounce text-muted-foreground" />
-          </button>
-        </motion.div>
       </div>
+      
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 0.8 }}
+        className="mt-8 mb-4"
+      >
+        <button 
+          onClick={() => scrollToSection('about')}
+          className="focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-full p-2"
+          aria-label="Scroll to about section"
+        >
+          <ArrowDown className="h-6 w-6 animate-bounce text-muted-foreground" />
+        </button>
+      </motion.div>
     </section>
   );
 } 
