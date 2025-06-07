@@ -17,30 +17,43 @@ export function Experience() {
   const projects = [
     {
       title: "$30K Healthcare Compliance Platform",
-      description: "Leading development of multi-tenant SaaS application serving 5 states",
-      tech: ["Next.js 15", "Django", "PostgreSQL", "AWS"],
-      impact: "Independent project delivery worth $30,000",
+      description: "Solo-building a complete HIPAA-compliant SaaS platform from scratch. Architecting multi-tenant infrastructure, secure document management, automated compliance tracking, and real-time notifications serving healthcare organizations across 5 states",
+      tech: ["Next.js 15", "Django", "PostgreSQL", "AWS S3", "SES", "Multi-tenant Architecture"],
+      impact: "Full-stack solo development of enterprise-grade healthcare software worth $30,000 with 9.5-week delivery timeline",
       icon: Building
     },
     {
       title: "Company Website Development",
-      description: "Built and maintain yourtrainingprovider.com from the ground up",
-      tech: ["SEO Optimization", "Lead Capture", "Automated Blog"],
-      impact: "Thousands of monthly visitors and continuous lead generation",
+      description: (
+        <>
+          Built{" "}
+          <a 
+            href="https://yourtrainingprovider.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-primary hover:underline font-medium"
+          >
+            yourtrainingprovider.com
+          </a>{" "}
+          from scratch and serve as sole developer. I code new product features, maintain automated blog systems, implement SEO strategies, and continuously optimize for lead conversion
+        </>
+      ),
+      tech: ["SEO Optimization", "Lead Capture", "Automated Blog", "Product Integration", "Content Management"],
+      impact: "Thousands of monthly visitors, continuous lead generation, and primary company marketing engine",
       icon: TrendingUp
     },
     {
       title: "Comprehensive Admin Platform",
-      description: "Integrated business intelligence platform with multiple data sources",
-      tech: ["Financial Analytics", "Freshdesk API", "Stripe Integration"],
-      impact: "Unified management of B2C clients and AI chatbot functionality",
+      description: "Built end-to-end business management platform integrating multiple APIs and data sources. Includes finance dashboard with Stripe/Mercury/Pipeline CRM integrations, automated invoice generation, Freshdesk analytics, B2C client management, and AI chatbot functionality",
+      tech: ["Stripe API", "Mercury API", "Pipeline CRM", "Freshdesk API", "Invoice Generation", "AI Chatbot"],
+      impact: "Complete business operations platform consolidating finances, customer support, client management, and automated workflows",
       icon: Code2
     },
     {
-      title: "Custom LMS Development",
-      description: "Architected proprietary Learning Management System",
-      tech: ["SCORM Tracking", "Custom Quizzes", "Next.js + Django"],
-      impact: "Complete replacement of inadequate existing system",
+      title: "AI-Powered Course Modernization Initiative",
+      description: "Led complete redesign of 63+ training courses using industry-standard Storyline360, implementing AI-powered content generation and custom Python automation scripts. Built comprehensive tracking systems for cycle time analysis and quality assurance workflows",
+      tech: ["Storyline360", "AI Content Generation", "Python Scripts", "Performance Analytics", "Quality Assurance"],
+      impact: "Dramatically accelerated course production through AI automation, eliminated customer complaints, and transformed learning experience from outdated content to modern, engaging training materials",
       icon: Users
     }
   ];
