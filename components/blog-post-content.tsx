@@ -8,6 +8,7 @@ import { formatDate } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
 import { usePathname } from "next/navigation";
+import { BlogContactForm } from "@/components/blog-contact-form";
 
 interface BlogPostContentProps {
   title: string;
@@ -183,6 +184,9 @@ export function BlogPostContent({
         >
           {children}
         </motion.div>
+
+        {/* Contact Form */}
+        <BlogContactForm />
 
         {/* Article Footer */}
         <motion.footer 

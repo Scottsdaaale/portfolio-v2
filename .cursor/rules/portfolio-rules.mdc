@@ -1,0 +1,98 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Portfolio Project Rules
+
+## Writing Style Guidelines
+
+### Em Dash Usage
+- **AVOID em dashes (—) throughout the codebase and content**
+- **DO NOT replace em dashes with regular dashes (-) or slashes (/)**
+- **INSTEAD: Restructure sentences using commas, conjunctions, or parentheses**
+
+**Examples:**
+```
+❌ Bad: "This is important — it affects performance"
+❌ Bad: "This is important - it affects performance" 
+❌ Bad: "This is important / it affects performance"
+✅ Good: "This is important because it affects performance"
+✅ Good: "This is important, as it affects performance"
+✅ Good: "This is important (it affects performance)"
+```
+
+### Sentence Restructuring Patterns
+When eliminating em dashes, use these approaches:
+- **Causal relationships:** Use "because," "since," "as"
+- **Additional information:** Use commas or parentheses
+- **Lists:** Use "like," "including," "such as"
+- **Contrasts:** Use "but," "however," "while"
+- **Sequential:** Use "then," "next," "after"
+
+## Blog Content Rules
+
+### TSX Component Structure
+- Use simple `<div>` wrapper only
+- No Tailwind classes on wrapper elements
+- Function names should be PascalCase and descriptive
+
+### Content Guidelines
+- Conversational but professional tone
+- First-person perspective for personal experiences
+- Include 3-5 external authoritative links per post
+- Support all major claims with linked sources
+- Use `&apos;` for apostrophes in JSX
+- Use `&ldquo;` and `&rdquo;` for quotes
+
+### Technical References
+- Reference actual tools and technologies used
+- Include specific project examples
+- Provide practical insights over theory
+- Connect technical concepts to business value
+
+## Code Style
+
+### General Principles
+- Clean, readable code over clever code
+- Consistent formatting and naming
+- Meaningful variable and function names
+- Proper error handling
+
+### Component Structure
+- Keep components focused and single-purpose
+- Use TypeScript for all new code
+- Implement proper prop types and interfaces
+- Follow Next.js best practices
+
+## Content Strategy
+
+### Blog Post Goals
+- Attract potential clients through expertise demonstration
+- Establish thought leadership in key technical areas
+- Improve SEO for relevant business keywords
+- Maintain authentic voice and personal experiences
+
+### Project Showcase
+- Highlight high-value projects ($30K healthcare platform)
+- Emphasize solo development capabilities
+- Show technical depth and business acumen
+- Include measurable outcomes and impact
+
+## Quality Standards
+
+### Before Publishing
+- All em dashes eliminated and sentences properly restructured
+- TSX syntax is valid with no errors
+- External links are authoritative and current
+- Personal experiences are specific and authentic
+- Technical accuracy is maintained
+- Tone is consistent with portfolio brand
+
+### Content Review
+- Provides practical value to readers
+- Balances technical depth with accessibility
+- Flows logically from section to section
+- Positions expertise without being overly promotional
+
+
