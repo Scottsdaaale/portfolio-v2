@@ -5,6 +5,68 @@ alwaysApply: true
 ---
 # Portfolio Project Rules
 
+## File Structure Organization
+
+### Directory Structure
+The portfolio follows Next.js 13+ app directory structure with organized component separation:
+
+```
+portfolio-v2/
+├── .cursor/rules/          # Project rules and guidelines
+├── app/                    # Next.js app directory (routing)
+│   ├── blog/              # Blog-related pages
+│   ├── resume/            # Resume page
+│   └── [other-pages]/     # Additional pages
+├── components/            # Reusable React components
+│   ├── sections/          # Page section components
+│   └── ui/               # Generic UI components
+├── content/blog/          # Blog post content (TSX files)
+├── lib/                   # Utility functions and actions
+├── public/               # Static assets (images, PDFs)
+└── [config files]        # Various config files at root
+```
+
+### File Placement Guidelines
+
+#### New Blog Posts
+- **Location:** `content/blog/[slug].tsx`
+- **Naming:** Use kebab-case for file names (e.g., `healthcare-compliance.tsx`)
+- **Structure:** Export default TSX component with simple `<div>` wrapper
+
+#### New Components
+- **UI Components:** `components/ui/[component-name].tsx`
+- **Section Components:** `components/sections/[section-name].tsx`
+- **Feature Components:** `components/[feature-name].tsx`
+- **Naming:** Use kebab-case for file names, PascalCase for component names
+
+#### New Pages
+- **Location:** `app/[page-name]/page.tsx`
+- **Dynamic Routes:** `app/[param]/page.tsx`
+- **Nested Routes:** `app/parent/child/page.tsx`
+
+#### Static Assets
+- **Images:** `public/[descriptive-name].[ext]`
+- **Documents:** `public/[document-name].[ext]`
+- **Naming:** Use descriptive names, prefer lowercase with hyphens
+
+#### Utility Functions
+- **Location:** `lib/[purpose].ts`
+- **Examples:** `lib/analytics.ts`, `lib/blog.ts`, `lib/utils.ts`
+- **Naming:** Group related functions by purpose
+
+### File Naming Conventions
+- **Components:** kebab-case files, PascalCase exports
+- **Pages:** Use Next.js conventions (`page.tsx`, `layout.tsx`)
+- **Blog Posts:** kebab-case matching URL slug
+- **Utilities:** kebab-case, descriptive of purpose
+- **Static Assets:** lowercase, descriptive, use hyphens
+
+### Import Organization
+- **External libraries first** (React, Next.js, etc.)
+- **Internal components** (from `@/components`)
+- **Internal utilities** (from `@/lib`)
+- **Relative imports last** (from `./` or `../`)
+
 ## Writing Style Guidelines
 
 ### Em Dash Usage
