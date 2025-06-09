@@ -27,4 +27,11 @@ frontend:
         - key: 'X-Frame-Options'
           value: 'DENY'
         - key: 'X-Content-Type-Options'
-          value: 'nosniff' 
+          value: 'nosniff'
+  redirects:
+    - source: 'https://scottypeterson.net'
+      target: 'https://www.scottypeterson.net'
+      status: '301'
+    - source: 'https://scottypeterson.net/<*>'
+      target: 'https://www.scottypeterson.net/<*>'
+      status: '301' 
