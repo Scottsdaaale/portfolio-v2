@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     title: `${post.title} - Scotty Peterson`,
     description: post.description,
     keywords: post.tags,
-    authors: [{ name: "Scotty Peterson", url: "https://scottypeterson.net" }],
+    authors: [{ name: "Scotty Peterson", url: "https://www.scottypeterson.net" }],
     openGraph: {
       title: post.title,
       description: post.description,
@@ -67,14 +67,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     author: {
       "@type": "Person",
       name: "Scotty Peterson",
-      url: "https://scottypeterson.net",
+                    url: "https://www.scottypeterson.net",
     },
     datePublished: post.publishedAt,
     dateModified: post.updatedAt || post.publishedAt,
-    url: `https://scottypeterson.net/blog/${post.slug}`,
+                url: `https://www.scottypeterson.net/blog/${post.slug}`,
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://scottypeterson.net/blog/${post.slug}`,
+              "@id": `https://www.scottypeterson.net/blog/${post.slug}`,
     },
     publisher: {
       "@type": "Person",

@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     "Freelance Developer",
     "Software Engineer"
   ],
-  authors: [{ name: "Scotty Peterson", url: "https://scottypeterson.net" }],
+  authors: [{ name: "Scotty Peterson", url: "https://www.scottypeterson.net" }],
   creator: "Scotty Peterson",
   publisher: "Scotty Peterson",
   formatDetection: {
@@ -41,14 +41,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://scottypeterson.net'), // Updated with correct domain
+  metadataBase: new URL('https://www.scottypeterson.net'), // Updated with correct domain
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: "Scotty Peterson - Full Stack Developer | React, Next.js, Django Expert",
     description: "Full-stack developer specializing in scalable business solutions. Currently leading a $30K healthcare compliance platform and managing high-traffic websites.",
-    url: 'https://scottypeterson.net',
+    url: 'https://www.scottypeterson.net',
     siteName: 'Scotty Peterson Portfolio',
     locale: 'en_US',
     type: 'website',
@@ -95,7 +95,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="canonical" href="https://scottypeterson.net" />
+        <link rel="canonical" href="https://www.scottypeterson.net" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -104,7 +104,7 @@ export default function RootLayout({
               "@type": "Person",
               name: "Scotty Peterson",
               jobTitle: "Full Stack Developer",
-              url: "https://scottypeterson.net",
+              url: "https://www.scottypeterson.net",
               email: "scottpetersonSE@gmail.com",
               address: {
                 "@type": "PostalAddress",

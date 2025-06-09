@@ -33,7 +33,7 @@ export default function Home() {
               name: "Scotty Peterson",
               jobTitle: "Full Stack Developer",
               email: "scottpetersonSE@gmail.com",
-              url: "https://scottypeterson.net"
+              url: "https://www.scottypeterson.net"
             },
             serviceType: [
               "Full Stack Web Development",
