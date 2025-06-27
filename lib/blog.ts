@@ -6,6 +6,7 @@ import NewHavenLoveLetter from '@/content/blog/new-haven-love-letter';
 import EmailCodingBestPractices from '@/content/blog/email-coding-best-practices-for-client-compatibility';
 import MyExperienceProgrammingWithADHD from '@/content/blog/my-experience-programming-with-adhd';
 import HealthcareComplianceBlogPost from '@/content/blog/heathcare-compliance';
+import GoogleDarkPatterns2FAEcosystemTrap from '@/content/blog/google-dark-patterns-2fa-ecosystem-trap';
 
 export interface BlogPost {
   slug: string;
@@ -21,6 +22,26 @@ export interface BlogPost {
 
 // This will store our blog posts - you can later move this to a CMS or markdown files
 const blogPosts: BlogPost[] = [
+  {
+    slug: 'google-dark-patterns-2fa-ecosystem-trap',
+    title: 'The Google Ecosystem Trap: How 2FA Becomes a Gateway to Data Harvesting',
+    description:
+      'How Google weaponizes two-factor authentication requirements to force app installations, trigger automatic photo backups, and push users toward paid storage subscriptions. A deep dive into the dark patterns that turn security into surveillance.',
+    publishedAt: '2025-06-27',
+    tags: [
+      'Google',
+      'Dark Patterns',
+      'Privacy',
+      'Security',
+      '2FA',
+      'UX Design',
+      'Tech Ethics',
+      'Data Collection',
+    ],
+    readingTime: 12,
+    content: GoogleDarkPatterns2FAEcosystemTrap,
+    draft: false,
+  },
   {
     slug: 'building-healthcare-compliance-software',
     title: 'Building Healthcare Compliance Software: Lessons from the Trenches',
