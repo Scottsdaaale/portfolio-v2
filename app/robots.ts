@@ -9,6 +9,10 @@ export default function robots(): MetadataRoute.Robots {
       allow: [
         '/',
         '/_next/static/', // Allow static assets (fonts, CSS, images)
+        '/_next/static/media/*.woff2',  // Explicitly allow font files
+        '/_next/static/media/*.woff',   // Explicitly allow font files
+        '/_next/static/media/*.ttf',    // Explicitly allow font files
+        '/_next/image/',                // Allow Next.js image optimization
       ],
       disallow: [
         '/api/',
