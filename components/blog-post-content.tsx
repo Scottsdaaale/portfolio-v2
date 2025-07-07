@@ -3,10 +3,10 @@
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { CalendarDays, Clock, ArrowLeft, Share2 } from "lucide-react";
+import { CalendarDays, Clock, ArrowLeft, Share2, Check } from "lucide-react";
 import { formatDate } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import { usePathname } from "next/navigation";
 import { BlogContactForm } from "@/components/blog-contact-form";
 
@@ -64,6 +64,7 @@ export function BlogPostContent({
   children 
 }: BlogPostContentProps) {
   const pathname = usePathname();
+  const [copied, setCopied] = useState(false);
 
   const handleShare = async () => {
     const url = `${window.location.origin}${pathname}`;
@@ -80,16 +81,17 @@ export function BlogPostContent({
       } else {
         // Fallback: copy URL to clipboard
         await navigator.clipboard.writeText(url);
-        // Simple feedback without external library
-        console.log("Link copied to clipboard!");
-        // You could also show a temporary message here
+        setCopied(true);
+        // Reset the copied state after 2 seconds
+        setTimeout(() => setCopied(false), 2000);
       }
     } catch (error) {
       console.error("Could not share this post:", error);
       // Fallback to just copying URL
       try {
         await navigator.clipboard.writeText(url);
-        console.log("Link copied to clipboard as fallback!");
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
       } catch (clipboardError) {
         console.error("Clipboard access failed:", clipboardError);
       }
@@ -147,8 +149,17 @@ export function BlogPostContent({
             </div>
             
             <Button variant="outline" size="sm" onClick={handleShare}>
-              <Share2 className="h-4 w-4 mr-2" />
-              Share
+              {copied ? (
+                <>
+                  <Check className="h-4 w-4 mr-2" />
+                  Copied!
+                </>
+              ) : (
+                <>
+                  <Share2 className="h-4 w-4 mr-2" />
+                  Share
+                </>
+              )}
             </Button>
           </motion.div>
 
