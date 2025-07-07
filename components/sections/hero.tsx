@@ -57,7 +57,7 @@ export function Hero() {
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-normal">
-            Full-stack developer delivering <span className="text-foreground font-semibold">$30K healthcare compliance projects</span> and 
+            Full-stack developer delivering <span className="text-foreground font-semibold">enterprise healthcare compliance platforms</span> and 
             managing websites that generate <span className="text-foreground font-semibold">thousands of monthly visitors</span>.
           </p>
           

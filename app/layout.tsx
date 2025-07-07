@@ -16,7 +16,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Scotty Peterson - Full Stack Developer | React, Next.js, Django Expert",
-  description: "Full-stack developer specializing in scalable business solutions. Currently leading a $30K healthcare compliance platform and managing high-traffic websites. Expert in React, Next.js, Django, AWS, and modern web technologies.",
+  description: "Full-stack developer specializing in scalable business solutions. Currently leading an enterprise healthcare compliance platform and managing high-traffic websites. Expert in React, Next.js, Django, AWS, and modern web technologies.",
   keywords: [
     "Full Stack Developer",
     "React Developer", 
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Scotty Peterson - Full Stack Developer | React, Next.js, Django Expert",
-    description: "Full-stack developer specializing in scalable business solutions. Currently leading a $30K healthcare compliance platform and managing high-traffic websites.",
+    description: "Full-stack developer specializing in scalable business solutions. Currently leading an enterprise healthcare compliance platform and managing high-traffic websites.",
     url: 'https://www.scottypeterson.net',
     siteName: 'Scotty Peterson Portfolio',
     locale: 'en_US',
@@ -128,7 +128,7 @@ export default function RootLayout({
                 "Web Development",
                 "Healthcare Technology"
               ],
-              description: "Full-stack developer specializing in scalable business solutions, currently leading a $30K healthcare compliance platform."
+              description: "Full-stack developer specializing in scalable business solutions, currently leading an enterprise healthcare compliance platform."
             })
           }}
         />

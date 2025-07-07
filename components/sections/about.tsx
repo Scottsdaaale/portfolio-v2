@@ -25,7 +25,7 @@ export function About() {
     {
       icon: Users,
       title: "Business Impact",
-      description: "Currently delivering a $30K healthcare platform while managing sites that generate thousands of leads monthly."
+      description: "Currently delivering an enterprise healthcare compliance platform while managing sites that generate thousands of leads monthly."
     }
   ];
 

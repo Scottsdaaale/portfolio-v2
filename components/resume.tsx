@@ -15,7 +15,7 @@ export function Resume() {
       type: "Full-time",
       description: "Full-stack developer building complete business solutions from concept to deployment. Leading high-value projects while managing growth-driving web properties.",
       achievements: [
-        "Leading $30K healthcare compliance platform serving 5 states using Next.js 15, Django, PostgreSQL, and AWS",
+        "Leading enterprise healthcare compliance platform serving 5 states using Next.js 15, Django, PostgreSQL, and AWS",
         "Built and maintain company website generating thousands of monthly visitors and continuous lead generation",
         "Developed comprehensive admin platform with financial analytics, Freshdesk integration, and AI chatbot functionality", 
         "Architected custom LMS with SCORM tracking, replacing inadequate existing system",
@@ -43,7 +43,7 @@ export function Resume() {
 
   const projects = [
     {
-      title: "$30K Healthcare Compliance Platform",
+      title: "Healthcare Compliance Platform",
       date: "2024 - Present",
       description: "Leading development of multi-tenant SaaS application serving healthcare organizations across 5 states with comprehensive compliance tracking and reporting",
       technologies: ["Next.js 15", "Django", "PostgreSQL", "AWS", "Multi-tenant Architecture"],
@@ -188,7 +188,7 @@ export function Resume() {
         <section className="mb-6 print:mb-4">
           <h3 className="text-xl font-bold mb-3 border-b-2 border-gray-200 pb-1 print:text-lg print:mb-2 text-black">Professional Summary</h3>
           <p className="text-gray-700 leading-relaxed print:text-sm">
-            Full-stack software engineer and web developer who builds scalable solutions that solve real business problems. Currently leading a $30K healthcare compliance SaaS platform 
+            Full-stack software engineer and web developer who builds scalable solutions that solve real business problems. Currently leading an enterprise healthcare compliance SaaS platform 
             serving 5 states while managing high-traffic websites generating thousands of monthly visitors. Proven expertise in modern JavaScript frameworks (React, Next.js), 
             backend development (Django, Python), cloud infrastructure (AWS), and AI integration workflows. Unique background transitioning from customer service to software development brings 
             user-focused problem-solving to technical solutions. Specializes in building complete end-to-end business applications from concept to production deployment, 
@@ -204,8 +204,8 @@ export function Resume() {
             <Card className="print:border print:border-gray-300 bg-white border-gray-200">
               <CardContent className="p-3 print:p-2">
                 <div className="text-center">
-                  <div className="text-lg font-bold text-blue-600 print:text-base">$30K</div>
-                  <div className="text-xs text-gray-600">Independent Project Value</div>
+                  <div className="text-lg font-bold text-blue-600 print:text-base">Enterprise</div>
+                  <div className="text-xs text-gray-600">Healthcare Platform</div>
                 </div>
               </CardContent>
             </Card>
