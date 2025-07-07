@@ -1,8 +1,6 @@
 export default function WhyRLCSRocks() {
   return (
     <div>
-      <h2>Why RLCS is the Best Esport You&apos;re Probably Not Watching (But Should Be)</h2>
-      
       <p>
         Okay, hear me out. I know esports can feel overwhelming if you&apos;re not already into gaming. 
         But Rocket League Championship Series (RLCS) is different. It&apos;s basically soccer with 

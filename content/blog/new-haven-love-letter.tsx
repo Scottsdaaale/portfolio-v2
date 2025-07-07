@@ -1,8 +1,6 @@
 export default function NewHavenLoveLetter() {
   return (
     <div>
-      <h2>Why I Actually Love Living in New Haven</h2>
-      
       <p>
         Most people think of Connecticut as either boring suburbs or a tax haven for rich people. 
         When they think of New Haven specifically, it&apos;s usually just &ldquo;<a href="https://www.yale.edu/" target="_blank" rel="noopener noreferrer">Yale</a>&rdquo; 

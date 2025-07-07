@@ -1,8 +1,6 @@
 export default function GoogleDarkPatterns2FAEcosystemTrap() {
   return (
     <div>
-      <h1>The Google Ecosystem Trap: How 2FA Becomes a Gateway to Data Harvesting</h1>
-      
       <p>Picture this: you&apos;re trying to log into YouTube on a new device, and suddenly Google tells you that you need to verify your identity through their authenticator app. But here&apos;s the twist — to use their 2FA system, you need to download Google Photos. Once installed, the app immediately starts backing up your photos without clear consent. Within days, you&apos;re getting storage warnings across Gmail, Drive, and Photos, all pushing you toward a Google One subscription.</p>
       
       <p>This isn&apos;t just poor UX design. It&apos;s a carefully orchestrated dark pattern that transforms a basic security requirement into a data collection and revenue generation funnel.</p>

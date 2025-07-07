@@ -1,8 +1,6 @@
 export default function AIImpostorSyndrome() {
   return (
     <div>
-      <h2>Imposter Syndrome in the Age of AI: I Use Cursor and I Don&apos;t Feel Bad About It</h2>
-      
       <p>
         So here&apos;s the thing: I use AI for coding. A lot. Cursor is basically my co-pilot, 
         GitHub Copilot fills in my functions, and ChatGPT helps me debug weird edge cases. 

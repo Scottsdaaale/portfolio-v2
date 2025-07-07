@@ -1,8 +1,6 @@
 export default function EmailCodingBestPractices() {
   return (
     <div>
-      <h2>Email Coding Best Practices for Client Compatibility</h2>
-      
       <p>
         Email coding is like web development&apos;s evil twin—what works perfectly in your browser 
         might completely break in Outlook 2016. After building countless email templates and 

@@ -98,6 +98,8 @@ When eliminating em dashes, use these approaches:
 - Use simple `<div>` wrapper only
 - No Tailwind classes on wrapper elements
 - Function names should be PascalCase and descriptive
+- **NO TITLES in blog post content** - titles are provided by the metadata in `lib/blog.ts`
+- Blog content should start directly with the first paragraph or section
 
 ### Content Guidelines
 - Conversational but professional tone
@@ -136,7 +138,7 @@ When eliminating em dashes, use these approaches:
 - Maintain authentic voice and personal experiences
 
 ### Project Showcase
-- Highlight high-value projects ($30K healthcare platform)
+- Highlight high-value projects (enterprise healthcare platform)
 - Emphasize solo development capabilities
 - Show technical depth and business acumen
 - Include measurable outcomes and impact

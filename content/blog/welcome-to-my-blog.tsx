@@ -1,8 +1,6 @@
 export default function WelcomeToBlog() {
   return (
     <div>
-      <h2>Welcome to My Blog</h2>
-      
       <p>
         I finally got around to building this thing. I&apos;ve been meaning to start writing 
         for a while now, so here we are.
