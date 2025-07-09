@@ -69,7 +69,7 @@ export function About() {
               </p>
               <p>
                 Plus I have this annoying habit of diving deep into anything that interests me: from guitar to audio engineering to building computers to coding. 
-                <span className="text-foreground font-semibold">That curiosity drives better solutions</span>.
+                {" "}<span className="text-foreground font-semibold">That curiosity drives better solutions</span>.
               </p>
             </div>
           </motion.div>
