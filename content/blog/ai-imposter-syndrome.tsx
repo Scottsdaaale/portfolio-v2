@@ -48,8 +48,8 @@ export default function AIImpostorSyndrome() {
       <h3>Case Study: This Site</h3>
       
       <p>
-        Want a concrete example? The portfolio site you&apos;re reading this on—including this 
-        entire blog system—was built in about 2 hours using Cursor.
+                Want a concrete example? The portfolio site you&apos;re reading this on (including this
+        entire blog system) was built in about 2 hours using Cursor.
       </p>
 
       <p>
@@ -73,7 +73,7 @@ export default function AIImpostorSyndrome() {
       </ul>
 
       <p>
-        Now, before you think &ldquo;See? AI did all the work!&rdquo;—hold on. Cursor didn&apos;t 
+        Now, before you think &ldquo;See? AI did all the work!&rdquo; hold on. Cursor didn&apos;t 
         make any of the important decisions. It didn&apos;t decide on the architecture, choose the 
         tech stack, design the user experience, or figure out how to separate server and client 
         components for optimal performance.
@@ -86,7 +86,7 @@ export default function AIImpostorSyndrome() {
       </p>
 
       <p>
-        The speed came from removing all the small delays—the &ldquo;how do I do X again?&rdquo; 
+        The speed came from removing all the small delays: the &ldquo;how do I do X again?&rdquo; 
         moments that usually break flow state. Instead of context switching to documentation, 
         I stayed focused on the actual problem-solving.
       </p>
@@ -119,7 +119,7 @@ export default function AIImpostorSyndrome() {
       </p>
 
       <p>
-        The value isn&apos;t in the tool—it&apos;s in knowing how to use it, when to use it, and 
+        The value isn&apos;t in the tool, it&apos;s in knowing how to use it, when to use it, and 
         what to build. A carpenter with power tools can build better houses faster. A developer 
         with AI can build better software faster.
       </p>
@@ -158,7 +158,7 @@ export default function AIImpostorSyndrome() {
       </ul>
 
       <p>
-        If you can answer yes to those questions, then congratulations—you&apos;re a developer. 
+        If you can answer yes to those questions, then congratulations, you&apos;re a developer. 
         The tools you use are just implementation details.
       </p>
 
@@ -172,7 +172,7 @@ export default function AIImpostorSyndrome() {
 
       <p>
         I choose option two. My imposter syndrome these days isn&apos;t about whether I&apos;m using 
-        AI—it&apos;s about whether I&apos;m using it well enough.
+        AI, it&apos;s about whether I&apos;m using it well enough.
       </p>
 
       <p>

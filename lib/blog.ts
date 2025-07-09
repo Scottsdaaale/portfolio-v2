@@ -46,7 +46,7 @@ const blogPosts: BlogPost[] = [
     slug: 'building-healthcare-compliance-software',
     title: 'Building Healthcare Compliance Software: Lessons from the Trenches',
     description:
-      "How I learned to navigate HIPAA complexities while building enterprise healthcare platforms — and why the market is exploding beyond anyone's expectations.",
+      "How I learned to navigate HIPAA complexities while building enterprise healthcare platforms, and why the market is exploding beyond anyone's expectations.",
     publishedAt: '2025-06-07',
     tags: [
       'Healthcare',

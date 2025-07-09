@@ -17,7 +17,7 @@ export function Experience() {
   const projects = [
     {
       title: "Healthcare Compliance Platform",
-      description: "Solo-building a complete HIPAA-compliant SaaS platform from scratch. Architecting multi-tenant infrastructure, secure document management, automated compliance tracking, and real-time notifications serving healthcare organizations across 5 states",
+      description: "Leading development of a HIPAA-compliant SaaS platform from scratch. Architecting multi-tenant infrastructure, secure document management, automated compliance tracking, and real-time notifications serving healthcare organizations across 5 states",
       tech: ["Next.js 15", "Django", "PostgreSQL", "AWS S3", "SES", "Multi-tenant Architecture"],
               impact: "Full-stack solo development of enterprise-grade healthcare software with 9.5-week delivery timeline",
       icon: Building

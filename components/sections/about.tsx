@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { User, Coffee, Code, Users } from "lucide-react";
+import { User, Code, Users } from "lucide-react";
 
 export function About() {
   const highlights = [
@@ -11,11 +11,6 @@ export function About() {
       icon: User,
       title: "Customer-First Mindset",
       description: "Years in customer service taught me to think about what users actually need, not just what's technically possible."
-    },
-    {
-      icon: Coffee,
-      title: "Problem Solver",
-      description: "I take messy business problems and turn them into clean, working solutions that people actually want to use."
     },
     {
       icon: Code,
@@ -64,7 +59,7 @@ export function About() {
                 That experience taught me something most developers miss: <span className="text-foreground font-semibold">it&apos;s not about the code, it&apos;s about the solution</span>.
               </p>
               <p>
-                When I transitioned to development, I brought that user-focused mindset with me. I don&apos;t just build features—I solve problems. 
+                When I transitioned to development, I brought that user-focused mindset with me. I don&apos;t just build features, I solve problems. 
                 Whether it&apos;s a custom LMS because the existing one sucked, or an admin platform that pulls data from everywhere into one place that actually makes sense.
               </p>
               <p>
@@ -112,7 +107,7 @@ export function About() {
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold mb-4">What This Means For You</h3>
               <p className="text-lg text-muted-foreground mb-6">
-                You get a developer who doesn&apos;t just understand the technical side—I understand your users, your business problems, and what actually makes a solution successful.
+                You get a developer who doesn&apos;t just understand the technical side. I understand your users, your business problems, and what actually makes a solution successful.
               </p>
               <div className="flex flex-wrap justify-center gap-2">
                 <Badge variant="outline">User Experience</Badge>

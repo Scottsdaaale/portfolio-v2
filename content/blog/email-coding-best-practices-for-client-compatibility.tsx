@@ -2,7 +2,7 @@ export default function EmailCodingBestPractices() {
   return (
     <div>
       <p>
-        Email coding is like web development&apos;s evil twin—what works perfectly in your browser 
+        Email coding is like web development&apos;s evil twin: what works perfectly in your browser 
         might completely break in Outlook 2016. After building countless email templates and 
         debugging rendering issues across dozens of clients, here&apos;s what actually works.
       </p>
@@ -11,7 +11,7 @@ export default function EmailCodingBestPractices() {
       
       <p>
         I know, I know. It&apos;s 2024 and we&apos;re still using tables. But email clients are 
-        stuck in the early 2000s, especially Outlook (which uses Word&apos;s rendering engine—yes, really).
+        stuck in the early 2000s, especially Outlook (which uses Word&apos;s rendering engine, yes really).
       </p>
 
       <ul>
@@ -62,7 +62,7 @@ export default function EmailCodingBestPractices() {
       <h3>Mobile Responsiveness</h3>
       
       <p>
-        Mobile-first isn&apos;t just a web dev concept—it&apos;s crucial for email:
+        Mobile-first isn&apos;t just a web dev concept, it&apos;s crucial for email:
       </p>
 
       <ul>
@@ -132,11 +132,11 @@ export default function EmailCodingBestPractices() {
       <h3>Final Tips</h3>
       
       <ul>
-        <li><strong>Keep it simple</strong>—complex layouts break more easily</li>
+        <li><strong>Keep it simple</strong>: complex layouts break more easily</li>
         <li><strong>Use inline CSS</strong> for critical styles (some clients strip head CSS)</li>
         <li><strong>Include a web version link</strong> for fallback</li>
-        <li><strong>Consider accessibility</strong>—screen readers are used for email too</li>
-        <li><strong>Document your workarounds</strong>—you&apos;ll forget why you did something</li>
+        <li><strong>Consider accessibility</strong>: screen readers are used for email too</li>
+        <li><strong>Document your workarounds</strong>: you&apos;ll forget why you did something</li>
       </ul>
 
       <h3>The Reality Check</h3>

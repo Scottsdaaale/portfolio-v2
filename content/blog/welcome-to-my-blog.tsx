@@ -41,7 +41,7 @@ export default function WelcomeToBlog() {
       <h3>Quick Note on Content</h3>
       
       <p>
-        Some (probably most) posts here will be AI-generated for SEO purposes—technical tutorials, guides, tech shit,
+        Some (probably most) posts here will be AI-generated for SEO purposes: technical tutorials, guides, tech stuff,
         that kind of thing. Gotta help people find this site somehow. But the personal stuff, 
         stories, and random thoughts are all me.
       </p>
@@ -50,7 +50,7 @@ export default function WelcomeToBlog() {
         That&apos;s about it. Thanks for stopping by.
       </p>
 
-      <p><em>— Scotty</em></p>
+      <p><em>Scotty</em></p>
     </div>
   );
 } 

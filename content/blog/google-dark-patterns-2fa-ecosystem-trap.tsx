@@ -1,7 +1,7 @@
 export default function GoogleDarkPatterns2FAEcosystemTrap() {
   return (
     <div>
-      <p>Picture this: you&apos;re trying to log into YouTube on a new device, and suddenly Google tells you that you need to verify your identity through their authenticator app. But here&apos;s the twist — to use their 2FA system, you need to download Google Photos. Once installed, the app immediately starts backing up your photos without clear consent. Within days, you&apos;re getting storage warnings across Gmail, Drive, and Photos, all pushing you toward a Google One subscription.</p>
+      <p>Picture this: you&apos;re trying to log into YouTube on a new device, and suddenly Google tells you that you need to verify your identity through their authenticator app. But here&apos;s the twist: to use their 2FA system, you need to download Google Photos. Once installed, the app immediately starts backing up your photos without clear consent. Within days, you&apos;re getting storage warnings across Gmail, Drive, and Photos, all pushing you toward a Google One subscription.</p>
       
       <p>This isn&apos;t just poor UX design. It&apos;s a carefully orchestrated dark pattern that transforms a basic security requirement into a data collection and revenue generation funnel.</p>
       
@@ -24,8 +24,8 @@ export default function GoogleDarkPatterns2FAEcosystemTrap() {
       <p>What makes this manipulation especially problematic is that it weaponizes legitimate security practices. Two-factor authentication genuinely improves account security, but Google has found ways to use this necessity as a trojan horse for broader data collection.</p>
       
       <blockquote>
-        <p>&ldquo;The message is essentially holding your email hostage. An email account is absolutely essential to someone&apos;s life — it&apos;s tied to how you pay your bills, your bank account, and more.&rdquo;</p>
-        <cite>— David Echo, documenting Google&apos;s Gmail-to-Google+ manipulation tactics</cite>
+        <p>&ldquo;The message is essentially holding your email hostage. An email account is absolutely essential to someone&apos;s life because it&apos;s tied to how you pay your bills, your bank account, and more.&rdquo;</p>
+        <cite>David Echo, documenting Google&apos;s Gmail-to-Google+ manipulation tactics</cite>
       </blockquote>
       
       <p>When security becomes the excuse for data harvesting, users face an impossible choice: compromise their account security or surrender more personal information than they intended.</p>

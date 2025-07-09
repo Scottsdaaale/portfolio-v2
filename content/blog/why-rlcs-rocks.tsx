@@ -8,7 +8,7 @@ export default function WhyRLCSRocks() {
       </p>
 
       <p>
-        I used to be pretty good at this game—hit Grand Champion back when that actually meant 
+        I used to be pretty good at this game. I hit Grand Champion back when that actually meant 
         something. These days I mostly watch from my couch, eating snacks and questioning my 
         life choices. But damn, this esport is special.
       </p>
@@ -59,7 +59,7 @@ export default function WhyRLCSRocks() {
 
       <p>
         And because goals are relatively rare (games usually end 3-2 or 4-1), every single one 
-        matters. There&apos;s no &ldquo;oh well, we&apos;ll get the next one&rdquo;—every goal could be 
+        matters. There&apos;s no &ldquo;oh well, we&apos;ll get the next one&rdquo; because every goal could be 
         the difference between winning and going home.
       </p>
 
@@ -130,7 +130,7 @@ export default function WhyRLCSRocks() {
       </p>
 
       <p>
-        The World Championship is usually the best starting point—highest stakes, best players, 
+        The World Championship is usually the best starting point: highest stakes, best players, 
         most hype. But honestly, even regular season matches can be incredible.
       </p>
 
