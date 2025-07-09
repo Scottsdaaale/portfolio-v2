@@ -17,9 +17,9 @@ export function Experience() {
   const projects = [
     {
       title: "Healthcare Compliance Platform",
-      description: "Leading development of a HIPAA-compliant SaaS platform from scratch. Architecting multi-tenant infrastructure, secure document management, automated compliance tracking, and real-time notifications serving healthcare organizations across 5 states",
+      description: "Leading development of a HIPAA-compliant SaaS platform from scratch. Architecting multi-tenant infrastructure, secure document management, automated compliance tracking, and real-time notifications serving healthcare organizations across 5 states.",
       tech: ["Next.js 15", "Django", "PostgreSQL", "AWS S3", "SES", "Multi-tenant Architecture"],
-              impact: "Full-stack solo development of enterprise-grade healthcare software with 9.5-week delivery timeline",
+              impact: "Full-stack solo development of enterprise-grade healthcare software with 9.5-week delivery timeline.",
       icon: Building
     },
     {
@@ -35,25 +35,25 @@ export function Experience() {
           >
             yourtrainingprovider.com
           </a>{" "}
-          from scratch and serve as sole developer. I code new product features, maintain automated blog systems, implement SEO strategies, and continuously optimize for lead conversion
+          from scratch and serve as sole developer. I code new product features, maintain automated blog systems, implement SEO strategies, and continuously optimize for lead conversion.
         </>
       ),
       tech: ["SEO Optimization", "Lead Capture", "Automated Blog", "Product Integration", "Content Management"],
-      impact: "Thousands of monthly visitors, continuous lead generation, and primary company marketing engine",
+      impact: "Thousands of monthly visitors, continuous lead generation, and primary company marketing engine.",
       icon: TrendingUp
     },
     {
       title: "Comprehensive Admin Platform",
-      description: "Built end-to-end business management platform integrating multiple APIs and data sources. Includes finance dashboard with Stripe/Mercury/Pipeline CRM integrations, automated invoice generation, Freshdesk analytics, B2C client management, and AI chatbot functionality",
+      description: "Built end-to-end business management platform integrating multiple APIs and data sources. Includes finance dashboard with Stripe/Mercury/Pipeline CRM integrations, automated invoice generation, Freshdesk analytics, B2C client management, and AI chatbot functionality.",
       tech: ["Stripe API", "Mercury API", "Pipeline CRM", "Freshdesk API", "Invoice Generation", "AI Chatbot"],
-      impact: "Complete business operations platform consolidating finances, customer support, client management, and automated workflows",
+      impact: "Complete business operations platform consolidating finances, customer support, client management, and automated workflows.",
       icon: Code2
     },
     {
       title: "AI-Powered Course Modernization Initiative",
-      description: "Led complete redesign of 63+ training courses using industry-standard Storyline360, implementing AI-powered content generation and custom Python automation scripts. Built comprehensive tracking systems for cycle time analysis and quality assurance workflows",
+      description: "Led complete redesign of 63+ training courses using industry-standard Storyline360, implementing AI-powered content generation and custom Python automation scripts. Built comprehensive tracking systems for cycle time analysis and quality assurance workflows.",
       tech: ["Storyline360", "AI Content Generation", "Python Scripts", "Performance Analytics", "Quality Assurance"],
-      impact: "Dramatically accelerated course production through AI automation, eliminated customer complaints, and transformed learning experience from outdated content to modern, engaging training materials",
+      impact: "Dramatically accelerated course production through AI automation, eliminated customer complaints, and transformed learning experience from outdated content to modern, engaging training materials.",
       icon: Users
     }
   ];
