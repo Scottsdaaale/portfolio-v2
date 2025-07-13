@@ -27,13 +27,29 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       // === DOMAIN REDIRECTS (Fix redirect issues) ===
-      // Force www and https
+      // Force www and https - handle all variations
       {
         source: '/(.*)',
         has: [
           {
             type: 'host',
             value: 'scottypeterson.net', // non-www
+          },
+        ],
+        destination: 'https://www.scottypeterson.net/:path*',
+        permanent: true,
+      },
+      {
+        source: '/(.*)',
+        has: [
+          {
+            type: 'host',
+            value: 'www.scottypeterson.net',
+          },
+          {
+            type: 'header',
+            key: 'x-forwarded-proto',
+            value: 'http',
           },
         ],
         destination: 'https://www.scottypeterson.net/:path*',
