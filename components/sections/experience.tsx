@@ -19,7 +19,7 @@ export function Experience() {
       title: "Healthcare Compliance Platform",
       description: "Leading development of a HIPAA-compliant SaaS platform from scratch. Architecting multi-tenant infrastructure, secure document management, automated compliance tracking, and real-time notifications serving healthcare organizations across 5 states.",
       tech: ["Next.js 15", "Django", "PostgreSQL", "AWS S3", "SES", "Multi-tenant Architecture"],
-              impact: "Full-stack solo development of enterprise-grade healthcare software with 9.5-week delivery timeline.",
+              impact: "Full-stack solo development of enterprise-grade healthcare software with short delivery timeline.",
       icon: Building
     },
     {

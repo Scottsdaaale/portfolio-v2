@@ -44,14 +44,14 @@ export function Resume() {
   const projects = [
     {
       title: "Healthcare Compliance Platform",
-      date: "2024 - Present",
+      date: "2025 - Present",
       description: "Leading development of multi-tenant SaaS application serving healthcare organizations across 5 states with comprehensive compliance tracking and reporting",
       technologies: ["Next.js 15", "Django", "PostgreSQL", "AWS", "Multi-tenant Architecture"],
       link: null
     },
     {
       title: "Company Website Development", 
-      date: "2024",
+      date: "2024 - Present",
       description: "Built and maintain yourtrainingprovider.com from ground up, driving thousands of monthly visitors and continuous lead generation pipeline",
       technologies: ["SEO Optimization", "Lead Capture Systems", "Blog Automation", "Analytics Integration"],
       link: null
