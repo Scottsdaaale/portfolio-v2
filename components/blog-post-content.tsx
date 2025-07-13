@@ -120,7 +120,7 @@ export function BlogPostContent({
         <motion.header className="space-y-6 mb-12" variants={itemVariants}>
           <div className="space-y-4">
             <motion.h1 
-              className="text-4xl font-bold tracking-tight leading-tight"
+              className="text-4xl font-bold tracking-tight leading-tight text-pretty"
               variants={itemVariants}
             >
               {title}
