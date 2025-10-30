@@ -37,6 +37,9 @@ export function About() {
           <Badge variant="secondary" className="mb-4">
             About Me
           </Badge>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4">
+            I build complete solutions and help teams implement them successfully, from enterprise healthcare platforms to integrated business systems that actually work.
+          </p>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             I Build Solutions That Actually Work
           </h2>

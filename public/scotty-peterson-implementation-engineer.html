@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scotty Peterson - Implementation Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print {
+            @page {
+                margin: 0.5in;
+                size: auto;
+            }
+            body::before,
+            body::after {
+                display: none !important;
+            }
+            .print\:hidden {
+                display: none !important;
+            }
+            .print\:mb-2 {
+                margin-bottom: 0.5rem !important;
+            }
+            .print\:mb-3 {
+                margin-bottom: 0.75rem !important;
+            }
+            .print\:mb-4 {
+                margin-bottom: 1rem !important;
+            }
+            .print\:text-xs {
+                font-size: 0.75rem !important;
+            }
+            .print\:text-sm {
+                font-size: 0.875rem !important;
+            }
+            .print\:text-base {
+                font-size: 1rem !important;
+            }
+            .print\:text-lg {
+                font-size: 1.125rem !important;
+            }
+            .print\:text-3xl {
+                font-size: 1.875rem !important;
+            }
+            .print\:p-0 {
+                padding: 0 !important;
+            }
+            .print\:p-2 {
+                padding: 0.5rem !important;
+            }
+            .print\:max-w-none {
+                max-width: none !important;
+            }
+            .print\:gap-2 {
+                gap: 0.5rem !important;
+            }
+            .print\:space-y-0 > * + * {
+                margin-top: 0 !important;
+            }
+            .print\:border {
+                border-width: 1px !important;
+            }
+            .print\:border-gray-300 {
+                border-color: rgb(209 213 219) !important;
+            }
+            .print\:border-gray-400 {
+                border-color: rgb(156 163 175) !important;
+            }
+            .print\:break-inside-avoid {
+                break-inside: avoid !important;
+            }
+        }
+        body {
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <div class="max-w-4xl mx-auto p-6 bg-white text-black print:p-0 print:max-w-none">
+        <!-- Floating Print Button -->
+        <button 
+            onclick="window.print()" 
+            class="fixed bottom-6 right-6 z-50 print:hidden shadow-lg bg-black text-white hover:bg-gray-800 px-4 py-3 rounded-md flex items-center gap-2 font-medium"
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            Download PDF
+        </button>
+
+        <!-- Header -->
+        <div class="text-center mb-6 print:mb-3">
+            <h1 class="text-4xl font-bold mb-2 print:text-3xl text-black">Scotty Peterson</h1>
+            <h2 class="text-xl text-gray-600 mb-3 print:text-base">Implementation Engineer</h2>
+            
+            <div class="flex flex-wrap justify-center gap-3 text-sm print:gap-2 print:text-xs text-black">
+                <div class="flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="print:w-3 print:h-3">
+                        <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                    </svg>
+                    <span>scottpetersonSE@gmail.com</span>
+                </div>
+                <div class="flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="print:w-3 print:h-3">
+                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Connecticut, United States</span>
+                </div>
+                <div class="flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="print:w-3 print:h-3">
+                        <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+                        <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                    </svg>
+                    <span>github.com/Scottsdaaale</span>
+                </div>
+                <div class="flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="print:w-3 print:h-3">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect width="4" height="12" x="2" y="9"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                    <span>linkedin.com/in/scotty-peterson</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Professional Summary -->
+        <section class="mb-6 print:mb-3">
+            <h3 class="text-xl font-bold mb-3 border-b-2 border-gray-200 pb-1 print:text-lg print:mb-2 text-black">Professional Summary</h3>
+            <p class="text-gray-700 leading-relaxed print:text-sm print:leading-snug">
+                Implementation Engineer with extensive experience deploying, configuring, and maintaining complex SaaS systems across multiple client environments. Currently managing the technical implementation of a healthcare compliance platform serving 5 states, with expertise in system integrations, automated deployments, and customer environment configuration. Combines strong technical foundation in modern web technologies (Next.js, Django, PostgreSQL, AWS) with proven ability to manage technical rollouts, troubleshoot complex issues, and ensure seamless customer onboarding. Specializes in multi-tenant system architecture, API integrations, and building scalable deployment automation that reduces implementation time from weeks to hours.
+            </p>
+        </section>
+
+        <!-- Key Achievements -->
+        <section class="mb-6 print:mb-3">
+            <h3 class="text-xl font-bold mb-3 border-b-2 border-gray-200 pb-1 print:text-lg print:mb-2 text-black">Key Achievements</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 print:gap-2 print:grid-cols-4">
+                <div class="border border-gray-200 rounded-lg print:border print:border-gray-300 bg-white">
+                    <div class="p-3 print:p-2">
+                        <div class="text-center">
+                            <div class="text-lg font-bold text-blue-600 print:text-base">Multi-State</div>
+                            <div class="text-xs text-gray-600">Platform Implementation</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg print:border print:border-gray-300 bg-white">
+                    <div class="p-3 print:p-2">
+                        <div class="text-center">
+                            <div class="text-lg font-bold text-blue-600 print:text-base">Multi-Tenant</div>
+                            <div class="text-xs text-gray-600">Architecture</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg print:border print:border-gray-300 bg-white">
+                    <div class="p-3 print:p-2">
+                        <div class="text-center">
+                            <div class="text-lg font-bold text-blue-600 print:text-base">7+ APIs</div>
+                            <div class="text-xs text-gray-600">Real-time Integration</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="border border-gray-200 rounded-lg print:border print:border-gray-300 bg-white">
+                    <div class="p-3 print:p-2">
+                        <div class="text-center">
+                            <div class="text-lg font-bold text-blue-600 print:text-base">Custom LMS</div>
+                            <div class="text-xs text-gray-600">SCORM Compliance</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience -->
+        <section class="mb-6 print:mb-3">
+            <h3 class="text-xl font-bold mb-4 border-b-2 border-gray-200 pb-1 print:text-lg print:mb-2 text-black">Professional Experience</h3>
+            
+            <!-- Experience 1 -->
+            <div class="mb-6 print:mb-3 print:break-inside-avoid">
+                <div class="flex justify-between items-start mb-2 print:mb-1">
+                    <div>
+                        <h4 class="text-lg font-semibold print:text-base text-black">Implementation Engineer</h4>
+                        <p class="text-gray-600 font-medium print:text-sm">Training & eTracking Solutions • Full-time</p>
+                    </div>
+                    <div class="text-right text-sm text-gray-600 print:text-xs">
+                        <p>Jul 2024 - Present</p>
+                        <p>Remote</p>
+                    </div>
+                </div>
+                <p class="text-gray-700 mb-3 print:text-sm print:mb-2 print:leading-tight">Lead technical implementation and deployment of enterprise healthcare compliance platform. Manage system configurations, integrations, and customer environment setup across multiple state jurisdictions.</p>
+                
+                <div class="mb-3 print:mb-2">
+                    <h5 class="font-semibold text-gray-800 mb-2 print:text-sm print:mb-1">System Implementation & Deployment:</h5>
+                    <ul class="list-disc list-inside text-gray-700 text-sm space-y-1 print:text-xs print:space-y-0">
+                        <li>Deployed and configured healthcare compliance platform across 5 state environments with custom requirements</li>
+                        <li>Built automated deployment pipeline reducing customer setup time from weeks to hours</li>
+                        <li>Implemented multi-tenant architecture supporting isolated customer environments with shared infrastructure</li>
+                        <li>Configured custom LMS integrations with SCORM compliance and automated progress tracking</li>
+                    </ul>
+                </div>
+
+                <div class="mb-3 print:mb-2">
+                    <h5 class="font-semibold text-gray-800 mb-2 print:text-sm print:mb-1">Technical Integration & Configuration:</h5>
+                    <ul class="list-disc list-inside text-gray-700 text-sm space-y-1 print:text-xs print:space-y-0">
+                        <li>Integrated 7+ external APIs including Stripe, Mercury, Pipeline CRM, and Freshdesk for seamless data flow</li>
+                        <li>Built webhook management system for real-time data synchronization between platforms</li>
+                        <li>Configured role-based access controls and security implementations across customer environments</li>
+                        <li>Implemented automated backup and disaster recovery procedures ensuring 99.5% uptime</li>
+                    </ul>
+                </div>
+
+                <div class="mb-3 print:mb-2">
+                    <h5 class="font-semibold text-gray-800 mb-2 print:text-sm print:mb-1">Customer Environment Management:</h5>
+                    <ul class="list-disc list-inside text-gray-700 text-sm space-y-1 print:text-xs print:space-y-0">
+                        <li>Managed technical rollouts for 1,000+ users across multiple organizations without service interruption</li>
+                        <li>Built customer onboarding automation creating isolated environments with pre-configured settings</li>
+                        <li>Implemented monitoring and alerting systems for proactive issue identification and resolution</li>
+                        <li>Created technical documentation and runbooks for system administration and troubleshooting</li>
+                    </ul>
+                </div>
+
+                <div class="mb-3 print:mb-2">
+                    <h5 class="font-semibold text-gray-800 mb-2 print:text-sm print:mb-1">Database & Infrastructure Management:</h5>
+                    <ul class="list-disc list-inside text-gray-700 text-sm space-y-1 print:text-xs print:space-y-0">
+                        <li>Designed and implemented PostgreSQL database architecture with automated scaling and optimization</li>
+                        <li>Built AWS infrastructure with EC2, S3, RDS, and Lambda for scalable, cost-effective operations</li>
+                        <li>Implemented CI/CD pipelines for automated testing, deployment, and rollback capabilities</li>
+                        <li>Configured load balancing and performance optimization achieving sub-200ms response times</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Experience 2 -->
+            <div class="mb-6 print:mb-4 print:break-inside-avoid">
+                <div class="flex justify-between items-start mb-2">
+                    <div>
+                        <h4 class="text-lg font-semibold print:text-base text-black">Implementation Consultant</h4>
+                        <p class="text-gray-600 font-medium">Liquid XYZ • Full-time</p>
+                    </div>
+                    <div class="text-right text-sm text-gray-600">
+                        <p>Jul 2022 - Jul 2024</p>
+                        <p>Remote</p>
+                    </div>
+                </div>
+                <p class="text-gray-700 mb-3 print:text-sm print:mb-2">Provided technical implementation services for client web applications with focus on performance optimization and system reliability.</p>
+                <ul class="list-disc list-inside text-gray-700 text-sm space-y-1 print:text-xs print:space-y-0">
+                    <li>Implemented custom deployment processes for client applications with zero-downtime requirements</li>
+                    <li>Configured database systems and optimization procedures improving query performance by 60%</li>
+                    <li>Built monitoring and logging systems for proactive system health management</li>
+                    <li>Collaborated with development teams to establish deployment best practices and procedures</li>
+                </ul>
+            </div>
+
+            <!-- Experience 3 -->
+            <div class="mb-6 print:mb-4 print:break-inside-avoid">
+                <div class="flex justify-between items-start mb-2">
+                    <div>
+                        <h4 class="text-lg font-semibold print:text-base text-black">Early Career Experience</h4>
+                        <p class="text-gray-600 font-medium">Goodwill Industries & Urban Outfitters</p>
+                    </div>
+                    <div class="text-right text-sm text-gray-600">
+                        <p>2016 - 2022</p>
+                        <p>New York/Connecticut</p>
+                    </div>
+                </div>
+                <p class="text-gray-700 mb-3 print:text-sm print:mb-2">Prior to transitioning to software development in 2022, worked in retail operations developing strong customer service skills and understanding of user experience.</p>
+            </div>
+        </section>
+
+        <!-- Technical Skills -->
+        <section class="mb-6 print:mb-4">
+            <h3 class="text-xl font-bold mb-4 border-b-2 border-gray-200 pb-1 print:text-lg print:mb-3 text-black">Technical Skills</h3>
+            
+            <div class="mb-4">
+                <h4 class="font-semibold mb-2 print:text-sm text-black">Implementation & Deployment:</h4>
+                <p class="text-gray-700 text-sm print:text-xs">System Implementation • Environment Configuration • Automated Deployment • Multi-tenant Architecture • Customer Onboarding • Technical Rollouts • System Migration</p>
+            </div>
+
+            <div class="mb-4">
+                <h4 class="font-semibold mb-2 print:text-sm text-black">Integration & APIs:</h4>
+                <p class="text-gray-700 text-sm print:text-xs">REST API Integration • Webhook Management • Data Synchronization • Third-party Integrations • ETL Processes • Real-time Data Processing</p>
+            </div>
+
+            <div class="mb-4">
+                <h4 class="font-semibold mb-2 print:text-sm text-black">Backend Development:</h4>
+                <p class="text-gray-700 text-sm print:text-xs">Django • Python • Node.js • PostgreSQL • Database Design • Performance Optimization • Security Implementation • Scalable Architecture</p>
+            </div>
+
+            <div class="mb-4">
+                <h4 class="font-semibold mb-2 print:text-sm text-black">Cloud Infrastructure:</h4>
+                <p class="text-gray-700 text-sm print:text-xs">AWS (EC2, S3, RDS, Lambda) • Cloud Architecture • Infrastructure as Code • Monitoring & Alerting • Backup & Recovery • Load Balancing</p>
+            </div>
+
+            <div class="mb-4">
+                <h4 class="font-semibold mb-2 print:text-sm text-black">DevOps & Automation:</h4>
+                <p class="text-gray-700 text-sm print:text-xs">CI/CD Pipelines • Automated Testing • Deployment Automation • Infrastructure Monitoring • Log Management • Performance Monitoring</p>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="mb-6 print:mb-4">
+            <h3 class="text-xl font-bold mb-4 border-b-2 border-gray-200 pb-1 print:text-lg print:mb-3 text-black">Education & Certifications</h3>
+            
+            <div class="mb-4 print:mb-3 print:break-inside-avoid">
+                <div class="flex justify-between items-start mb-1">
+                    <div>
+                        <h4 class="text-lg font-semibold print:text-base text-black">Certification - Software Engineering</h4>
+                        <p class="text-gray-600 font-medium">Flatiron School</p>
+                    </div>
+                    <span class="text-sm text-gray-600">Feb 2022 - Jun 2022</span>
+                </div>
+                <p class="text-gray-700 mb-2 print:text-sm">15 Week Intensive Full Stack Software Engineering Program</p>
+                <ul class="list-disc list-inside text-gray-700 text-sm print:text-xs">
+                    <li>Front End: JavaScript (ES6+), React.js</li>
+                    <li>Back End: Ruby, Ruby on Rails, SQL, ORMs & Active Record</li>
+                </ul>
+            </div>
+
+            <div class="mb-4 print:mb-3 print:break-inside-avoid">
+                <div class="flex justify-between items-start mb-1">
+                    <div>
+                        <h4 class="text-lg font-semibold print:text-base text-black">Certification - Audio Engineering</h4>
+                        <p class="text-gray-600 font-medium">SAE Institute North America</p>
+                    </div>
+                    <span class="text-sm text-gray-600">2016</span>
+                </div>
+                <p class="text-gray-700 mb-2 print:text-sm">Professional audio engineering and production certification demonstrating technical precision, complex system management, and multi-platform software proficiency.</p>
+                <ul class="list-disc list-inside text-gray-700 text-sm print:text-xs">
+                    <li>Advanced technical training in Pro Tools, Logic Pro, Ableton, and digital audio workstations</li>
+                    <li>Signal processing, system optimization, and hardware/software integration expertise</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

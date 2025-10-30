@@ -29,7 +29,7 @@ export function Resume() {
       company: "Liquid XYZ",
       duration: "Jul 2022 - Jul 2024",
       location: "Remote",
-      type: "Freelance",
+      type: "Full-time",
       description: "Freelance full-stack development focused on creating high-impact web applications with emphasis on user experience and performance.",
       achievements: [
         "Created successful page designs and navigation frameworks achieving usability requirements",
@@ -123,31 +123,46 @@ export function Resume() {
   };
 
   return (
-    <div 
-      className="min-h-screen"
-      style={{
-        '--background': 'oklch(1 0 0)',
-        '--foreground': 'oklch(0.145 0 0)',
-        '--card': 'oklch(1 0 0)',
-        '--card-foreground': 'oklch(0.145 0 0)',
-        '--popover': 'oklch(1 0 0)',
-        '--popover-foreground': 'oklch(0.145 0 0)',
-        '--primary': 'oklch(0.205 0 0)',
-        '--primary-foreground': 'oklch(0.985 0 0)',
-        '--secondary': 'oklch(0.97 0 0)',
-        '--secondary-foreground': 'oklch(0.205 0 0)',
-        '--muted': 'oklch(0.97 0 0)',
-        '--muted-foreground': 'oklch(0.556 0 0)',
-        '--accent': 'oklch(0.97 0 0)',
-        '--accent-foreground': 'oklch(0.205 0 0)',
-        '--destructive': 'oklch(0.577 0.245 27.325)',
-        '--border': 'oklch(0.922 0 0)',
-        '--input': 'oklch(0.922 0 0)',
-        '--ring': 'oklch(0.708 0 0)',
-        backgroundColor: 'white',
-        color: 'black'
-      } as React.CSSProperties}
-    >
+    <>
+      <style jsx global>{`
+        @media print {
+          @page {
+            margin: 0.5in;
+            size: auto;
+          }
+          
+          /* Remove browser-generated headers and footers */
+          body::before,
+          body::after {
+            display: none !important;
+          }
+        }
+      `}</style>
+      <div 
+        className="min-h-screen"
+        style={{
+          '--background': 'oklch(1 0 0)',
+          '--foreground': 'oklch(0.145 0 0)',
+          '--card': 'oklch(1 0 0)',
+          '--card-foreground': 'oklch(0.145 0 0)',
+          '--popover': 'oklch(1 0 0)',
+          '--popover-foreground': 'oklch(0.145 0 0)',
+          '--primary': 'oklch(0.205 0 0)',
+          '--primary-foreground': 'oklch(0.985 0 0)',
+          '--secondary': 'oklch(0.97 0 0)',
+          '--secondary-foreground': 'oklch(0.205 0 0)',
+          '--muted': 'oklch(0.97 0 0)',
+          '--muted-foreground': 'oklch(0.556 0 0)',
+          '--accent': 'oklch(0.97 0 0)',
+          '--accent-foreground': 'oklch(0.205 0 0)',
+          '--destructive': 'oklch(0.577 0.245 27.325)',
+          '--border': 'oklch(0.922 0 0)',
+          '--input': 'oklch(0.922 0 0)',
+          '--ring': 'oklch(0.708 0 0)',
+          backgroundColor: 'white',
+          color: 'black'
+        } as React.CSSProperties}
+      >
       <div className="max-w-4xl mx-auto p-6 bg-white text-black print:p-0 print:max-w-none">
         {/* Floating Print Button */}
         <Button
@@ -400,12 +415,8 @@ export function Resume() {
             </div>
           ))}
         </section>
-
-        {/* Print-specific footer */}
-        <div className="print:block hidden text-center text-xs text-gray-500 mt-6">
-          <p>This resume was generated from scottypeterson.net</p>
-        </div>
       </div>
     </div>
+    </>
   );
 } 
