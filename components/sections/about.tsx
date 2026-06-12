@@ -3,24 +3,24 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { User, Code, Users } from "lucide-react";
+import { Target, Workflow, Sparkles } from "lucide-react";
 
 export function About() {
   const highlights = [
     {
-      icon: User,
-      title: "Customer-First Mindset",
-      description: "Years in customer service taught me to think about what users actually need, not just what's technically possible."
+      icon: Target,
+      title: "End-to-End Ownership",
+      description: "I decide what to build based on where the funnel is breaking, then build it. Strategy, program design, and the code behind it come from the same person."
     },
     {
-      icon: Code,
-      title: "Full-Stack Builder",
-      description: "From React frontends to Django backends, I build complete solutions that solve real business problems."
+      icon: Workflow,
+      title: "Systems Builder",
+      description: "Webhook and API orchestration across Brevo, Pipeline CRM, Stripe, and Calendly. Behavioral email sequences, webinar infrastructure, and internal dashboards."
     },
     {
-      icon: Users,
-      title: "Business Impact",
-      description: "Currently delivering an enterprise healthcare compliance platform while managing sites that generate thousands of leads monthly."
+      icon: Sparkles,
+      title: "AI-Assisted Development",
+      description: "Claude and Cursor are my development environment. Context documents, reusable prompt patterns, and integration templates mean most things go from idea to production in under two weeks."
     }
   ];
 
@@ -38,13 +38,13 @@ export function About() {
             About Me
           </Badge>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-4">
-            I build complete solutions and help teams implement them successfully, from enterprise healthcare platforms to integrated business systems that actually work.
+            I build the internal tools and automation systems GTM and marketing teams run on. Not as a consultant who hands off a spec. I embed with the business, find what's manual and slow, and ship the thing that removes it.
           </p>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            I Build Solutions That Actually Work
+            Strategy and Code From the Same Person
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            My weird background actually helps: I spent years in customer service before getting into development.
+            The technical side is only half of it. I also own program design, attribution, and results analysis.
           </p>
         </motion.div>
 
@@ -58,16 +58,16 @@ export function About() {
             <h3 className="text-2xl font-bold mb-6">The Journey</h3>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                I started in customer service and e-commerce, spending years solving problems for real people. 
-                That experience taught me something most developers miss: <span className="text-foreground font-semibold">it&apos;s not about the code, it&apos;s about the solution</span>.
+                I started in retail and ecommerce, then made the leap through a coding bootcamp in 2022. 
+                My first developer role was building a company's marketing website from the ground up, including a custom CMS so the content team never needed an engineer.
               </p>
               <p>
-                When I transitioned to development, I brought that user-focused mindset with me. I don&apos;t just build features, I solve problems. 
-                Whether it&apos;s a custom LMS because the existing one sucked, or an admin platform that pulls data from everywhere into one place that actually makes sense.
+                Then the company decided to go harder on marketing, and there was nothing there. No lead capture, no automations, no lifecycle infrastructure. 
+                As the only technical person, I built the entire program from scratch: <span className="text-foreground font-semibold">webhook and API orchestration across four platforms, behavioral nurture sequences, a webinar system that handled 1,900+ registrations across 7 events</span>.
               </p>
               <p>
-                Plus I have this annoying habit of diving deep into anything that interests me: from guitar to audio engineering to building computers to coding. 
-                {" "}<span className="text-foreground font-semibold">That curiosity drives better solutions</span>.
+                That's where I landed on what I actually am: a marketing technologist who ships. 
+                {" "}<span className="text-foreground font-semibold">I cover what usually takes a marketer plus an engineer</span>, and AI-assisted development is how I keep that pace as one person.
               </p>
             </div>
           </motion.div>
@@ -110,14 +110,14 @@ export function About() {
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold mb-4">What This Means For You</h3>
               <p className="text-lg text-muted-foreground mb-6">
-                You get a developer who doesn&apos;t just understand the technical side. I understand your users, your business problems, and what actually makes a solution successful.
+                You get one person who can own the technical marketing stack end to end. I find what's manual and slow, ship the system that removes it, and keep it running without a ticket queue.
               </p>
               <div className="flex flex-wrap justify-center gap-2">
-                <Badge variant="outline">User Experience</Badge>
-                <Badge variant="outline">Business Impact</Badge>
-                <Badge variant="outline">Problem Solving</Badge>
-                <Badge variant="outline">Full-Stack Solutions</Badge>
-                <Badge variant="outline">Real Results</Badge>
+                <Badge variant="outline">Lifecycle Marketing</Badge>
+                <Badge variant="outline">Marketing Automation</Badge>
+                <Badge variant="outline">API Integration</Badge>
+                <Badge variant="outline">Internal Tooling</Badge>
+                <Badge variant="outline">AI-Assisted Development</Badge>
               </div>
             </CardContent>
           </Card>

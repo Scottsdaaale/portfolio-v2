@@ -3,81 +3,81 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CalendarDays, Building, TrendingUp, Users, Code2, Zap } from "lucide-react";
+import { CalendarDays, TrendingUp, Users, Code2, Zap, Video, Workflow } from "lucide-react";
 
 export function Experience() {
   const currentRole = {
     company: "Training & eTracking Solutions",
-    position: "Full Stack Developer",
-    duration: "Jul 2024 - Present",
+    position: "Marketing Engineer",
+    duration: "Jul 2024 - Jun 2026",
     location: "Remote",
-    description: "Full-stack developer building complete business solutions from concept to deployment. Leading high-value projects while managing growth-driving web properties."
+    description: "Sole owner of marketing technology at a B2B SaaS company. Built the entire lifecycle automation program from nothing: no prior automation, no engineering team, no existing infrastructure. Scoped directly with business stakeholders, shipped fast, owned it end to end."
   };
 
   const projects = [
     {
-      title: "Healthcare Compliance Platform",
-      description: "Leading development of a HIPAA-compliant SaaS platform from scratch. Architecting multi-tenant infrastructure, secure document management, automated compliance tracking, and real-time notifications serving healthcare organizations across 5 states.",
-      tech: ["Next.js 15", "Django", "PostgreSQL", "AWS S3", "SES", "Multi-tenant Architecture"],
-              impact: "Full-stack solo development of enterprise-grade healthcare software with short delivery timeline.",
-      icon: Building
+      title: "Lifecycle Marketing Automation Program",
+      description: "Designed and built the full lifecycle program connecting Brevo, Pipeline CRM, Stripe, and Calendly via API integration and webhook orchestration. B2B demo nurture with cross-system attribution, behavioral recovery sequences for leads who click a booking link without completing it, and B2C post-purchase flows with merge-not-retrigger logic for repeat buyers.",
+      tech: ["Brevo", "Pipeline CRM", "Stripe", "Calendly", "Webhooks", "REST APIs"],
+      impact: "187 campaigns delivered to 2M+ recipients last year. Demo booking recovery sequence processed 1,200+ contacts.",
+      icon: Workflow
     },
     {
-      title: "Company Website Development",
+      title: "Webinar Registration System",
+      description: "Built the registration infrastructure behind the company's webinar program: audience segmentation, multi-webinar deduplication, and confirmation automation including calendar adds and progressive profiling surveys.",
+      tech: ["Brevo", "AWS Lambda", "Webhooks", "MJML", "Segmentation"],
+      impact: "Handled 7 webinars and 1,900+ registrations with zero manual processing.",
+      icon: Video
+    },
+    {
+      title: "Internal Tools Suite",
+      description: "Built the internal tooling the company runs on: finance dashboards pulling live data from Mercury, Stripe, and Pipeline CRM, Freshdesk analytics, email automation monitoring, invoice generation, and weekly business review reporting that auto-generates key metrics.",
+      tech: ["Next.js", "Flask", "Mercury API", "Stripe API", "Pipeline CRM", "Freshdesk API"],
+      impact: "Gave leadership real-time pipeline and financial visibility without a ticket queue. Solo build.",
+      icon: Code2
+    },
+    {
+      title: "MyMedPath",
       description: (
         <>
-          Built{" "}
+          Shipped{" "}
           <a 
-            href="https://yourtrainingprovider.com" 
+            href="https://mymedpath.com" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-primary hover:underline font-medium"
           >
-            yourtrainingprovider.com
+            mymedpath.com
           </a>{" "}
-          from scratch and serve as sole developer. I code new product features, maintain automated blog systems, implement SEO strategies, and continuously optimize for lead conversion.
+          completely solo: a production SaaS for dental practice licensure and compliance management. Multi-tenant org management with role-based access, AI-powered document analysis, automated licensure tracking with real-time dashboards, and a state compliance database.
         </>
       ),
-      tech: ["SEO Optimization", "Lead Capture", "Automated Blog", "Product Integration", "Content Management"],
-      impact: "Thousands of monthly visitors, continuous lead generation, and primary company marketing engine.",
+      tech: ["Next.js", "PostgreSQL", "AWS Amplify", "AI Document Analysis", "Multi-tenant Architecture"],
+      impact: "Live, fully functional production SaaS built end to end by one person using AI-assisted development.",
       icon: TrendingUp
-    },
-    {
-      title: "Comprehensive Admin Platform",
-      description: "Built end-to-end business management platform integrating multiple APIs and data sources. Includes finance dashboard with Stripe/Mercury/Pipeline CRM integrations, automated invoice generation, Freshdesk analytics, B2C client management, and AI chatbot functionality.",
-      tech: ["Stripe API", "Mercury API", "Pipeline CRM", "Freshdesk API", "Invoice Generation", "AI Chatbot"],
-      impact: "Complete business operations platform consolidating finances, customer support, client management, and automated workflows.",
-      icon: Code2
-    },
-    {
-      title: "AI-Powered Course Modernization Initiative",
-      description: "Led complete redesign of 63+ training courses using industry-standard Storyline360, implementing AI-powered content generation and custom Python automation scripts. Built comprehensive tracking systems for cycle time analysis and quality assurance workflows.",
-      tech: ["Storyline360", "AI Content Generation", "Python Scripts", "Performance Analytics", "Quality Assurance"],
-      impact: "Dramatically accelerated course production through AI automation, eliminated customer complaints, and transformed learning experience from outdated content to modern, engaging training materials.",
-      icon: Users
     }
   ];
 
   const achievements = [
     {
-      metric: "Enterprise",
-      label: "Healthcare Platform Delivery",
-      icon: TrendingUp
-    },
-    {
-      metric: "Thousands",
-      label: "Monthly Website Visitors",
-      icon: Users
-    },
-    {
-      metric: "Tens of Thousands",
-      label: "Cost Savings via AI Integration",
+      metric: "187",
+      label: "Campaigns Delivered Last Year",
       icon: Zap
     },
     {
-      metric: "1,083",
-      label: "Course Slides Modernized",
-      icon: Code2
+      metric: "2M+",
+      label: "Email Recipients",
+      icon: Users
+    },
+    {
+      metric: "1,900+",
+      label: "Webinar Registrations",
+      icon: Video
+    },
+    {
+      metric: "1,200+",
+      label: "Leads Through Recovery Flows",
+      icon: TrendingUp
     }
   ];
 
@@ -95,10 +95,10 @@ export function Experience() {
             Experience
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Building Solutions That Drive Results
+            Systems That Ship and Run Themselves
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Currently leading high-impact projects that deliver real business value.
+            Two years as the sole engineer building the marketing and operations infrastructure at a B2B SaaS company.
           </p>
         </motion.div>
 
@@ -125,7 +125,7 @@ export function Experience() {
                     <span>{currentRole.location}</span>
                   </div>
                 </div>
-                <Badge variant="outline" className="self-start">Current Role</Badge>
+                <Badge variant="outline" className="self-start">Most Recent Role</Badge>
               </div>
             </CardHeader>
             <CardContent>

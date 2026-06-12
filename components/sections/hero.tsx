@@ -49,16 +49,17 @@ export function Hero() {
           transition={{ duration: 0.8 }}
         >
           <Badge variant="secondary" className="mb-4">
-            Available for new projects
+            Open to new opportunities
           </Badge>
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight bg-gradient-to-r from-foreground to-foreground/80 bg-clip-text text-transparent px-1">
-            I build things that actually solve problems
+            I build the systems marketing teams run on
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-normal">
-            Software engineer and solutions architect <span className="text-foreground font-semibold">delivering enterprise healthcare software</span> and
-            managing websites that generate <span className="text-foreground font-semibold">thousands of monthly visitors</span>.
+            Marketing technologist and GTM engineer. Last year my lifecycle program delivered{" "}
+            <span className="text-foreground font-semibold">187 campaigns to 2M+ recipients</span>, designed,
+            built, and run by <span className="text-foreground font-semibold">one person</span>.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">

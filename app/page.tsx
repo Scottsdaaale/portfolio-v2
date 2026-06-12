@@ -26,24 +26,24 @@ export default function Home() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ProfessionalService",
-            name: "Scotty Peterson - Full Stack Development Services",
-            description: "Professional full-stack web development services specializing in React, Next.js, Django, and AWS solutions for businesses.",
+            name: "Scotty Peterson - Marketing Systems & GTM Engineering",
+            description: "Marketing technology services: lifecycle automation programs, API and webhook integrations, email marketing systems, and internal GTM tooling.",
             provider: {
               "@type": "Person",
               name: "Scotty Peterson",
-              jobTitle: "Full Stack Developer",
+              jobTitle: "Marketing Technologist",
               email: "scottpetersonSE@gmail.com",
               url: "https://www.scottypeterson.net"
             },
             serviceType: [
-              "Full Stack Web Development",
-              "React Development", 
-              "Next.js Development",
-              "Django Development",
+              "Lifecycle Marketing Automation",
+              "Marketing Operations", 
+              "API & Webhook Integration",
+              "Email Marketing Systems",
+              "Internal Tooling Development",
+              "GTM Engineering",
               "AWS Cloud Solutions",
-              "Web Application Development",
-              "API Development",
-              "Database Design"
+              "AI-Assisted Development"
             ],
             areaServed: {
               "@type": "Country",

@@ -8,6 +8,7 @@ import MyExperienceProgrammingWithADHD from '@/content/blog/my-experience-progra
 import HealthcareComplianceBlogPost from '@/content/blog/heathcare-compliance';
 import GoogleDarkPatterns2FAEcosystemTrap from '@/content/blog/google-dark-patterns-2fa-ecosystem-trap';
 import LeetCodeInterviewsArePointless from '@/content/blog/leetcode-interviews-are-pointless';
+import LifecycleMarketingProgramFromScratch from '@/content/blog/lifecycle-marketing-program-from-scratch';
 
 export interface BlogPost {
   slug: string;
@@ -23,6 +24,17 @@ export interface BlogPost {
 
 // This will store our blog posts - you can later move this to a CMS or markdown files
 const blogPosts: BlogPost[] = [
+  {
+    slug: 'lifecycle-marketing-program-from-scratch',
+    title: 'How I Built a Lifecycle Marketing Program from Scratch',
+    description:
+      'Building a one-person marketing tech function: how I designed and shipped lifecycle infrastructure that manages 100,000 subscribers, routes leads across systems, and runs 187 campaigns without manual intervention.',
+    publishedAt: '2026-05-05',
+    tags: ['Marketing', 'Engineering', 'Automation', 'CRM', 'Lifecycle Marketing', 'B2B', 'Technical'],
+    readingTime: 10,
+    content: LifecycleMarketingProgramFromScratch,
+    draft: false,
+  },
   {
     slug: 'leetcode-interviews-are-pointless',
     title: 'Why LeetCode Interviews Are Broken in the Age of AI',

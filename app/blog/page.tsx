@@ -5,7 +5,7 @@ import { BlogContent } from "@/components/blog-content";
 
 export const metadata: Metadata = {
   title: "Blog - Scotty Peterson | Developer, Hiker, Musician & More",
-  description: "My thoughts on development, tech, camping, hiking, plants, music, guitar, video games, and whatever else catches my interest. Personal stories and insights from a full-stack developer who has way too many hobbies.",
+  description: "My thoughts on development, tech, camping, hiking, plants, music, guitar, video games, and whatever else catches my interest. Personal stories and insights from a marketing technologist who has way too many hobbies.",
   keywords: [
     "Personal Blog",
     "Web Development", 

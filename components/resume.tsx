@@ -8,91 +8,93 @@ import { Mail, MapPin, Github, Linkedin, Download } from "lucide-react";
 export function Resume() {
   const experiences = [
     {
-      title: "Full Stack Developer",
+      title: "Technical Marketing & Lifecycle Engineering",
       company: "Training & eTracking Solutions",
-      duration: "Jul 2024 - Present",
+      duration: "Jul 2024 - Jun 2026",
       location: "Remote",
       type: "Full-time",
-      description: "Full-stack developer building complete business solutions from concept to deployment. Leading high-value projects while managing growth-driving web properties.",
+      description: "Sole owner of marketing technology at a B2B company. Built the entire lifecycle automation program from nothing: no prior automation, no engineering team, no existing infrastructure.",
       achievements: [
-        "Leading enterprise healthcare compliance platform serving 5 states using Next.js 15, Django, PostgreSQL, and AWS",
-        "Built and maintain company website generating thousands of monthly visitors and continuous lead generation",
-        "Developed comprehensive admin platform with financial analytics, Freshdesk integration, and AI chatbot functionality", 
-        "Architected custom LMS with SCORM tracking, replacing inadequate existing system",
-        "Created multi-platform lead generation system aggregating customers from Stripe and other APIs",
-        "Modernized 1,083+ course slides and manage newsletter reaching thousands of subscribers",
-        "Achieved tens of thousands in cost savings through AI-integrated processes"
+        "Designed and built lifecycle marketing program connecting Brevo, Pipeline CRM, Stripe, and Calendly via API integration and webhook orchestration",
+        "Designed B2B lead journey covering form capture, attribution tagging, demo nurture email sequences, and Calendly-driven booking with cross-system attribution preservation",
+        "Built behavioral trigger sequences that identify leads who click a demo booking link without completing the booking, then run an automated recovery sequence until they book or opt out: 1,200+ contacts processed",
+        "Built B2C post-purchase email automation with merge-not-retrigger logic for customers who purchase multiple times mid-sequence",
+        "Built webinar registration system handling 7 webinars and 1,900+ registrations, with audience segmentation, multi-webinar deduplication, and confirmation automation including calendar adds and progressive profiling surveys",
+        "Program delivered 187 campaigns to 2M+ recipients last year",
+        "Built API integrations, webhook handlers, and landing pages in Cursor using maintained context documents for company styling, brand guidelines, and integration patterns",
+        "Built responsive email templates in MJML with dynamic personalization and variable-based content",
+        "Managed AWS infrastructure (Lambda, S3, SES) for marketing automation and email delivery",
+        "Designed and documented full lifecycle architecture in Figma for cross-team reference",
+        "Built a suite of internal tools in Next.js + Flask: finance dashboards connected to Mercury, Stripe, and Pipeline CRM; Freshdesk analytics; email automation monitoring; invoice generation; and weekly business review reporting"
       ]
     },
     {
-      title: "Full Stack Developer", 
+      title: "Contract Web Developer", 
       company: "Liquid XYZ",
-      duration: "Jul 2022 - Jul 2024",
+      duration: "Apr 2023 - Jul 2024",
       location: "Remote",
-      type: "Full-time",
-      description: "Freelance full-stack development focused on creating high-impact web applications with emphasis on user experience and performance.",
+      type: "Contract",
+      description: "Built and maintained yourtrainingprovider.com full stack (React + Flask) as sole developer.",
       achievements: [
-        "Created successful page designs and navigation frameworks achieving usability requirements",
-        "Managed multiple project priorities and communicated timelines to entire development team",
-        "Utilized Jira for project management while implementing front-end code for client applications",
-        "Developed high-impact web pages using JavaScript and Object-Oriented Programming principles",
-        "Designed effective interfaces using HTML, CSS, XML and modern frameworks"
+        "Built and maintained the full marketing site: blog, webinar registration pages, lead capture forms, and expert directory",
+        "Built a custom in-house CMS: blog post creation, ad creation and injection into blog content, tag-based training recommendations, and expert profile management",
+        "Implemented frontend functionality using React, JavaScript, HTML, and CSS"
       ]
     }
   ];
 
   const projects = [
     {
-      title: "Healthcare Compliance Platform",
-      date: "2025 - Present",
-      description: "Leading development of multi-tenant SaaS application serving healthcare organizations across 5 states with comprehensive compliance tracking and reporting",
-      technologies: ["Next.js 15", "Django", "PostgreSQL", "AWS", "Multi-tenant Architecture"],
+      title: "MyMedPath",
+      date: "2025",
+      description: "Production SaaS for dental practice licensure and compliance management, built completely solo. Multi-tenant org management with role-based access, AI-powered document analysis, automated licensure tracking with real-time dashboards, and state compliance database",
+      technologies: ["Next.js", "PostgreSQL", "AWS Amplify", "AI Document Analysis", "Multi-tenant Architecture"],
+      link: "mymedpath.com"
+    },
+    {
+      title: "Lifecycle Automation Program", 
+      date: "2024 - 2026",
+      description: "Full B2B/B2C lifecycle program connecting four platforms via webhook and API orchestration: lead capture, demo nurture, booking recovery, post-purchase onboarding, and renewal flows. 187 campaigns to 2M+ recipients last year",
+      technologies: ["Brevo", "Pipeline CRM", "Stripe", "Calendly", "Webhooks", "REST APIs"],
       link: null
     },
     {
-      title: "Company Website Development", 
-      date: "2024 - Present",
-      description: "Built and maintain yourtrainingprovider.com from ground up, driving thousands of monthly visitors and continuous lead generation pipeline",
-      technologies: ["SEO Optimization", "Lead Capture Systems", "Blog Automation", "Analytics Integration"],
+      title: "Webinar Registration System",
+      date: "2024 - 2026",
+      description: "Registration infrastructure handling 7 webinars and 1,900+ registrations with audience segmentation, multi-webinar deduplication, calendar adds, and progressive profiling surveys",
+      technologies: ["Brevo", "AWS Lambda", "Webhooks", "MJML"],
       link: null
     },
     {
-      title: "Custom LMS Development",
+      title: "Internal Tools Suite",
+      date: "2024 - 2026", 
+      description: "Finance dashboards pulling live data from Mercury, Stripe, and Pipeline CRM, Freshdesk analytics, email automation monitoring, invoice generation, and automated weekly business review reporting",
+      technologies: ["Next.js", "Flask", "Mercury API", "Stripe API", "Freshdesk API"],
+      link: null
+    },
+    {
+      title: "Marketing Site + Custom CMS",
+      date: "2023 - 2024",
+      description: "Built yourtrainingprovider.com full stack with a custom in-house CMS: blog management, ad injection into blog content, tag-based training recommendations, and expert profile management",
+      technologies: ["React", "Flask", "Custom CMS", "Lead Capture", "SEO"],
+      link: "yourtrainingprovider.com"
+    },
+    {
+      title: "Transactional Email Infrastructure",
       date: "2024",
-      description: "Architected proprietary Learning Management System with SCORM tracking, custom quiz systems, and versioning capabilities, replacing inadequate existing system",
-      technologies: ["SCORM Compliance", "Next.js", "Django", "Custom Quiz Engine", "Version Control"],
-      link: null
-    },
-    {
-      title: "Comprehensive Admin Platform",
-      date: "2024", 
-      description: "Built integrated business intelligence platform with financial analytics, invoice generation, Freshdesk analytics, B2C client management, and AI chatbot functionality",
-      technologies: ["Financial Analytics", "Freshdesk API", "AI Chatbot", "Invoice Generation", "Client Management"],
-      link: null
-    },
-    {
-      title: "Multi-Platform Lead Generation System",
-      date: "2024",
-      description: "Architected centralized system using APIs to aggregate customers from multiple platforms (Stripe, CRM, etc.) into unified conversion funnel",
-      technologies: ["Stripe API", "CRM Integration", "Multi-platform APIs", "Lead Automation", "Conversion Tracking"],
-      link: null
-    },
-    {
-      title: "Newsletter & Content Management",
-      date: "2024",
-      description: "Manage monthly newsletter reaching thousands of subscribers and create technical blog content, modernizing 1,083+ course slides",
-      technologies: ["Content Management", "Email Automation", "Slide Modernization", "Technical Writing"],
+      description: "Built transactional email delivery infrastructure for the company LMS using AWS SES, SQS, and Lambda, supporting onboarding of the first 100 users",
+      technologies: ["AWS SES", "AWS SQS", "AWS Lambda"],
       link: null
     }
   ];
 
   const skills = {
-    frontend: ["React", "React.js", "Next.js", "NextJS", "JavaScript", "JavaScript ES6+", "TypeScript", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap", "React Hooks", "Redux", "Vue.js", "Angular"],
-    backend: ["Django", "Python", "Ruby on Rails", "Node.js", "NodeJS", "Express.js", "REST APIs", "RESTful Services", "API Development", "GraphQL", "PostgreSQL", "MySQL", "MongoDB", "SQL", "NoSQL"],
-    cloud: ["AWS", "Amazon Web Services", "EC2", "S3", "Lambda", "RDS", "Vercel", "Heroku", "Database Management", "Multi-tenant Architecture", "Cloud Computing", "Serverless"], 
-    tools: ["Git", "GitHub", "GitLab", "VS Code", "Cursor IDE", "GitHub Copilot", "Postman", "Jira", "Confluence", "Figma", "Docker", "CI/CD", "Agile", "Scrum"],
-    specialties: ["SCORM", "LMS Architecture", "LMS Development", "AI Integration", "AI Automation", "ChatGPT API", "OpenAI API", "Claude API", "Machine Learning", "Prompt Engineering", "AI-Assisted Development", "E-learning", "Storyline360", "Multi-platform APIs", "SaaS Development", "Healthcare Compliance"],
-    business: ["E-commerce", "Lead Generation", "Customer Service", "Project Management", "Analytics", "SEO", "CRO", "Digital Marketing", "Business Intelligence", "Data Analysis", "AI Process Optimization", "Workflow Automation"]
+    marketing: ["Lifecycle Marketing", "Marketing Automation", "Marketing Operations", "Email Marketing", "Customer Segmentation", "Attribution Tracking", "Behavioral Triggers", "Marketing Technology (MarTech)"],
+    platforms: ["Brevo", "Pipeline CRM", "Stripe", "Calendly", "Freshdesk", "Mercury", "MJML"],
+    languages: ["Python", "JavaScript", "TypeScript", "Next.js", "React", "Flask", "HTML", "CSS", "Tailwind CSS"], 
+    integration: ["REST APIs", "Webhooks", "Webhook Orchestration", "API Integration", "Cross-System Attribution", "Data Sync"],
+    cloud: ["AWS Lambda", "AWS S3", "AWS SES", "AWS SQS", "AWS Amplify", "PostgreSQL", "SQL"],
+    ai: ["Claude", "Cursor", "Prompt Engineering", "AI-Assisted Development", "Context Documents", "Integration Templates"]
   };
 
   const education = [
@@ -115,8 +117,8 @@ export function Resume() {
   const handlePrint = () => {
     // Create a temporary anchor element to trigger download
     const link = document.createElement('a');
-    link.href = '/Scotty Peterson - Resume _ Full Stack Developer.pdf';
-    link.download = 'Scotty Peterson - Resume _ Full Stack Developer.pdf';
+    link.href = '/scotty-peterson-resume.pdf';
+    link.download = 'Scotty Peterson - Resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -177,7 +179,7 @@ export function Resume() {
         {/* Header */}
         <div className="text-center mb-6 print:mb-4">
           <h1 className="text-4xl font-bold mb-2 print:text-3xl text-black">Scotty Peterson</h1>
-          <h2 className="text-xl text-gray-600 mb-3 print:text-lg">Full Stack Developer</h2>
+          <h2 className="text-xl text-gray-600 mb-3 print:text-lg">Lifecycle Marketing Engineer | Marketing Technologist</h2>
           
           <div className="flex flex-wrap justify-center gap-3 text-sm print:gap-2 print:text-xs text-black">
             <div className="flex items-center gap-1">
@@ -186,7 +188,7 @@ export function Resume() {
             </div>
             <div className="flex items-center gap-1">
               <MapPin className="h-4 w-4 print:h-3 print:w-3" />
-              <span>Connecticut, United States</span>
+              <span>New Haven, CT</span>
             </div>
             <div className="flex items-center gap-1">
               <Github className="h-4 w-4 print:h-3 print:w-3" />
@@ -203,12 +205,10 @@ export function Resume() {
         <section className="mb-6 print:mb-4">
           <h3 className="text-xl font-bold mb-3 border-b-2 border-gray-200 pb-1 print:text-lg print:mb-2 text-black">Professional Summary</h3>
           <p className="text-gray-700 leading-relaxed print:text-sm">
-            Full-stack software engineer and web developer who builds scalable solutions that solve real business problems. Currently leading an enterprise healthcare compliance SaaS platform 
-            serving 5 states while managing high-traffic websites generating thousands of monthly visitors. Proven expertise in modern JavaScript frameworks (React, Next.js), 
-            backend development (Django, Python), cloud infrastructure (AWS), and AI integration workflows. Unique background transitioning from customer service to software development brings 
-            user-focused problem-solving to technical solutions. Specializes in building complete end-to-end business applications from concept to production deployment, 
-            with deep experience in full-stack web development, API development, AI automation, and database design. Leverages AI-assisted development tools and prompt engineering 
-            to deliver high-impact software projects that drive measurable business results and cost savings.
+            Lifecycle marketing engineer who designs and ships the technical systems behind marketing automation programs. End-to-end ownership of lead capture, 
+            CRM integration, email automation, post-purchase nurture sequences, and webinar registration infrastructure. Connects marketing platforms, CRMs, 
+            payment systems, and scheduling tools into automated customer journeys that run without manual intervention. Leans heavily on AI-assisted development 
+            to ship at the pace of a small engineering team.
           </p>
         </section>
 
@@ -219,32 +219,32 @@ export function Resume() {
             <Card className="print:border print:border-gray-300 bg-white border-gray-200">
               <CardContent className="p-3 print:p-2">
                 <div className="text-center">
-                  <div className="text-lg font-bold text-blue-600 print:text-base">Enterprise</div>
-                  <div className="text-xs text-gray-600">Healthcare Platform</div>
+                  <div className="text-lg font-bold text-blue-600 print:text-base">187</div>
+                  <div className="text-xs text-gray-600">Campaigns Last Year</div>
                 </div>
               </CardContent>
             </Card>
             <Card className="print:border print:border-gray-300 bg-white border-gray-200">
               <CardContent className="p-3 print:p-2">
                 <div className="text-center">
-                  <div className="text-lg font-bold text-blue-600 print:text-base">Thousands</div>
-                  <div className="text-xs text-gray-600">Monthly Website Visitors</div>
+                  <div className="text-lg font-bold text-blue-600 print:text-base">2M+</div>
+                  <div className="text-xs text-gray-600">Email Recipients</div>
                 </div>
               </CardContent>
             </Card>
             <Card className="print:border print:border-gray-300 bg-white border-gray-200">
               <CardContent className="p-3 print:p-2">
                 <div className="text-center">
-                  <div className="text-lg font-bold text-blue-600 print:text-base">Tens of K</div>
-                  <div className="text-xs text-gray-600">Cost Savings via AI</div>
+                  <div className="text-lg font-bold text-blue-600 print:text-base">1,900+</div>
+                  <div className="text-xs text-gray-600">Webinar Registrations</div>
                 </div>
               </CardContent>
             </Card>
             <Card className="print:border print:border-gray-300 bg-white border-gray-200">
               <CardContent className="p-3 print:p-2">
                 <div className="text-center">
-                  <div className="text-lg font-bold text-blue-600 print:text-base">1,083+</div>
-                  <div className="text-xs text-gray-600">Course Slides Modernized</div>
+                  <div className="text-lg font-bold text-blue-600 print:text-base">1,200+</div>
+                  <div className="text-xs text-gray-600">Leads Through Recovery Flows</div>
                 </div>
               </CardContent>
             </Card>
@@ -291,13 +291,12 @@ export function Resume() {
               </div>
             </div>
             <p className="text-gray-700 mb-3 print:text-sm print:mb-2">
-              Developed customer-focused problem-solving approach and business operations expertise that directly informs development methodology and user experience design.
+              Customer-facing operations background that directly informs how I design customer journeys and lifecycle programs today.
             </p>
             <ul className="list-disc list-inside text-gray-700 text-sm space-y-1 print:text-xs print:space-y-0">
-              <li>Helped build Goodwill&apos;s e-commerce department from ground up, reaching top national rankings in first year</li>
-              <li>Successfully operated within tight deadlines in fast-paced, high-growth environment</li>
-              <li>Managed comprehensive customer service operations across multiple channels and store locations</li>
-              <li>Developed deep understanding of customer journey and user experience pain points</li>
+              <li>Helped build Goodwill&apos;s ecommerce department from the ground up; team ranked among the highest earners nationally at the end of year one (2020 - 2022)</li>
+              <li>Sales and customer service at Urban Outfitters across New York and Chicago (2016 - 2020)</li>
+              <li>Developed deep understanding of the customer journey and where it breaks down</li>
             </ul>
           </div>
         </section>
@@ -335,27 +334,27 @@ export function Resume() {
           <h3 className="text-xl font-bold mb-4 border-b-2 border-gray-200 pb-1 print:text-lg print:mb-3 text-black">Technical Skills</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 print:grid-cols-2 print:gap-4">
             <div>
-              <h4 className="font-semibold mb-2 print:text-sm text-black">Frontend Development</h4>
+              <h4 className="font-semibold mb-2 print:text-sm text-black">Lifecycle & Marketing Automation</h4>
               <div className="flex flex-wrap gap-1 mb-4">
-                {skills.frontend.map((skill, index) => (
+                {skills.marketing.map((skill, index) => (
                   <Badge key={index} variant="outline" className="text-xs print:border-gray-400 bg-white border-gray-300 text-gray-700">
                     {skill}
                   </Badge>
                 ))}
               </div>
               
-              <h4 className="font-semibold mb-2 print:text-sm text-black">Backend Development</h4>
+              <h4 className="font-semibold mb-2 print:text-sm text-black">Martech Platforms</h4>
               <div className="flex flex-wrap gap-1 mb-4">
-                {skills.backend.map((skill, index) => (
+                {skills.platforms.map((skill, index) => (
                   <Badge key={index} variant="outline" className="text-xs print:border-gray-400 bg-white border-gray-300 text-gray-700">
                     {skill}
                   </Badge>
                 ))}
               </div>
 
-              <h4 className="font-semibold mb-2 print:text-sm text-black">Cloud & Infrastructure</h4>
+              <h4 className="font-semibold mb-2 print:text-sm text-black">Languages & Frameworks</h4>
               <div className="flex flex-wrap gap-1">
-                {skills.cloud.map((skill, index) => (
+                {skills.languages.map((skill, index) => (
                   <Badge key={index} variant="outline" className="text-xs print:border-gray-400 bg-white border-gray-300 text-gray-700">
                     {skill}
                   </Badge>
@@ -364,27 +363,27 @@ export function Resume() {
             </div>
             
             <div>
-              <h4 className="font-semibold mb-2 print:text-sm text-black">Development Tools</h4>
+              <h4 className="font-semibold mb-2 print:text-sm text-black">APIs & Integration</h4>
               <div className="flex flex-wrap gap-1 mb-4">
-                {skills.tools.map((skill, index) => (
+                {skills.integration.map((skill, index) => (
                   <Badge key={index} variant="outline" className="text-xs print:border-gray-400 bg-white border-gray-300 text-gray-700">
                     {skill}
                   </Badge>
                 ))}
               </div>
 
-              <h4 className="font-semibold mb-2 print:text-sm text-black">Specializations</h4>
+              <h4 className="font-semibold mb-2 print:text-sm text-black">Cloud & Data</h4>
               <div className="flex flex-wrap gap-1 mb-4">
-                {skills.specialties.map((skill, index) => (
+                {skills.cloud.map((skill, index) => (
                   <Badge key={index} variant="outline" className="text-xs print:border-gray-400 bg-white border-gray-300 text-gray-700">
                     {skill}
                   </Badge>
                 ))}
               </div>
               
-              <h4 className="font-semibold mb-2 print:text-sm text-black">Business Skills</h4>
+              <h4 className="font-semibold mb-2 print:text-sm text-black">AI-Assisted Development</h4>
               <div className="flex flex-wrap gap-1">
-                {skills.business.map((skill, index) => (
+                {skills.ai.map((skill, index) => (
                   <Badge key={index} variant="outline" className="text-xs print:border-gray-400 bg-white border-gray-300 text-gray-700">
                     {skill}
                   </Badge>

@@ -3,7 +3,9 @@
 import { z } from "zod";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = process.env.RESEND_API_KEY 
+  ? new Resend(process.env.RESEND_API_KEY)
+  : null;
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -25,6 +27,12 @@ export async function submitContactForm(formData: FormData) {
     };
 
     const validatedData = contactSchema.parse(data);
+
+    // Skip email sending if no API key (local dev)
+    if (!resend) {
+      console.log("📧 Email would be sent (no API key configured):", validatedData);
+      return { success: true, message: "Message sent successfully! I'll get back to you soon." };
+    }
 
     // Send email using Resend
     await resend.emails.send({

@@ -128,13 +128,13 @@ export function Contact() {
     {
       icon: MapPin,
       label: "Location",
-      value: "Connecticut, United States",
+      value: "New Haven, Connecticut (remote friendly)",
       link: null
     },
     {
       icon: Coffee,
       label: "Coffee Chat",
-      value: "Always down to chat about interesting projects",
+      value: "Always down to talk marketing systems and automation",
       link: null
     }
   ];
@@ -156,8 +156,8 @@ export function Contact() {
             Let&apos;s Build Something Great
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ready to discuss your next project? I&apos;m always interested in new opportunities 
-            and interesting challenges. Let&apos;s talk about how we can solve your problems together.
+            I&apos;m looking for lifecycle marketing, marketing operations, and GTM engineering roles. 
+            If you need someone to own the technical marketing stack and actually ship, let&apos;s talk.
           </p>
         </motion.div>
 

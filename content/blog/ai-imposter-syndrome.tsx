@@ -2,9 +2,9 @@ export default function AIImpostorSyndrome() {
   return (
     <div>
       <p>
-        So here&apos;s the thing: I use AI for coding. A lot. Cursor is basically my co-pilot, 
+        So here's the thing: I use AI for coding. A lot. Cursor is basically my co-pilot, 
         GitHub Copilot fills in my functions, and ChatGPT helps me debug weird edge cases. 
-        And you know what? I&apos;m faster and more productive than I&apos;ve ever been.
+        And you know what? I'm faster and more productive than I've ever been.
       </p>
 
       <p>
@@ -14,21 +14,21 @@ export default function AIImpostorSyndrome() {
       <h3>The New Flavor of Imposter Syndrome</h3>
       
       <p>
-        Classic imposter syndrome was about feeling like you didn&apos;t know enough, that you were 
+        Classic imposter syndrome was about feeling like you didn't know enough, that you were 
         fooling everyone into thinking you could code. The new version is different: &ldquo;Am I 
         actually coding if AI is writing half of it?&rdquo;
       </p>
 
       <p>
-        I&apos;ve seen developers genuinely stressed about this. They&apos;re worried that using AI 
-        makes them lazy, that they&apos;re not &ldquo;real&rdquo; developers anymore, that they&apos;re 
+        I've seen developers genuinely stressed about this. They're worried that using AI 
+        makes them lazy, that they're not &ldquo;real&rdquo; developers anymore, that they're 
         somehow cheating.
       </p>
 
-      <h3>Let&apos;s Be Real About What AI Actually Does</h3>
+      <h3>Let's Be Real About What AI Actually Does</h3>
       
       <p>
-        AI doesn&apos;t write your applications for you. It doesn&apos;t architect your systems, 
+        AI doesn't write your applications for you. It doesn't architect your systems, 
         make technical decisions, or understand your business requirements. What it does is:
       </p>
 
@@ -40,7 +40,7 @@ export default function AIImpostorSyndrome() {
       </ul>
 
       <p>
-        You know what AI doesn&apos;t do? Figure out that your healthcare compliance platform needs 
+        You know what AI doesn't do? Figure out that your healthcare compliance platform needs 
         to handle edge cases for Medicare Advantage plans, or that your API needs rate limiting 
         because users are hammering the search endpoint.
       </p>
@@ -48,7 +48,7 @@ export default function AIImpostorSyndrome() {
       <h3>Case Study: This Site</h3>
       
       <p>
-                Want a concrete example? The portfolio site you&apos;re reading this on (including this
+                Want a concrete example? The portfolio site you're reading this on (including this
         entire blog system) was built in about 2 hours using Cursor.
       </p>
 
@@ -69,18 +69,18 @@ export default function AIImpostorSyndrome() {
         <li>SEO optimization with metadata and JSON-LD</li>
         <li>Responsive design that works on everything</li>
         <li>Dark/light theme switching</li>
-        <li>This blog post you&apos;re reading right now</li>
+        <li>This blog post you're reading right now</li>
       </ul>
 
       <p>
-        Now, before you think &ldquo;See? AI did all the work!&rdquo; hold on. Cursor didn&apos;t 
-        make any of the important decisions. It didn&apos;t decide on the architecture, choose the 
+        Now, before you think &ldquo;See? AI did all the work!&rdquo; hold on. Cursor didn't 
+        make any of the important decisions. It didn't decide on the architecture, choose the 
         tech stack, design the user experience, or figure out how to separate server and client 
         components for optimal performance.
       </p>
 
       <p>
-        What Cursor did was eliminate the friction. When I decided I wanted a blog system, I didn&apos;t 
+        What Cursor did was eliminate the friction. When I decided I wanted a blog system, I didn't 
         have to spend 30 minutes looking up Next.js routing patterns or remembering Framer Motion 
         syntax. I just described what I wanted and Cursor helped implement it.
       </p>
@@ -91,10 +91,10 @@ export default function AIImpostorSyndrome() {
         I stayed focused on the actual problem-solving.
       </p>
 
-      <h3>Results Don&apos;t Lie</h3>
+      <h3>Results Don't Lie</h3>
       
       <p>
-        Here&apos;s my honest experience: Since I started using AI tools heavily, I&apos;ve:
+        Here's my honest experience: Since I started using AI tools heavily, I've:
       </p>
 
       <ul>
@@ -113,13 +113,13 @@ export default function AIImpostorSyndrome() {
       <h3>The Carpenter Analogy</h3>
       
       <p>
-        Nobody expects a carpenter to cut wood with a hand saw when power tools exist. They don&apos;t 
+        Nobody expects a carpenter to cut wood with a hand saw when power tools exist. They don't 
         question whether someone is a &ldquo;real carpenter&rdquo; because they use a nail gun instead 
         of a hammer.
       </p>
 
       <p>
-        The value isn&apos;t in the tool, it&apos;s in knowing how to use it, when to use it, and 
+        The value isn't in the tool, it's in knowing how to use it, when to use it, and 
         what to build. A carpenter with power tools can build better houses faster. A developer 
         with AI can build better software faster.
       </p>
@@ -127,7 +127,7 @@ export default function AIImpostorSyndrome() {
       <h3>What Actually Makes You a Good Developer</h3>
       
       <p>
-        After using AI extensively, I&apos;m convinced that what makes someone a good developer has 
+        After using AI extensively, I'm convinced that what makes someone a good developer has 
         nothing to do with memorizing syntax or writing boilerplate from scratch:
       </p>
 
@@ -141,7 +141,7 @@ export default function AIImpostorSyndrome() {
 
       <p>
         None of these skills are diminished by using AI. If anything, they become more important 
-        because you&apos;re operating at a higher level.
+        because you're operating at a higher level.
       </p>
 
       <h3>The Real Question</h3>
@@ -158,21 +158,21 @@ export default function AIImpostorSyndrome() {
       </ul>
 
       <p>
-        If you can answer yes to those questions, then congratulations, you&apos;re a developer. 
+        If you can answer yes to those questions, then congratulations, you're a developer. 
         The tools you use are just implementation details.
       </p>
 
       <h3>Embrace the Future</h3>
       
       <p>
-        AI isn&apos;t going away. It&apos;s going to get better, faster, and more integrated into 
+        AI isn't going away. It's going to get better, faster, and more integrated into 
         our workflows. You can either feel guilty about using it or you can get really good at 
         leveraging it to build amazing things.
       </p>
 
       <p>
-        I choose option two. My imposter syndrome these days isn&apos;t about whether I&apos;m using 
-        AI, it&apos;s about whether I&apos;m using it well enough.
+        I choose option two. My imposter syndrome these days isn't about whether I'm using 
+        AI, it's about whether I'm using it well enough.
       </p>
 
       <p>

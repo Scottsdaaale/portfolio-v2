@@ -106,7 +106,7 @@ When eliminating em dashes, use these approaches:
 - First-person perspective for personal experiences
 - Include 3-5 external authoritative links per post
 - Support all major claims with linked sources
-- Use `&apos;` for apostrophes in JSX
+- Use regular apostrophes (') in JSX text content (ESLint rule disabled)
 - Use `&ldquo;` and `&rdquo;` for quotes
 
 ### Technical References

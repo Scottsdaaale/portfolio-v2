@@ -6,103 +6,101 @@ import { Badge } from "@/components/ui/badge";
 import { 
   Code, 
   Database, 
-  Palette, 
   Zap, 
   Globe,
-  Cog
+  Cog,
+  Sparkles
 } from "lucide-react";
 
 export function Skills() {
   const skillCategories = [
     {
-      title: "Frontend Development",
-      icon: Palette,
-      description: "Building modern, responsive user interfaces",
-      skills: [
-        { name: "Next.js", level: 95, featured: true },
-        { name: "React", level: 90, featured: true },
-        { name: "TypeScript", level: 85 },
-        { name: "JavaScript", level: 90 },
-        { name: "Tailwind CSS", level: 90, featured: true },
-        { name: "HTML5", level: 95 },
-        { name: "CSS3", level: 90 },
-        { name: "Framer Motion", level: 80 }
-      ]
-    },
-    {
-      title: "Backend Development",
-      icon: Code,
-      description: "Scalable server-side solutions and APIs",
-      skills: [
-        { name: "Django", level: 90, featured: true },
-        { name: "Python", level: 85 },
-        { name: "Ruby on Rails", level: 80 },
-        { name: "Node.js", level: 75 },
-        { name: "REST APIs", level: 90, featured: true },
-        { name: "API Integration", level: 95 },
-        { name: "Ruby", level: 80 },
-        { name: "Flask", level: 70 }
-      ]
-    },
-    {
-      title: "Database & Cloud",
-      icon: Database,
-      description: "Data management and cloud infrastructure",
-      skills: [
-        { name: "PostgreSQL", level: 85, featured: true },
-        { name: "AWS", level: 80, featured: true },
-        { name: "SQL", level: 90 },
-        { name: "Database Design", level: 85 },
-        { name: "Cloud Architecture", level: 75 },
-        { name: "Docker", level: 70 }
-      ]
-    },
-    {
-      title: "Integrations & Tools",
-      icon: Cog,
-      description: "Third-party services and development tools",
-      skills: [
-        { name: "Stripe API", level: 90, featured: true },
-        { name: "Freshdesk API", level: 85 },
-        { name: "Git", level: 95 },
-        { name: "GitHub", level: 90 },
-        { name: "SCORM", level: 80 },
-        { name: "WordPress", level: 85 },
-        { name: "Postman", level: 85 }
-      ]
-    },
-    {
-      title: "Business & Analytics",
+      title: "Lifecycle & Marketing Automation",
       icon: Zap,
-      description: "Business intelligence and automation",
+      description: "The programs and strategy behind automated customer journeys",
       skills: [
-        { name: "AI Integration", level: 85, featured: true },
-        { name: "Financial Analytics", level: 80 },
-        { name: "SEO Optimization", level: 85 },
-        { name: "Lead Generation", level: 90 },
-        { name: "Process Automation", level: 85 },
-        { name: "CRM Integration", level: 80 }
+        "Lifecycle Marketing",
+        "Marketing Automation",
+        "Marketing Operations",
+        "Email Marketing",
+        "Customer Segmentation",
+        "Behavioral Triggers",
+        "Attribution Tracking"
       ]
     },
     {
-      title: "Specialized",
-      icon: Globe,
-      description: "Domain-specific expertise",
+      title: "Martech Platforms",
+      icon: Cog,
+      description: "The tools I connect into automated systems",
       skills: [
-        { name: "LMS Development", level: 90, featured: true },
-        { name: "Healthcare Compliance", level: 85 },
-        { name: "Multi-tenant SaaS", level: 80 },
-        { name: "E-Learning", level: 85 },
-        { name: "Content Management", level: 85 },
-        { name: "Audio Engineering", level: 75 }
+        "Brevo",
+        "Pipeline CRM",
+        "Stripe",
+        "Calendly",
+        "Freshdesk",
+        "Mercury",
+        "MJML"
+      ]
+    },
+    {
+      title: "APIs & Integration",
+      icon: Globe,
+      description: "Connecting platforms so data flows without manual work",
+      skills: [
+        "REST APIs",
+        "Webhooks",
+        "Webhook Orchestration",
+        "API Integration",
+        "Cross-System Attribution",
+        "Data Sync"
+      ]
+    },
+    {
+      title: "Languages & Frameworks",
+      icon: Code,
+      description: "What I build with",
+      skills: [
+        "Python",
+        "JavaScript",
+        "TypeScript",
+        "Next.js",
+        "React",
+        "Flask",
+        "Tailwind CSS"
+      ]
+    },
+    {
+      title: "Cloud & Data",
+      icon: Database,
+      description: "Infrastructure for automation and email delivery",
+      skills: [
+        "AWS Lambda",
+        "AWS S3",
+        "AWS SES",
+        "AWS Amplify",
+        "PostgreSQL",
+        "SQL"
+      ]
+    },
+    {
+      title: "AI-Assisted Development",
+      icon: Sparkles,
+      description: "How I ship at the pace of a small engineering team",
+      skills: [
+        "Claude",
+        "Cursor",
+        "Prompt Engineering",
+        "Context Documents",
+        "Integration Templates",
+        "Rapid Prototyping"
       ]
     }
   ];
 
   const topSkills = [
-    "Next.js", "React", "Django", "PostgreSQL", "AWS", 
-    "Tailwind CSS", "API Integration", "Stripe API", 
-    "AI Integration", "LMS Development"
+    "Marketing Automation", "API & Webhook Orchestration", "Lifecycle Engineering",
+    "Internal Tooling", "Python", "JavaScript", "Next.js", "AWS",
+    "AI-Assisted Development"
   ];
 
   return (
@@ -116,13 +114,13 @@ export function Skills() {
           className="text-center mb-16"
         >
           <Badge variant="secondary" className="mb-4">
-            Technical Skills
+            Skills
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Full-Stack Expertise
+            Marketing Systems Expertise
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            The technical foundation behind those high-impact business solutions.
+            The stack behind the automation programs, integrations, and internal tools.
           </p>
           
           {/* Top Skills */}
@@ -162,29 +160,11 @@ export function Skills() {
                   <p className="text-sm text-muted-foreground">{category.description}</p>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-3">
-                    {category.skills.map((skill, skillIndex) => (
-                      <div key={skill.name} className="space-y-2">
-                        <div className="flex items-center justify-between">
-                          <span className={`text-sm ${skill.featured ? 'font-semibold text-foreground' : 'text-muted-foreground'}`}>
-                            {skill.name}
-                          </span>
-                          {skill.featured && (
-                            <Badge variant="secondary" className="text-xs">
-                              Featured
-                            </Badge>
-                          )}
-                        </div>
-                        <div className="w-full bg-muted rounded-full h-2">
-                          <motion.div
-                            className="bg-primary h-2 rounded-full"
-                            initial={{ width: 0 }}
-                            whileInView={{ width: `${skill.level}%` }}
-                            transition={{ duration: 1, delay: skillIndex * 0.1 }}
-                            viewport={{ once: true }}
-                          />
-                        </div>
-                      </div>
+                  <div className="flex flex-wrap gap-2">
+                    {category.skills.map((skill) => (
+                      <Badge key={skill} variant="secondary" className="text-xs">
+                        {skill}
+                      </Badge>
                     ))}
                   </div>
                 </CardContent>
@@ -203,14 +183,14 @@ export function Skills() {
         >
           <Card className="max-w-4xl mx-auto">
             <CardContent className="p-8">
-              <h3 className="text-2xl font-bold mb-4">Always Learning</h3>
+              <h3 className="text-2xl font-bold mb-4">How I Build</h3>
               <p className="text-lg text-muted-foreground mb-4">
-                Technology evolves fast, and so do I. From diving deep into new frameworks to 
-                exploring emerging AI tools, I stay current with what matters for building better solutions.
+                Claude and Cursor are my development environment. I keep context documents for every system I build, 
+                reusable prompt patterns, and integration templates. Most things go from idea to production in under two weeks.
               </p>
               <p className="text-muted-foreground">
-                <span className="font-semibold">Currently exploring:</span> AI/ML integration, 
-                advanced Next.js patterns, and serverless architectures.
+                <span className="font-semibold">The platforms translate:</span> the architecture behind my work in 
+                Brevo and Pipeline CRM maps directly to HubSpot, Iterable, Customer.io, and Braze.
               </p>
             </CardContent>
           </Card>
@@ -218,4 +198,4 @@ export function Skills() {
       </div>
     </section>
   );
-} 
+}

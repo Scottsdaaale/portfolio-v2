@@ -2,16 +2,16 @@ export default function EmailCodingBestPractices() {
   return (
     <div>
       <p>
-        Email coding is like web development&apos;s evil twin: what works perfectly in your browser 
+        Email coding is like web development's evil twin: what works perfectly in your browser 
         might completely break in Outlook 2016. After building countless email templates and 
-        debugging rendering issues across dozens of clients, here&apos;s what actually works.
+        debugging rendering issues across dozens of clients, here's what actually works.
       </p>
 
       <h3>The Foundation: Tables Are Your Friend</h3>
       
       <p>
-        I know, I know. It&apos;s 2024 and we&apos;re still using tables. But email clients are 
-        stuck in the early 2000s, especially Outlook (which uses Word&apos;s rendering engine, yes really).
+        I know, I know. It's 2024 and we're still using tables. But email clients are 
+        stuck in the early 2000s, especially Outlook (which uses Word's rendering engine, yes really).
       </p>
 
       <ul>
@@ -24,7 +24,7 @@ export default function EmailCodingBestPractices() {
       <h3>CSS That Actually Works</h3>
       
       <p>
-        Not all CSS properties work across email clients. Here&apos;s what you can rely on:
+        Not all CSS properties work across email clients. Here's what you can rely on:
       </p>
 
       <h4>Safe CSS Properties:</h4>
@@ -49,7 +49,7 @@ export default function EmailCodingBestPractices() {
       <h3>The Outlook Problem</h3>
       
       <p>
-        Outlook deserves its own section because it&apos;s the bane of every email developer&apos;s existence:
+        Outlook deserves its own section because it's the bane of every email developer's existence:
       </p>
 
       <ul>
@@ -62,7 +62,7 @@ export default function EmailCodingBestPractices() {
       <h3>Mobile Responsiveness</h3>
       
       <p>
-        Mobile-first isn&apos;t just a web dev concept, it&apos;s crucial for email:
+        Mobile-first isn't just a web dev concept, it's crucial for email:
       </p>
 
       <ul>
@@ -82,7 +82,7 @@ export default function EmailCodingBestPractices() {
       <ul>
         <li><strong>Always include alt text</strong> that makes sense without the image</li>
         <li><strong>Use background colors</strong> behind images as fallbacks</li>
-        <li><strong>Don&apos;t rely solely on images</strong> for important information</li>
+        <li><strong>Don't rely solely on images</strong> for important information</li>
         <li><strong>Optimize image sizes</strong> for faster loading</li>
         <li><strong>Host images externally</strong> and use absolute URLs</li>
       </ul>
@@ -90,7 +90,7 @@ export default function EmailCodingBestPractices() {
       <h3>Testing Strategy</h3>
       
       <p>
-        Testing is where most email campaigns fall apart. Here&apos;s my approach:
+        Testing is where most email campaigns fall apart. Here's my approach:
       </p>
 
       <ul>
@@ -104,7 +104,7 @@ export default function EmailCodingBestPractices() {
       <h3>Code Structure Template</h3>
       
       <p>
-        Here&apos;s a basic structure that works across most clients:
+        Here's a basic structure that works across most clients:
       </p>
 
       <pre><code>{`<!DOCTYPE html>
@@ -136,15 +136,15 @@ export default function EmailCodingBestPractices() {
         <li><strong>Use inline CSS</strong> for critical styles (some clients strip head CSS)</li>
         <li><strong>Include a web version link</strong> for fallback</li>
         <li><strong>Consider accessibility</strong>: screen readers are used for email too</li>
-        <li><strong>Document your workarounds</strong>: you&apos;ll forget why you did something</li>
+        <li><strong>Document your workarounds</strong>: you'll forget why you did something</li>
       </ul>
 
       <h3>The Reality Check</h3>
       
       <p>
-        Email coding isn&apos;t glamorous, and it&apos;s definitely not cutting-edge. But when your 
-        email renders perfectly across 40+ email clients while your competitor&apos;s looks broken 
-        in half of them, you&apos;ll appreciate the extra effort.
+        Email coding isn't glamorous, and it's definitely not cutting-edge. But when your 
+        email renders perfectly across 40+ email clients while your competitor's looks broken 
+        in half of them, you'll appreciate the extra effort.
       </p>
 
       <p>
