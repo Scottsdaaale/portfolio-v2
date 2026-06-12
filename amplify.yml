@@ -6,11 +6,11 @@ frontend:
         - npm ci --cache .npm --prefer-offline
     build:
       commands:
-        # Set up environment variables for the application
-        - env | grep -e NEXT_PUBLIC_GA_MEASUREMENT_ID >> .env.production
-        - env | grep -e RESEND_API_KEY >> .env.production
-        - env | grep -e CONTACT_FORM_TO_EMAIL >> .env.production
-        - env | grep -e CONTACT_FORM_FROM_EMAIL >> .env.production
+        # grep exits 1 when a var is unset; || true keeps the build from failing
+        - env | grep -e NEXT_PUBLIC_GA_MEASUREMENT_ID >> .env.production || true
+        - env | grep -e RESEND_API_KEY >> .env.production || true
+        - env | grep -e CONTACT_FORM_TO_EMAIL >> .env.production || true
+        - env | grep -e CONTACT_FORM_FROM_EMAIL >> .env.production || true
         - npm run build
   artifacts:
     baseDirectory: .next
