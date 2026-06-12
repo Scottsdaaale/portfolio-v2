@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { 
   Code, 
@@ -37,6 +37,7 @@ export function Skills() {
         "Pipeline CRM",
         "Stripe",
         "Calendly",
+        "Zapier",
         "Freshdesk",
         "Mercury",
         "MJML"
@@ -142,36 +143,39 @@ export function Skills() {
         </motion.div>
 
         {/* Skills Categories */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="max-w-5xl mx-auto rounded-xl border bg-card text-card-foreground shadow-sm divide-y divide-border"
+        >
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
+              transition={{ duration: 0.5, delay: categoryIndex * 0.05 }}
               viewport={{ once: true }}
+              className="grid md:grid-cols-[280px_1fr] gap-4 md:gap-8 p-6 md:p-8 md:items-center"
             >
-              <Card className="h-full hover:shadow-lg transition-shadow">
-                <CardHeader className="pb-4">
-                  <div className="flex items-center gap-3 mb-2">
-                    <category.icon className="h-6 w-6 text-primary" />
-                    <CardTitle className="text-lg">{category.title}</CardTitle>
-                  </div>
-                  <p className="text-sm text-muted-foreground">{category.description}</p>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    {category.skills.map((skill) => (
-                      <Badge key={skill} variant="secondary" className="text-xs">
-                        {skill}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+              <div>
+                <div className="flex items-center gap-3 mb-1">
+                  <category.icon className="h-5 w-5 text-primary flex-shrink-0" />
+                  <h3 className="font-semibold">{category.title}</h3>
+                </div>
+                <p className="text-sm text-muted-foreground md:pl-8">{category.description}</p>
+              </div>
+              <div className="flex flex-wrap items-center justify-center gap-2">
+                {category.skills.map((skill) => (
+                  <Badge key={skill} variant="secondary" className="text-sm py-1 px-3">
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Bottom CTA */}
         <motion.div

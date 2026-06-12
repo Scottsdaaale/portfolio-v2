@@ -90,7 +90,7 @@ export function Resume() {
 
   const skills = {
     marketing: ["Lifecycle Marketing", "Marketing Automation", "Marketing Operations", "Email Marketing", "Customer Segmentation", "Attribution Tracking", "Behavioral Triggers", "Marketing Technology (MarTech)"],
-    platforms: ["Brevo", "Pipeline CRM", "Stripe", "Calendly", "Freshdesk", "Mercury", "MJML"],
+    platforms: ["Brevo", "Pipeline CRM", "Stripe", "Calendly", "Zapier", "Freshdesk", "Mercury", "MJML"],
     languages: ["Python", "JavaScript", "TypeScript", "Next.js", "React", "Flask", "HTML", "CSS", "Tailwind CSS"], 
     integration: ["REST APIs", "Webhooks", "Webhook Orchestration", "API Integration", "Cross-System Attribution", "Data Sync"],
     cloud: ["AWS Lambda", "AWS S3", "AWS SES", "AWS SQS", "AWS Amplify", "PostgreSQL", "SQL"],

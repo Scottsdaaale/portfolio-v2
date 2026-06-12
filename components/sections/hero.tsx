@@ -57,9 +57,9 @@ export function Hero() {
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-normal">
-            Marketing technologist and GTM engineer. Last year my lifecycle program delivered{" "}
-            <span className="text-foreground font-semibold">187 campaigns to 2M+ recipients</span>, designed,
-            built, and run by <span className="text-foreground font-semibold">one person</span>.
+            Marketing technologist and GTM engineer. As a <span className="text-foreground font-semibold">team of one</span>, I built
+            and ran a lifecycle program that delivered{" "}
+            <span className="text-foreground font-semibold">187 campaigns to 2M+ recipients</span> in a single year.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">

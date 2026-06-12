@@ -9,6 +9,8 @@ frontend:
         # Set up environment variables for the application
         - env | grep -e NEXT_PUBLIC_GA_MEASUREMENT_ID >> .env.production
         - env | grep -e RESEND_API_KEY >> .env.production
+        - env | grep -e CONTACT_FORM_TO_EMAIL >> .env.production
+        - env | grep -e CONTACT_FORM_FROM_EMAIL >> .env.production
         - npm run build
   artifacts:
     baseDirectory: .next
