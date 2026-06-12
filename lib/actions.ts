@@ -7,8 +7,9 @@ const resend = process.env.RESEND_API_KEY
   ? new Resend(process.env.RESEND_API_KEY)
   : null;
 
-const contactFormToEmail =
-  process.env.CONTACT_FORM_TO_EMAIL ?? "scottpetersonSE@gmail.com";
+const contactFormToEmail = (
+  process.env.CONTACT_FORM_TO_EMAIL ?? "scottpetersonse@gmail.com"
+).toLowerCase();
 
 const contactFormFromEmail =
   process.env.CONTACT_FORM_FROM_EMAIL ?? "portfolio-inquiry@resend.dev";
@@ -24,7 +25,7 @@ const contactSchema = z.object({
 export async function submitContactForm(formData: FormData) {
   try {
     // Parse and validate form data
-    const data = {
+    const formValues = {
       name: formData.get("name") as string,
       email: formData.get("email") as string,
       company: formData.get("company") as string,
@@ -32,7 +33,7 @@ export async function submitContactForm(formData: FormData) {
       message: formData.get("message") as string,
     };
 
-    const validatedData = contactSchema.parse(data);
+    const validatedData = contactSchema.parse(formValues);
 
     // Skip email sending if no API key (local dev)
     if (!resend) {
@@ -40,8 +41,8 @@ export async function submitContactForm(formData: FormData) {
       return { success: true, message: "Message sent successfully! I'll get back to you soon." };
     }
 
-    // Send email using Resend
-    await resend.emails.send({
+    // Send email using Resend (returns { data, error } and does not throw on API errors)
+    const { data: emailData, error: sendError } = await resend.emails.send({
       from: contactFormFromEmail,
       to: contactFormToEmail,
       replyTo: validatedData.email,
@@ -74,6 +75,15 @@ export async function submitContactForm(formData: FormData) {
       `,
     });
 
+    if (sendError) {
+      console.error("Resend API error:", sendError);
+      return {
+        success: false,
+        message: "Failed to send message. Please try again or email me directly.",
+      };
+    }
+
+    console.log("Contact form email sent:", emailData?.id);
     return { success: true, message: "Message sent successfully! I'll get back to you soon." };
   } catch (error) {
     console.error("Contact form error:", error);
