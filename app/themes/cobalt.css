@@ -1,0 +1,12 @@
+/* Cool gray paper, electric cobalt accent. Tech-forward but not neon. */
+:root {
+  --brand-paper: oklch(0.97 0.006 250);
+  --brand-ink: oklch(0.22 0.02 250);
+  --brand-accent: oklch(0.5 0.2 265);
+}
+
+.dark {
+  --brand-paper: oklch(0.19 0.02 250);
+  --brand-ink: oklch(0.94 0.01 250);
+  --brand-accent: oklch(0.7 0.18 265);
+}

@@ -1,203 +1,231 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { CalendarDays, TrendingUp, Users, Code2, Zap, Video, Workflow } from "lucide-react";
+
+const fadeUp = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+};
+
+const programMetrics = [
+  { metric: "187", label: "Campaigns I shipped in one year" },
+  { metric: "2M+", label: "Recipients reached by my program" },
+  { metric: "01", label: "Person designing and running it" },
+];
+
+const projects = [
+  {
+    num: "01",
+    title: "Lifecycle Marketing Automation Program",
+    description:
+      "The full lifecycle program connecting Brevo, Pipeline CRM, Stripe, and Calendly via API integration and webhook orchestration. B2B lead flows: demo nurture, cross-system attribution, and automated follow-up when someone clicks a booking link without finishing. B2B customer flows: retention sequences with upsell campaigns, renewal reminders, billing touchpoints, and educational content through the contract year. B2C: post-purchase sequences with product recommendations and merge-not-retrigger logic so repeat buyers stay in one conversation instead of getting retriggered.",
+    impact:
+      "Thousands of users through lead nurture, customer retention, and post-purchase flows",
+    tech: "Brevo · Pipeline CRM · Stripe · Calendly · Webhooks · REST APIs",
+  },
+  {
+    num: "02",
+    title: "Webinar Registration System",
+    description:
+      "Registration infrastructure behind the company's webinar program: audience segmentation, multi-webinar deduplication, and confirmation automation including calendar adds and progressive profiling surveys.",
+    impact: "7 webinars, 1,900+ registrations, zero manual processing",
+    tech: "Brevo · Next.js · Python · REST APIs",
+  },
+  {
+    num: "03",
+    title: "Internal Tools Suite",
+    description:
+      "The internal tooling the company runs on: finance dashboards pulling live data from Mercury, Stripe, and Pipeline CRM, Freshdesk analytics, email automation monitoring, invoice generation, and weekly business review reporting that auto-generates key metrics.",
+    impact: "Real-time pipeline and financial visibility, no ticket queue",
+    tech: "Next.js · Flask · Mercury API · Stripe API · Freshdesk API",
+  },
+  {
+    num: "04",
+    title: "MyMedPath",
+    href: "https://mymedpath.com",
+    description:
+      "Production SaaS for dental practice licensure and compliance management, shipped completely solo. Multi-tenant org management with role-based access, AI-powered document analysis, automated licensure tracking with real-time dashboards, and a state compliance database.",
+    impact: "Live production SaaS, built end to end by one person",
+    tech: "Next.js · PostgreSQL · AWS Amplify · AI Document Analysis",
+  },
+];
+
+const earlier = [
+  {
+    org: "Liquid XYZ",
+    role: "Contract Web Developer",
+    period: "Apr 2023 – Jul 2024",
+    note: "Built and maintained yourtrainingprovider.com full stack (React + Flask), including a custom CMS for blog, ads, and expert profiles so content ops never needed an engineer.",
+  },
+  {
+    org: "Flatiron School",
+    role: "Software Engineering Certification",
+    period: "2022",
+    note: "Full-stack web development intensive. JavaScript, React, Ruby on Rails, SQL.",
+  },
+];
 
 export function Experience() {
-  const currentRole = {
-    company: "Training & eTracking Solutions",
-    position: "Marketing Engineer",
-    duration: "Jul 2024 - Jun 2026",
-    location: "Remote",
-    description: "Sole owner of marketing technology at a B2B SaaS company. Built the entire lifecycle automation program from nothing: no prior automation, no engineering team, no existing infrastructure. Scoped directly with business stakeholders, shipped fast, owned it end to end."
-  };
-
-  const projects = [
-    {
-      title: "Lifecycle Marketing Automation Program",
-      description: "Designed and built the full lifecycle program connecting Brevo, Pipeline CRM, Stripe, and Calendly via API integration and webhook orchestration. B2B demo nurture with cross-system attribution, behavioral recovery sequences for leads who click a booking link without completing it, and B2C post-purchase flows with merge-not-retrigger logic for repeat buyers.",
-      tech: ["Brevo", "Pipeline CRM", "Stripe", "Calendly", "Webhooks", "REST APIs"],
-      impact: "187 campaigns delivered to 2M+ recipients last year. Demo booking recovery sequence processed 1,200+ contacts.",
-      icon: Workflow
-    },
-    {
-      title: "Webinar Registration System",
-      description: "Built the registration infrastructure behind the company's webinar program: audience segmentation, multi-webinar deduplication, and confirmation automation including calendar adds and progressive profiling surveys.",
-      tech: ["Brevo", "AWS Lambda", "Webhooks", "MJML", "Segmentation"],
-      impact: "Handled 7 webinars and 1,900+ registrations with zero manual processing.",
-      icon: Video
-    },
-    {
-      title: "Internal Tools Suite",
-      description: "Built the internal tooling the company runs on: finance dashboards pulling live data from Mercury, Stripe, and Pipeline CRM, Freshdesk analytics, email automation monitoring, invoice generation, and weekly business review reporting that auto-generates key metrics.",
-      tech: ["Next.js", "Flask", "Mercury API", "Stripe API", "Pipeline CRM", "Freshdesk API"],
-      impact: "Gave leadership real-time pipeline and financial visibility without a ticket queue. Solo build.",
-      icon: Code2
-    },
-    {
-      title: "MyMedPath",
-      description: (
-        <>
-          Shipped{" "}
-          <a 
-            href="https://mymedpath.com" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-primary hover:underline font-medium"
-          >
-            mymedpath.com
-          </a>{" "}
-          completely solo: a production SaaS for dental practice licensure and compliance management. Multi-tenant org management with role-based access, AI-powered document analysis, automated licensure tracking with real-time dashboards, and a state compliance database.
-        </>
-      ),
-      tech: ["Next.js", "PostgreSQL", "AWS Amplify", "AI Document Analysis", "Multi-tenant Architecture"],
-      impact: "Live, fully functional production SaaS built end to end by one person using AI-assisted development.",
-      icon: TrendingUp
-    }
-  ];
-
-  const achievements = [
-    {
-      metric: "187",
-      label: "Campaigns Delivered Last Year",
-      icon: Zap
-    },
-    {
-      metric: "2M+",
-      label: "Email Recipients",
-      icon: Users
-    },
-    {
-      metric: "1,900+",
-      label: "Webinar Registrations",
-      icon: Video
-    },
-    {
-      metric: "1,200+",
-      label: "Leads Through Recovery Flows",
-      icon: TrendingUp
-    }
-  ];
-
   return (
-    <section id="experience" className="py-20 px-4 bg-muted/30">
+    <section id="experience" className="px-6 md:px-12 py-24">
       <div className="max-w-6xl mx-auto">
+        {/* Section folio */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
+          {...fadeUp}
+          transition={{ duration: 0.5 }}
+          className="flex items-center justify-between py-4 border-t border-border font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-12"
         >
-          <Badge variant="secondary" className="mb-4">
-            Experience
-          </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Systems That Ship and Run Themselves
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Two years as the sole engineer building the marketing and operations infrastructure at a B2B SaaS company.
-          </p>
+          <span>
+            <span className="text-brand mr-2">02</span>Experience
+          </span>
+          <span className="hidden sm:block">Selected work, 2023–2026</span>
         </motion.div>
 
-        {/* Current Role */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <Card className="max-w-4xl mx-auto">
-            <CardHeader>
-              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-                <div className="flex-1">
-                  <CardTitle className="text-xl sm:text-2xl mb-2">{currentRole.position}</CardTitle>
-                  <p className="text-base sm:text-lg font-semibold text-primary mb-3">{currentRole.company}</p>
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-sm sm:text-base text-muted-foreground">
-                    <div className="flex items-center gap-1">
-                      <CalendarDays className="h-4 w-4" />
-                      <span>{currentRole.duration}</span>
-                    </div>
-                    <span className="hidden sm:inline">•</span>
-                    <span>{currentRole.location}</span>
+        {/* Role header */}
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-0 mb-16">
+          <motion.div
+            {...fadeUp}
+            transition={{ duration: 0.7 }}
+            className="lg:col-span-7 lg:pr-12"
+          >
+            <h2 className="font-display text-[clamp(2.25rem,5vw,4.5rem)] leading-[1.02] tracking-tight mb-6">
+              Two years building the machine,{" "}
+              <em className="text-brand">end to end.</em>
+            </h2>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-lg">
+              Sole owner of marketing technology at a B2B SaaS company. No
+              prior automation, no engineering team, no existing
+              infrastructure. Scoped directly with business stakeholders,
+              shipped fast, owned it end to end.
+            </p>
+          </motion.div>
+
+          <motion.div
+            {...fadeUp}
+            transition={{ duration: 0.7, delay: 0.15 }}
+            className="lg:col-span-5 lg:border-l border-border lg:pl-8"
+          >
+            <div className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-4">
+              <span className="text-brand mr-2">Role</span>
+            </div>
+            <div className="font-display text-2xl tracking-tight mb-1">
+              Marketing Engineer
+            </div>
+            <div className="text-sm text-muted-foreground mb-6">
+              Training &amp; eTracking Solutions · Remote
+              <br />
+              Jul 2024 – Jun 2026
+            </div>
+
+            <div className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-3">
+              <span className="text-brand">Metrics</span> from the program I
+              built and operated
+            </div>
+            <div className="border border-border">
+              {programMetrics.map((item, i) => (
+                <div
+                  key={item.label}
+                  className={`flex items-center gap-4 px-5 py-3.5 ${
+                    i > 0 ? "border-t border-border" : ""
+                  }`}
+                >
+                  <span className="font-display text-3xl w-20 shrink-0">
+                    {item.metric}
+                  </span>
+                  <span className="font-mono text-[0.65rem] uppercase tracking-[0.12em] text-muted-foreground leading-snug text-balance">
+                    {item.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Project ledger */}
+        <motion.div {...fadeUp} transition={{ duration: 0.6 }}>
+          <div className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-2">
+            <span className="text-brand mr-2">Index</span>Selected builds
+          </div>
+        </motion.div>
+
+        <div className="border-t border-border mb-20">
+          {projects.map((project, i) => (
+            <motion.article
+              key={project.num}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: i * 0.05 }}
+              viewport={{ once: true }}
+              className="grid lg:grid-cols-12 gap-4 lg:gap-0 py-10 border-b border-border"
+            >
+              <div className="lg:col-span-4 lg:pr-8 flex items-start gap-4">
+                <span className="font-mono text-xs text-brand pt-1.5">
+                  {project.num}
+                </span>
+                <h3 className="font-display text-2xl md:text-[1.7rem] leading-tight tracking-tight">
+                  {project.href ? (
+                    <a
+                      href={project.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-brand transition-colors underline decoration-border underline-offset-4 hover:decoration-brand"
+                    >
+                      {project.title}
+                    </a>
+                  ) : (
+                    project.title
+                  )}
+                </h3>
+              </div>
+
+              <div className="lg:col-span-8 lg:border-l border-border lg:pl-8">
+                <p className="text-muted-foreground leading-relaxed mb-4 max-w-2xl">
+                  {project.description}
+                </p>
+                <p className="text-sm mb-3">
+                  <span className="font-mono text-[0.65rem] uppercase tracking-[0.15em] text-brand mr-3">
+                    Impact
+                  </span>
+                  {project.impact}
+                </p>
+                <p className="font-mono text-xs text-muted-foreground tracking-wide">
+                  {project.tech}
+                </p>
+              </div>
+            </motion.article>
+          ))}
+        </div>
+
+        {/* Earlier */}
+        <motion.div {...fadeUp} transition={{ duration: 0.6 }}>
+          <div className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-2">
+            <span className="text-brand mr-2">Prior</span>Earlier work
+          </div>
+          <div className="border-t border-border">
+            {earlier.map((item) => (
+              <div
+                key={item.org}
+                className="grid md:grid-cols-12 gap-2 md:gap-0 py-6 border-b border-border"
+              >
+                <div className="md:col-span-4 md:pr-8 flex flex-col justify-center">
+                  <div className="font-display text-xl tracking-tight">
+                    {item.org}
+                  </div>
+                  <div className="font-mono text-[0.65rem] uppercase tracking-[0.15em] text-muted-foreground mt-1">
+                    {item.role} · {item.period}
                   </div>
                 </div>
-                <Badge variant="outline" className="self-start">Most Recent Role</Badge>
+                <div className="md:col-span-8 md:border-l border-border md:pl-8 flex items-center">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {item.note}
+                  </p>
+                </div>
               </div>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground mb-6">{currentRole.description}</p>
-              
-              {/* Achievement Metrics */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-                {achievements.map((achievement, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="text-center p-4 md:p-5 rounded-lg bg-background border border-border/50 hover:border-primary/20 transition-colors"
-                  >
-                    <achievement.icon className="h-6 w-6 mx-auto mb-2 text-primary" />
-                    <div className="text-xl sm:text-2xl font-bold text-foreground mb-1">{achievement.metric}</div>
-                    <div className="text-xs sm:text-sm text-muted-foreground leading-tight">{achievement.label}</div>
-                  </motion.div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </motion.div>
-
-        {/* Major Projects */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-3xl font-bold text-center mb-12">Major Projects</h3>
-          <div className="grid md:grid-cols-2 gap-6">
-            {projects.map((project, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="h-full hover:shadow-lg transition-shadow">
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4 mb-4">
-                      <project.icon className="h-8 w-8 text-primary flex-shrink-0 mt-1" />
-                      <div>
-                        <h4 className="text-xl font-semibold mb-2">{project.title}</h4>
-                        <p className="text-muted-foreground mb-4">{project.description}</p>
-                      </div>
-                    </div>
-                    
-                    <div className="mb-4">
-                      <p className="text-sm font-semibold mb-2">Impact:</p>
-                      <p className="text-sm text-muted-foreground">{project.impact}</p>
-                    </div>
-                    
-                    <div className="flex flex-wrap gap-2">
-                      {project.tech.map((tech, techIndex) => (
-                        <Badge key={techIndex} variant="secondary" className="text-xs">
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
             ))}
           </div>
         </motion.div>
       </div>
     </section>
   );
-} 
+}

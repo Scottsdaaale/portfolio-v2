@@ -1,0 +1,12 @@
+/* Terminal green. Pairs with the blinking cursor brand. */
+:root {
+  --brand-paper: oklch(0.965 0.008 145);
+  --brand-ink: oklch(0.22 0.02 155);
+  --brand-accent: oklch(0.52 0.16 145);
+}
+
+.dark {
+  --brand-paper: oklch(0.17 0.02 155);
+  --brand-ink: oklch(0.93 0.02 145);
+  --brand-accent: oklch(0.72 0.19 145);
+}

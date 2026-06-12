@@ -5,25 +5,15 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { submitContactForm } from "@/lib/actions";
 import { trackContactFormSubmit, trackSocialClick } from "@/lib/analytics";
-import { 
-  Mail, 
-  Github, 
-  Linkedin, 
-  MapPin, 
-  Send,
-  CheckCircle,
-  ExternalLink,
-  Coffee,
-  AlertCircle,
-  Instagram
-} from "lucide-react";
+import { ArrowUpRight, CheckCircle, AlertCircle } from "lucide-react";
+
+const fadeUp = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+};
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -35,9 +25,22 @@ const contactSchema = z.object({
 
 type ContactForm = z.infer<typeof contactSchema>;
 
+const socialLinks = [
+  { name: "GitHub", url: "https://github.com/Scottsdaaale" },
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/scotty-peterson/" },
+  { name: "Instagram", url: "https://www.instagram.com/scottsdaaale" },
+  { name: "Linktree", url: "https://linktr.ee/scottsdaaale" },
+];
+
+const inputClass =
+  "w-full px-4 py-3 border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-brand disabled:opacity-50 font-sans text-sm";
+
+const labelClass =
+  "font-mono text-[0.65rem] uppercase tracking-[0.15em] text-muted-foreground";
+
 export function Contact() {
   const [submitMessage, setSubmitMessage] = useState<{
-    type: 'success' | 'error';
+    type: "success" | "error";
     message: string;
   } | null>(null);
   const [isPending, startTransition] = useTransition();
@@ -55,311 +58,261 @@ export function Contact() {
     startTransition(async () => {
       try {
         const formData = new FormData();
-        formData.append('name', data.name);
-        formData.append('email', data.email);
-        formData.append('company', data.company || '');
-        formData.append('subject', data.subject);
-        formData.append('message', data.message);
+        formData.append("name", data.name);
+        formData.append("email", data.email);
+        formData.append("company", data.company || "");
+        formData.append("subject", data.subject);
+        formData.append("message", data.message);
 
         const result = await submitContactForm(formData);
 
         if (result.success) {
-          // Track successful form submission
           trackContactFormSubmit();
-          
           setSubmitMessage({
-            type: 'success',
-            message: result.message
+            type: "success",
+            message: result.message,
           });
           reset();
         } else {
           setSubmitMessage({
-            type: 'error',
-            message: result.message
+            type: "error",
+            message: result.message,
           });
         }
 
-        // Clear message after 5 seconds
         setTimeout(() => setSubmitMessage(null), 5000);
       } catch {
         setSubmitMessage({
-          type: 'error',
-          message: 'Something went wrong. Please try again.'
+          type: "error",
+          message: "Something went wrong. Please try again.",
         });
         setTimeout(() => setSubmitMessage(null), 5000);
       }
     });
   };
 
-  const socialLinks = [
-    {
-      name: "GitHub",
-      url: "https://github.com/Scottsdaaale",
-      icon: Github,
-      description: "View my code and projects"
-    },
-    {
-      name: "LinkedIn",
-      url: "https://www.linkedin.com/in/scotty-peterson/",
-      icon: Linkedin,
-      description: "Professional background"
-    },
-    {
-      name: "Instagram",
-      url: "https://www.instagram.com/scottsdaaale",
-      icon: Instagram,
-      description: "Follow my journey"
-    },
-    {
-      name: "Linktree",
-      url: "https://linktr.ee/scottsdaaale",
-      icon: ExternalLink,
-      description: "All my links in one place"
-    }
-  ];
-
-  const contactInfo = [
-    {
-      icon: Mail,
-      label: "Email",
-      value: "scottpetersonSE@gmail.com",
-      link: "mailto:scottpetersonSE@gmail.com"
-    },
-    {
-      icon: MapPin,
-      label: "Location",
-      value: "New Haven, Connecticut (remote friendly)",
-      link: null
-    },
-    {
-      icon: Coffee,
-      label: "Coffee Chat",
-      value: "Always down to talk marketing systems and automation",
-      link: null
-    }
-  ];
-
   return (
-    <section id="contact" className="py-20 px-4 bg-muted/30">
+    <section id="contact" className="px-6 md:px-12 py-24 border-t border-border">
       <div className="max-w-6xl mx-auto">
+        {/* Section folio */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
+          {...fadeUp}
+          transition={{ duration: 0.5 }}
+          className="flex items-center justify-between py-4 border-t border-border font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-12"
         >
-          <Badge variant="secondary" className="mb-4">
-            Get In Touch
-          </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Let&apos;s Build Something Great
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            I&apos;m looking for lifecycle marketing, marketing operations, and GTM engineering roles. 
-            If you need someone to own the technical marketing stack and actually ship, let&apos;s talk.
-          </p>
+          <span>
+            <span className="text-brand mr-2">04</span>Contact
+          </span>
+          <span className="hidden sm:block">Open to new opportunities</span>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
+        {/* Feature headline */}
+        <motion.h2
+          {...fadeUp}
+          transition={{ duration: 0.7 }}
+          className="font-display text-[clamp(2.25rem,5vw,4.5rem)] leading-[1.02] tracking-tight max-w-4xl mb-16"
+        >
+          Looking for lifecycle marketing, marketing ops, or GTM engineering.{" "}
+          <em className="text-brand">Let&apos;s talk.</em>
+        </motion.h2>
+
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-0">
+          {/* Form */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            {...fadeUp}
+            transition={{ duration: 0.7 }}
+            className="lg:col-span-7 lg:pr-12"
           >
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Send className="h-5 w-5" />
-                  Send me a message
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                {submitMessage && (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className={`mb-6 p-4 border rounded-lg flex items-center gap-2 ${
-                      submitMessage.type === 'success'
-                        ? 'bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800 text-green-700 dark:text-green-400'
-                        : 'bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800 text-red-700 dark:text-red-400'
-                    }`}
-                  >
-                    {submitMessage.type === 'success' ? (
-                      <CheckCircle className="h-5 w-5" />
-                    ) : (
-                      <AlertCircle className="h-5 w-5" />
-                    )}
-                    <span>{submitMessage.message}</span>
-                  </motion.div>
+            <div className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-6">
+              <span className="text-brand mr-2">Send</span>a message
+            </div>
+
+            {submitMessage && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.98 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className={`mb-6 px-4 py-3 border flex items-center gap-3 text-sm ${
+                  submitMessage.type === "success"
+                    ? "border-brand/40 text-foreground"
+                    : "border-red-500/40 text-red-600 dark:text-red-400"
+                }`}
+              >
+                {submitMessage.type === "success" ? (
+                  <CheckCircle className="h-4 w-4 shrink-0 text-brand" />
+                ) : (
+                  <AlertCircle className="h-4 w-4 shrink-0" />
                 )}
+                <span>{submitMessage.message}</span>
+              </motion.div>
+            )}
 
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="name">Name *</Label>
-                      <Input
-                        id="name"
-                        {...register("name")}
-                        placeholder="Your name"
-                        className={errors.name ? "border-red-500" : ""}
-                        disabled={isPending}
-                      />
-                      {errors.name && (
-                        <p className="text-sm text-red-500">{errors.name.message}</p>
-                      )}
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <Label htmlFor="email">Email *</Label>
-                      <Input
-                        id="email"
-                        type="email"
-                        {...register("email")}
-                        placeholder="your@email.com"
-                        className={errors.email ? "border-red-500" : ""}
-                        disabled={isPending}
-                      />
-                      {errors.email && (
-                        <p className="text-sm text-red-500">{errors.email.message}</p>
-                      )}
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="company">Company (Optional)</Label>
-                    <Input
-                      id="company"
-                      {...register("company")}
-                      placeholder="Your company"
-                      disabled={isPending}
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="subject">Subject *</Label>
-                    <Input
-                      id="subject"
-                      {...register("subject")}
-                      placeholder="What's this about?"
-                      className={errors.subject ? "border-red-500" : ""}
-                      disabled={isPending}
-                    />
-                    {errors.subject && (
-                      <p className="text-sm text-red-500">{errors.subject.message}</p>
-                    )}
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Message *</Label>
-                    <textarea
-                      id="message"
-                      {...register("message")}
-                      placeholder="Tell me about your project or what you'd like to discuss..."
-                      rows={5}
-                      disabled={isPending}
-                      className={`w-full px-3 py-2 border rounded-md bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring disabled:opacity-50 ${
-                        errors.message ? "border-red-500" : "border-input"
-                      }`}
-                    />
-                    {errors.message && (
-                      <p className="text-sm text-red-500">{errors.message.message}</p>
-                    )}
-                  </div>
-
-                  <Button 
-                    type="submit" 
-                    className="w-full" 
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+              <div className="grid sm:grid-cols-2 gap-5">
+                <div className="space-y-2">
+                  <label htmlFor="name" className={labelClass}>
+                    Name *
+                  </label>
+                  <input
+                    id="name"
+                    {...register("name")}
+                    placeholder="Your name"
+                    className={`${inputClass} ${errors.name ? "border-red-500" : ""}`}
                     disabled={isPending}
-                  >
-                    {isPending ? (
-                      <>
-                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2" />
-                        Sending...
-                      </>
-                    ) : (
-                      <>
-                        <Send className="h-4 w-4 mr-2" />
-                        Send Message
-                      </>
-                    )}
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+                  />
+                  {errors.name && (
+                    <p className="text-xs text-red-500">{errors.name.message}</p>
+                  )}
+                </div>
+
+                <div className="space-y-2">
+                  <label htmlFor="email" className={labelClass}>
+                    Email *
+                  </label>
+                  <input
+                    id="email"
+                    type="email"
+                    {...register("email")}
+                    placeholder="you@company.com"
+                    className={`${inputClass} ${errors.email ? "border-red-500" : ""}`}
+                    disabled={isPending}
+                  />
+                  {errors.email && (
+                    <p className="text-xs text-red-500">{errors.email.message}</p>
+                  )}
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <label htmlFor="company" className={labelClass}>
+                  Company
+                </label>
+                <input
+                  id="company"
+                  {...register("company")}
+                  placeholder="Optional"
+                  className={inputClass}
+                  disabled={isPending}
+                />
+              </div>
+
+              <div className="space-y-2">
+                <label htmlFor="subject" className={labelClass}>
+                  Subject *
+                </label>
+                <input
+                  id="subject"
+                  {...register("subject")}
+                  placeholder="What's this about?"
+                  className={`${inputClass} ${errors.subject ? "border-red-500" : ""}`}
+                  disabled={isPending}
+                />
+                {errors.subject && (
+                  <p className="text-xs text-red-500">{errors.subject.message}</p>
+                )}
+              </div>
+
+              <div className="space-y-2">
+                <label htmlFor="message" className={labelClass}>
+                  Message *
+                </label>
+                <textarea
+                  id="message"
+                  {...register("message")}
+                  placeholder="Tell me about the role, the stack, or what you're trying to build..."
+                  rows={5}
+                  disabled={isPending}
+                  className={`${inputClass} resize-y min-h-[140px] ${errors.message ? "border-red-500" : ""}`}
+                />
+                {errors.message && (
+                  <p className="text-xs text-red-500">{errors.message.message}</p>
+                )}
+              </div>
+
+              <button
+                type="submit"
+                disabled={isPending}
+                className="inline-flex items-center gap-2 font-mono text-[0.65rem] uppercase tracking-[0.15em] px-6 py-3 border border-foreground bg-foreground text-background hover:bg-transparent hover:text-foreground transition-colors disabled:opacity-50"
+              >
+                {isPending ? "Sending..." : "Send message"}
+                {!isPending && <ArrowUpRight className="h-3.5 w-3.5" />}
+              </button>
+            </form>
           </motion.div>
 
-          {/* Contact Info & Social Links */}
+          {/* Index column */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="space-y-6"
+            {...fadeUp}
+            transition={{ duration: 0.7, delay: 0.15 }}
+            className="lg:col-span-5 lg:border-l border-border"
           >
-            {/* Contact Information */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Contact Information</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {contactInfo.map((item, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <item.icon className="h-5 w-5 text-primary mt-0.5" />
-                    <div>
-                      <p className="font-medium">{item.label}</p>
-                      {item.link ? (
-                        <a 
-                          href={item.link}
-                          className="text-muted-foreground hover:text-foreground transition-colors"
-                        >
-                          {item.value}
-                        </a>
-                      ) : (
-                        <p className="text-muted-foreground">{item.value}</p>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
+            <div className="lg:pl-8 space-y-10">
+              <div>
+                <div className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-3">
+                  <span className="text-brand mr-2">Direct</span>Email
+                </div>
+                <a
+                  href="mailto:scottpetersonSE@gmail.com"
+                  className="font-display text-xl tracking-tight hover:text-brand transition-colors"
+                >
+                  scottpetersonSE@gmail.com
+                </a>
+              </div>
 
-            {/* Social Links */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Connect with me</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {socialLinks.map((social, index) => (
-                  <motion.a
-                    key={social.name}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    onClick={() => trackSocialClick(social.name)}
-                    className="flex items-center justify-between p-3 rounded-lg border hover:shadow-md transition-all group"
-                  >
-                    <div className="flex items-center gap-3">
-                      <social.icon className="h-5 w-5 text-primary" />
-                      <div>
-                        <p className="font-medium">{social.name}</p>
-                        <p className="text-sm text-muted-foreground">{social.description}</p>
-                      </div>
-                    </div>
-                    <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-foreground transition-colors" />
-                  </motion.a>
-                ))}
-              </CardContent>
-            </Card>
+              <div>
+                <div className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-3">
+                  <span className="text-brand mr-2">Based</span>in
+                </div>
+                <p className="text-muted-foreground leading-relaxed">
+                  New Haven, Connecticut
+                  <br />
+                  Remote friendly
+                </p>
+              </div>
+
+              <div>
+                <div className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-3">
+                  <span className="text-brand mr-2">Elsewhere</span>
+                </div>
+                <ul className="space-y-2">
+                  {socialLinks.map((social) => (
+                    <li key={social.name}>
+                      <a
+                        href={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => trackSocialClick(social.name)}
+                        className="group inline-flex items-center gap-2 text-sm hover:text-brand transition-colors"
+                      >
+                        {social.name}
+                        <ArrowUpRight
+                          className="h-3 w-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all"
+                        />
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="border-t border-border pt-8">
+                <p className="font-display text-lg leading-snug tracking-tight text-muted-foreground">
+                  Always down to talk marketing systems, lifecycle programs,
+                  and what&apos;s broken in your stack.
+                </p>
+              </div>
+            </div>
           </motion.div>
         </div>
+
+        {/* Footer strip */}
+        <motion.div
+          {...fadeUp}
+          transition={{ duration: 0.5 }}
+          className="mt-20 pt-6 border-t border-border flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground"
+        >
+          <span>Scotty Peterson</span>
+          <span>{new Date().getFullYear()}</span>
+        </motion.div>
       </div>
     </section>
   );
-} 
+}

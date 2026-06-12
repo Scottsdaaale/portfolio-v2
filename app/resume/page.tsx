@@ -1,4 +1,5 @@
 import { Resume } from "@/components/resume";
+import { Navigation } from "@/components/navigation";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,5 +12,10 @@ export const metadata: Metadata = {
 };
 
 export default function ResumePage() {
-  return <Resume />;
+  return (
+    <div className="min-h-screen">
+      <Navigation />
+      <Resume />
+    </div>
+  );
 } 

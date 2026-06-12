@@ -1,10 +1,10 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { LogoLockup } from "@/components/logo";
 import { ThemeToggleInstant } from "./theme-toggle-instant";
 import { trackDownloadResume } from "@/lib/analytics";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
@@ -48,16 +48,9 @@ export function Navigation() {
       <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
         <Link
           href="/"
-          className="font-bold text-xl hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded flex items-center space-x-3 cursor-pointer"
+          className="font-display text-xl tracking-tight hover:text-brand transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded cursor-pointer"
         >
-          <Image
-            src="/Me.gif"
-            alt="Scotty Peterson"
-            width={40}
-            height={40}
-            className="rounded-full"
-          />
-          <span>Scotty Peterson</span>
+          <LogoLockup cursorSize={18} />
         </Link>
         
         {/* Desktop Navigation */}

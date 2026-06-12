@@ -1,0 +1,12 @@
+/* Muted sage on warm cream. Calm, editorial, slightly organic. */
+:root {
+  --brand-paper: oklch(0.97 0.008 95);
+  --brand-ink: oklch(0.26 0.03 140);
+  --brand-accent: oklch(0.48 0.1 145);
+}
+
+.dark {
+  --brand-paper: oklch(0.22 0.02 140);
+  --brand-ink: oklch(0.94 0.01 95);
+  --brand-accent: oklch(0.7 0.12 145);
+}

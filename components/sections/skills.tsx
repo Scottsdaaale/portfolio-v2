@@ -1,203 +1,212 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { 
-  Code, 
-  Database, 
-  Zap, 
-  Globe,
-  Cog,
-  Sparkles
-} from "lucide-react";
+
+const fadeUp = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+};
+
+const skillCategories = [
+  {
+    num: "01",
+    title: "Lifecycle & automation",
+    description: "Programs, segmentation, and the operations behind them",
+    skills: [
+      "Lifecycle Marketing",
+      "Marketing Automation",
+      "Marketing Operations",
+      "Email Marketing",
+      "Customer Segmentation",
+      "Behavioral Triggers",
+      "Attribution Tracking",
+    ],
+  },
+  {
+    num: "02",
+    title: "Martech platforms",
+    description: "The tools I connect into automated systems",
+    skills: [
+      "Brevo",
+      "HubSpot",
+      "Pipeline CRM",
+      "Stripe",
+      "Calendly",
+      "Zapier",
+      "Freshdesk",
+      "Mercury",
+      "MJML",
+    ],
+  },
+  {
+    num: "03",
+    title: "APIs & integration",
+    description: "Connecting platforms so data flows without manual work",
+    skills: [
+      "REST APIs",
+      "Webhooks",
+      "Webhook Orchestration",
+      "API Integration",
+      "Cross-System Attribution",
+      "Data Sync",
+    ],
+  },
+  {
+    num: "04",
+    title: "Languages & frameworks",
+    description: "What I build with when the stack needs custom work",
+    skills: [
+      "Python",
+      "JavaScript",
+      "TypeScript",
+      "Next.js",
+      "React",
+      "Flask",
+      "Tailwind CSS",
+    ],
+  },
+  {
+    num: "05",
+    title: "Cloud & data",
+    description: "Infrastructure for automation and email delivery",
+    skills: [
+      "AWS Lambda",
+      "AWS S3",
+      "AWS SES",
+      "AWS Amplify",
+      "PostgreSQL",
+      "SQL",
+    ],
+  },
+  {
+    num: "06",
+    title: "AI-assisted development",
+    description: "How I ship at the pace of a small engineering team",
+    skills: [
+      "Claude",
+      "Cursor",
+      "Prompt Engineering",
+      "Context Documents",
+      "Integration Templates",
+      "Rapid Prototyping",
+    ],
+  },
+];
 
 export function Skills() {
-  const skillCategories = [
-    {
-      title: "Lifecycle & Marketing Automation",
-      icon: Zap,
-      description: "The programs and strategy behind automated customer journeys",
-      skills: [
-        "Lifecycle Marketing",
-        "Marketing Automation",
-        "Marketing Operations",
-        "Email Marketing",
-        "Customer Segmentation",
-        "Behavioral Triggers",
-        "Attribution Tracking"
-      ]
-    },
-    {
-      title: "Martech Platforms",
-      icon: Cog,
-      description: "The tools I connect into automated systems",
-      skills: [
-        "Brevo",
-        "Pipeline CRM",
-        "Stripe",
-        "Calendly",
-        "Zapier",
-        "Freshdesk",
-        "Mercury",
-        "MJML"
-      ]
-    },
-    {
-      title: "APIs & Integration",
-      icon: Globe,
-      description: "Connecting platforms so data flows without manual work",
-      skills: [
-        "REST APIs",
-        "Webhooks",
-        "Webhook Orchestration",
-        "API Integration",
-        "Cross-System Attribution",
-        "Data Sync"
-      ]
-    },
-    {
-      title: "Languages & Frameworks",
-      icon: Code,
-      description: "What I build with",
-      skills: [
-        "Python",
-        "JavaScript",
-        "TypeScript",
-        "Next.js",
-        "React",
-        "Flask",
-        "Tailwind CSS"
-      ]
-    },
-    {
-      title: "Cloud & Data",
-      icon: Database,
-      description: "Infrastructure for automation and email delivery",
-      skills: [
-        "AWS Lambda",
-        "AWS S3",
-        "AWS SES",
-        "AWS Amplify",
-        "PostgreSQL",
-        "SQL"
-      ]
-    },
-    {
-      title: "AI-Assisted Development",
-      icon: Sparkles,
-      description: "How I ship at the pace of a small engineering team",
-      skills: [
-        "Claude",
-        "Cursor",
-        "Prompt Engineering",
-        "Context Documents",
-        "Integration Templates",
-        "Rapid Prototyping"
-      ]
-    }
-  ];
-
-  const topSkills = [
-    "Marketing Automation", "API & Webhook Orchestration", "Lifecycle Engineering",
-    "Internal Tooling", "Python", "JavaScript", "Next.js", "AWS",
-    "AI-Assisted Development"
-  ];
-
   return (
-    <section id="skills" className="py-20 px-4">
+    <section id="skills" className="px-6 md:px-12 py-24">
       <div className="max-w-6xl mx-auto">
+        {/* Section folio */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
+          {...fadeUp}
+          transition={{ duration: 0.5 }}
+          className="flex items-center justify-between py-4 border-t border-border font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-12"
         >
-          <Badge variant="secondary" className="mb-4">
-            Skills
-          </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Marketing Systems Expertise
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            The stack behind the automation programs, integrations, and internal tools.
-          </p>
-          
-          {/* Top Skills */}
-          <div className="flex flex-wrap justify-center gap-2 max-w-4xl mx-auto">
-            {topSkills.map((skill, index) => (
-              <motion.div
-                key={skill}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Badge variant="outline" className="text-sm py-1 px-3">
-                  {skill}
-                </Badge>
-              </motion.div>
-            ))}
+          <span>
+            <span className="text-brand mr-2">03</span>Skills
+          </span>
+          <span className="hidden sm:block">Platforms, code, and how I connect them</span>
+        </motion.div>
+
+        {/* Feature headline */}
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-0 mb-16">
+          <motion.h2
+            {...fadeUp}
+            transition={{ duration: 0.7 }}
+            className="lg:col-span-7 lg:pr-12 font-display text-[clamp(2.25rem,5vw,4.5rem)] leading-[1.02] tracking-tight"
+          >
+            The stack behind the programs,{" "}
+            <em className="text-brand">integrations,</em>
+            <br />
+            and internal tools.
+          </motion.h2>
+
+          <motion.div
+            {...fadeUp}
+            transition={{ duration: 0.7, delay: 0.15 }}
+            className="lg:col-span-5 lg:border-l border-border lg:pl-8 flex items-center"
+          >
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Martech platforms on one side. APIs, webhooks, and custom
+              tooling on the other. Most of my work lives in the wiring
+              between them.
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Skill ledger */}
+        <motion.div {...fadeUp} transition={{ duration: 0.6 }}>
+          <div className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-2">
+            <span className="text-brand mr-2">Index</span>Capabilities
           </div>
         </motion.div>
 
-        {/* Skills Categories */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="max-w-5xl mx-auto rounded-xl border bg-card text-card-foreground shadow-sm divide-y divide-border"
-        >
-          {skillCategories.map((category, categoryIndex) => (
+        <div className="border-t border-border mb-20">
+          {skillCategories.map((category, i) => (
             <motion.div
-              key={category.title}
-              initial={{ opacity: 0, y: 10 }}
+              key={category.num}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: categoryIndex * 0.05 }}
+              transition={{ duration: 0.5, delay: i * 0.04 }}
               viewport={{ once: true }}
-              className="grid md:grid-cols-[280px_1fr] gap-4 md:gap-8 p-6 md:p-8 md:items-center"
+              className="grid lg:grid-cols-12 gap-4 lg:gap-0 py-8 border-b border-border"
             >
-              <div>
-                <div className="flex items-center gap-3 mb-1">
-                  <category.icon className="h-5 w-5 text-primary flex-shrink-0" />
-                  <h3 className="font-semibold">{category.title}</h3>
+              <div className="lg:col-span-4 lg:pr-8 flex items-start gap-4">
+                <span className="font-mono text-xs text-brand pt-1">
+                  {category.num}
+                </span>
+                <div>
+                  <h3 className="font-display text-xl md:text-2xl tracking-tight leading-tight">
+                    {category.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
+                    {category.description}
+                  </p>
                 </div>
-                <p className="text-sm text-muted-foreground md:pl-8">{category.description}</p>
               </div>
-              <div className="flex flex-wrap items-center justify-center gap-2">
-                {category.skills.map((skill) => (
-                  <Badge key={skill} variant="secondary" className="text-sm py-1 px-3">
-                    {skill}
-                  </Badge>
-                ))}
+
+              <div className="lg:col-span-8 lg:border-l border-border lg:pl-8 flex items-center">
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="font-mono text-[0.65rem] uppercase tracking-[0.1em] px-3 py-1.5 border border-border text-muted-foreground"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
 
-        {/* Bottom CTA */}
+        {/* Closing strip */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
+          {...fadeUp}
+          transition={{ duration: 0.7 }}
+          className="border-t border-border pt-10 grid lg:grid-cols-12 gap-10 lg:gap-0 lg:items-start"
         >
-          <Card className="max-w-4xl mx-auto">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-bold mb-4">How I Build</h3>
-              <p className="text-lg text-muted-foreground mb-4">
-                Claude and Cursor are my development environment. I keep context documents for every system I build, 
-                reusable prompt patterns, and integration templates. Most things go from idea to production in under two weeks.
-              </p>
-              <p className="text-muted-foreground">
-                <span className="font-semibold">The platforms translate:</span> the architecture behind my work in 
-                Brevo and Pipeline CRM maps directly to HubSpot, Iterable, Customer.io, and Braze.
-              </p>
-            </CardContent>
-          </Card>
+          <div className="lg:col-span-7 lg:pr-12">
+            <p className="font-display text-2xl md:text-3xl leading-snug tracking-tight">
+              Claude and Cursor are my development environment. Context
+              documents, integration templates, and reusable prompt patterns
+              take most ideas to production in{" "}
+              <em className="text-brand">under two weeks.</em>
+            </p>
+          </div>
+          <div className="lg:col-span-5 lg:border-l border-border">
+            <div className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-4 lg:pl-8">
+              <span className="text-brand">Platform</span> agnostic
+            </div>
+            <p className="text-muted-foreground leading-relaxed lg:pl-8">
+              I work at the API and webhook layer, underneath whatever
+              platform sits on top. Segmentation, triggers, and attribution
+              are the same architecture everywhere.
+            </p>
+          </div>
         </motion.div>
       </div>
     </section>

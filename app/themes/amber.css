@@ -1,0 +1,12 @@
+/* Warm charcoal with amber cursor. Moody, confident. */
+:root {
+  --brand-paper: oklch(0.975 0.01 85);
+  --brand-ink: oklch(0.25 0.02 70);
+  --brand-accent: oklch(0.62 0.17 75);
+}
+
+.dark {
+  --brand-paper: oklch(0.2 0.015 70);
+  --brand-ink: oklch(0.94 0.01 85);
+  --brand-accent: oklch(0.78 0.16 80);
+}

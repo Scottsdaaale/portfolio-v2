@@ -1,0 +1,12 @@
+/* Stark ink and paper. Cool blue accent like a hyperlinked word. */
+:root {
+  --brand-paper: oklch(0.99 0 0);
+  --brand-ink: oklch(0.16 0 0);
+  --brand-accent: oklch(0.48 0.2 255);
+}
+
+.dark {
+  --brand-paper: oklch(0.16 0 0);
+  --brand-ink: oklch(0.96 0 0);
+  --brand-accent: oklch(0.68 0.15 250);
+}

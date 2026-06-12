@@ -9,35 +9,35 @@
 }
 
 .blog-content h1 {
-  @apply text-3xl font-bold mb-6 mt-8 first:mt-0 text-foreground;
+  @apply font-display text-3xl md:text-4xl tracking-tight mb-6 mt-12 first:mt-0 text-foreground;
 }
 
 .blog-content h2 {
-  @apply text-2xl font-semibold mb-4 mt-8 first:mt-0 text-foreground;
+  @apply font-display text-2xl md:text-3xl tracking-tight mb-4 mt-12 first:mt-0 text-foreground;
 }
 
 .blog-content h3 {
-  @apply text-xl font-semibold mb-3 mt-6 first:mt-0 text-foreground;
+  @apply font-display text-xl md:text-2xl tracking-tight mb-3 mt-8 first:mt-0 text-foreground;
 }
 
 .blog-content h4 {
-  @apply text-lg font-medium mb-2 mt-4 first:mt-0 text-foreground;
+  @apply font-mono text-[0.7rem] uppercase tracking-[0.15em] mb-3 mt-8 first:mt-0 text-muted-foreground;
 }
 
 .blog-content p {
-  @apply mb-4 text-foreground leading-relaxed;
+  @apply mb-5 text-foreground leading-relaxed;
 }
 
 .blog-content ul, .blog-content ol {
-  @apply mb-4 ml-6 space-y-2;
+  @apply mb-5 ml-6 space-y-2;
 }
 
 .blog-content ul {
-  @apply list-disc;
+  @apply list-disc marker:text-brand;
 }
 
 .blog-content ol {
-  @apply list-decimal;
+  @apply list-decimal marker:text-brand;
 }
 
 .blog-content li {
@@ -45,7 +45,11 @@
 }
 
 .blog-content blockquote {
-  @apply border-l-4 border-primary pl-4 py-2 my-6 italic text-muted-foreground bg-muted/50 rounded-r;
+  @apply border-l-2 border-brand pl-6 py-1 my-8 text-muted-foreground;
+}
+
+.blog-content blockquote p {
+  @apply font-display text-xl md:text-2xl leading-snug tracking-tight not-italic;
 }
 
 .blog-content strong {
@@ -57,11 +61,11 @@
 }
 
 .blog-content code {
-  @apply bg-muted px-1.5 py-0.5 rounded text-sm font-mono;
+  @apply bg-muted px-1.5 py-0.5 text-sm font-mono;
 }
 
 .blog-content pre {
-  @apply bg-muted p-4 rounded-lg overflow-x-auto my-4;
+  @apply bg-muted border border-border p-4 overflow-x-auto my-6;
 }
 
 .blog-content pre code {
@@ -69,37 +73,26 @@
 }
 
 .blog-content a {
-  @apply text-primary hover:text-primary/80 underline underline-offset-2;
+  @apply text-brand hover:opacity-80 underline decoration-brand/40 hover:decoration-brand underline-offset-4 transition-colors;
 }
 
-/* CSS-only dark mode alternative */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: oklch(0.145 0 0);
-    --foreground: oklch(0.985 0 0);
-    --card: oklch(0.205 0 0);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.205 0 0);
-    --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.922 0 0);
-    --primary-foreground: oklch(0.205 0 0);
-    --secondary: oklch(0.269 0 0);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.269 0 0);
-    --muted-foreground: oklch(0.708 0 0);
-    --accent: oklch(0.269 0 0);
-    --accent-foreground: oklch(0.985 0 0);
-    --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.556 0 0);
-  }
+.blog-content hr {
+  @apply border-border my-10;
 }
+
+/* ============================================================
+   ACTIVE THEME
+   Change this one import to retheme the entire site.
+   Preview all options at /palette-preview
+   ============================================================ */
+@import "./themes/amber.css";
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter);
+  --color-brand: var(--brand-accent);
+  --font-sans: var(--font-instrument-sans);
+  --font-display: var(--font-fraunces);
   --font-mono: var(--font-jetbrains-mono);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -136,73 +129,43 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
-:root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-}
-
+/* Semantic colors, all derived from the brand tokens above.
+   These resolve per-mode automatically because .dark swaps the
+   brand tokens. You should rarely need to touch these. */
+:root,
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --radius: 0.625rem;
+  --background: var(--brand-paper);
+  --foreground: var(--brand-ink);
+  --card: color-mix(in oklch, var(--brand-ink) 3%, var(--brand-paper));
+  --card-foreground: var(--brand-ink);
+  --popover: var(--brand-paper);
+  --popover-foreground: var(--brand-ink);
+  --primary: var(--brand-ink);
+  --primary-foreground: var(--brand-paper);
+  --secondary: color-mix(in oklch, var(--brand-ink) 6%, var(--brand-paper));
+  --secondary-foreground: var(--brand-ink);
+  --muted: color-mix(in oklch, var(--brand-ink) 6%, var(--brand-paper));
+  --muted-foreground: color-mix(in oklch, var(--brand-ink) 62%, var(--brand-paper));
+  --accent: color-mix(in oklch, var(--brand-ink) 6%, var(--brand-paper));
+  --accent-foreground: var(--brand-ink);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: color-mix(in oklch, var(--brand-ink) 14%, var(--brand-paper));
+  --input: color-mix(in oklch, var(--brand-ink) 14%, var(--brand-paper));
+  --ring: var(--brand-accent);
+  --chart-1: var(--brand-accent);
+  --chart-2: color-mix(in oklch, var(--brand-accent) 70%, var(--brand-ink));
+  --chart-3: color-mix(in oklch, var(--brand-accent) 40%, var(--brand-ink));
+  --chart-4: color-mix(in oklch, var(--brand-accent) 55%, var(--brand-paper));
+  --chart-5: color-mix(in oklch, var(--brand-ink) 50%, var(--brand-paper));
+  --sidebar: var(--brand-paper);
+  --sidebar-foreground: var(--brand-ink);
+  --sidebar-primary: var(--brand-ink);
+  --sidebar-primary-foreground: var(--brand-paper);
+  --sidebar-accent: color-mix(in oklch, var(--brand-ink) 6%, var(--brand-paper));
+  --sidebar-accent-foreground: var(--brand-ink);
+  --sidebar-border: color-mix(in oklch, var(--brand-ink) 14%, var(--brand-paper));
+  --sidebar-ring: var(--brand-accent);
 }
 
 @layer base {
@@ -220,12 +183,21 @@
     margin: 0.5in;
     size: letter;
   }
-  
+
+  /* Force black-on-white regardless of theme or dark mode.
+     All semantic colors derive from these three tokens. */
+  :root,
+  .dark {
+    --brand-paper: oklch(1 0 0);
+    --brand-ink: oklch(0.15 0 0);
+    --brand-accent: oklch(0.3 0 0);
+  }
+
   body {
     -webkit-print-color-adjust: exact;
     color-adjust: exact;
   }
-  
+
   /* Hide navigation and other non-essential elements */
   nav,
   header,

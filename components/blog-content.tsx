@@ -1,9 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { CalendarDays, Clock, ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { formatDate } from "@/lib/utils";
 import { motion } from "framer-motion";
 
@@ -20,133 +18,122 @@ interface BlogContentProps {
   posts: BlogPostData[];
 }
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut",
-    },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-    },
-  },
+const fadeUp = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
 };
 
 export function BlogContent({ posts }: BlogContentProps) {
   return (
-    <motion.div 
-      className="pt-20"
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
-    >
-      <div className="max-w-4xl mx-auto px-4 py-12">
-        <motion.div className="space-y-4 mb-12" variants={itemVariants}>
-          <motion.h1 
-            className="text-4xl font-bold tracking-tight"
-            variants={itemVariants}
-          >
-            Blog
-          </motion.h1>
-          <motion.p 
-            className="text-xl text-muted-foreground max-w-2xl"
-            variants={itemVariants}
-          >
-            Thoughts on development, technology, and life. Sometimes technical deep-dives, sometimes just random musings.
-          </motion.p>
+    <div className="pt-24 px-6 md:px-12 pb-24">
+      <div className="max-w-6xl mx-auto">
+        {/* Section folio */}
+        <motion.div
+          {...fadeUp}
+          transition={{ duration: 0.5 }}
+          className="flex items-center justify-between py-4 border-t border-border font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-12"
+        >
+          <span>
+            <span className="text-brand mr-2">Blog</span>Writing
+          </span>
+          <span className="hidden sm:block">
+            {posts.length} {posts.length === 1 ? "entry" : "entries"}
+          </span>
         </motion.div>
 
-        {posts.length === 0 ? (
-          <motion.div 
-            className="text-center py-12"
-            variants={itemVariants}
+        {/* Feature headline */}
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-0 mb-16">
+          <motion.div
+            {...fadeUp}
+            transition={{ duration: 0.7 }}
+            className="lg:col-span-7 lg:pr-12"
           >
-            <h2 className="text-2xl font-semibold mb-4">Coming Soon!</h2>
-            <p className="text-muted-foreground">
-              I&apos;m working on some posts about dev stuff, hiking adventures, guitar progress, and whatever else is on my mind. Check back soon!
+            <h1 className="font-display text-[clamp(2.25rem,5vw,4.5rem)] leading-[1.02] tracking-tight mb-6">
+              Notes from <em className="text-brand">the build.</em>
+            </h1>
+          </motion.div>
+          <motion.div
+            {...fadeUp}
+            transition={{ duration: 0.7, delay: 0.15 }}
+            className="lg:col-span-5 lg:border-l border-border lg:pl-8 flex items-end"
+          >
+            <p className="text-muted-foreground leading-relaxed">
+              Marketing systems, email infrastructure, and development. Plus
+              hiking, music, and whatever else I&apos;m obsessing over at the
+              moment.
             </p>
           </motion.div>
-        ) : (
-          <motion.div 
-            className="grid gap-6"
-            variants={containerVariants}
-          >
-            {posts.map((post, index) => (
-              <motion.div
-                key={post.slug}
-                variants={cardVariants}
-                whileHover={{ 
-                  y: -4,
-                  transition: { duration: 0.2 }
-                }}
-                custom={index}
-              >
-                <Link href={`/blog/${post.slug}`} className="block">
-                  <Card className="group hover:shadow-lg transition-all duration-300 cursor-pointer">
-                    <CardHeader>
-                      <div className="flex items-center justify-between mb-2">
-                        <div className="flex items-center space-x-4 text-sm text-muted-foreground">
-                          <div className="flex items-center space-x-1">
-                            <CalendarDays className="h-4 w-4" />
-                            <span>{formatDate(post.publishedAt)}</span>
-                          </div>
-                          <div className="flex items-center space-x-1">
-                            <Clock className="h-4 w-4" />
-                            <span>{post.readingTime} min read</span>
-                          </div>
-                        </div>
-                      </div>
-                      <CardTitle className="group-hover:text-primary transition-colors">
-                        <div className="flex items-center justify-between">
-                          {post.title}
-                          <ArrowRight className="h-5 w-5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                        </div>
-                      </CardTitle>
-                      <CardDescription className="text-base leading-relaxed">
-                        {post.description}
-                      </CardDescription>
-                    </CardHeader>
-                    {post.tags && post.tags.length > 0 && (
-                      <CardContent className="pt-0">
-                        <div className="flex flex-wrap gap-2">
-                          {post.tags.map((tag) => (
-                            <Badge key={tag} variant="secondary" className="text-xs">
-                              {tag}
-                            </Badge>
-                          ))}
-                        </div>
-                      </CardContent>
-                    )}
-                  </Card>
-                </Link>
-              </motion.div>
-            ))}
+        </div>
+
+        {posts.length === 0 ? (
+          <motion.div {...fadeUp} transition={{ duration: 0.6 }}>
+            <div className="border-t border-border py-16">
+              <p className="font-display text-2xl tracking-tight mb-2">
+                Coming soon.
+              </p>
+              <p className="text-muted-foreground">
+                Posts are in the works. Check back shortly.
+              </p>
+            </div>
           </motion.div>
+        ) : (
+          <>
+            {/* Index label */}
+            <motion.div {...fadeUp} transition={{ duration: 0.6 }}>
+              <div className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-2">
+                <span className="text-brand mr-2">Index</span>All posts
+              </div>
+            </motion.div>
+
+            {/* Post ledger */}
+            <div className="border-t border-border">
+              {posts.map((post, i) => (
+                <motion.article
+                  key={post.slug}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: Math.min(i * 0.05, 0.3) }}
+                  viewport={{ once: true }}
+                  className="border-b border-border"
+                >
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="group grid lg:grid-cols-12 gap-3 lg:gap-0 py-8"
+                  >
+                    <div className="lg:col-span-3 lg:pr-8 flex lg:flex-col gap-3 lg:gap-1 items-baseline lg:items-start">
+                      <span className="font-mono text-xs text-brand">
+                        {String(posts.length - i).padStart(2, "0")}
+                      </span>
+                      <span className="font-mono text-[0.65rem] uppercase tracking-[0.15em] text-muted-foreground">
+                        {formatDate(post.publishedAt)}
+                      </span>
+                      <span className="font-mono text-[0.65rem] uppercase tracking-[0.15em] text-muted-foreground">
+                        {post.readingTime} min read
+                      </span>
+                    </div>
+
+                    <div className="lg:col-span-9 lg:border-l border-border lg:pl-8">
+                      <h2 className="font-display text-2xl md:text-[1.7rem] leading-tight tracking-tight mb-3 group-hover:text-brand transition-colors flex items-start gap-2">
+                        <span className="text-balance">{post.title}</span>
+                        <ArrowUpRight className="h-4 w-4 mt-2 shrink-0 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-brand" />
+                      </h2>
+                      <p className="text-muted-foreground leading-relaxed max-w-2xl mb-4">
+                        {post.description}
+                      </p>
+                      {post.tags && post.tags.length > 0 && (
+                        <p className="font-mono text-xs text-muted-foreground tracking-wide">
+                          {post.tags.slice(0, 5).join(" · ")}
+                        </p>
+                      )}
+                    </div>
+                  </Link>
+                </motion.article>
+              ))}
+            </div>
+          </>
         )}
       </div>
-    </motion.div>
+    </div>
   );
-} 
+}
