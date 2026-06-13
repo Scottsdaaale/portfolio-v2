@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -27,6 +28,8 @@ function IndexLabel({ num, children }: { num: string; children: React.ReactNode 
 }
 
 export function Hero() {
+  const [showPixelAuthor, setShowPixelAuthor] = useState(false);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -92,22 +95,43 @@ export function Hero() {
             <div className="py-4 lg:pl-8 border-b border-border lg:border-t-0 border-t">
               <IndexLabel num="00">The author</IndexLabel>
               <div className="flex items-center gap-4">
-                <div className="border border-border p-2 shrink-0">
+                <div
+                  className="relative border border-border shrink-0 size-28 overflow-hidden cursor-pointer group"
+                  aria-label="Scotty Peterson"
+                  onMouseEnter={() => setShowPixelAuthor(true)}
+                  onMouseLeave={() => setShowPixelAuthor(false)}
+                >
+                  <Image
+                    src="/scotty-peterson-headshot.jpg"
+                    alt=""
+                    fill
+                    className={`object-cover transition-opacity duration-300 ${showPixelAuthor ? "opacity-0" : "opacity-100"}`}
+                    sizes="112px"
+                  />
                   <Image
                     src="/Me.gif"
-                    alt="Pixel art of Scotty Peterson"
-                    width={56}
-                    height={56}
+                    alt=""
+                    fill
                     unoptimized
-                    className="[image-rendering:pixelated]"
+                    className={`object-cover transition-opacity duration-300 [image-rendering:pixelated] ${showPixelAuthor ? "opacity-100" : "opacity-0"}`}
+                    sizes="112px"
                   />
                 </div>
-                <p className="font-mono text-[0.65rem] uppercase tracking-[0.15em] text-muted-foreground leading-relaxed">
-                  Fig. 00
-                  <br />
-                  Scotty Peterson,
-                  <br />
-                  in pixel form
+                <p className="relative font-mono text-[0.65rem] uppercase tracking-[0.15em] text-muted-foreground leading-relaxed">
+                  <span
+                    className={`block transition-opacity duration-300 ${showPixelAuthor ? "opacity-0" : "opacity-100"}`}
+                  >
+                    Fig. 00
+                    <br />
+                    Scotty Peterson
+                  </span>
+                  <span
+                    className={`absolute left-0 top-0 transition-opacity duration-300 ${showPixelAuthor ? "opacity-100" : "opacity-0"}`}
+                  >
+                    Fig. 00a
+                    <br />
+                    Scotty, deprecated
+                  </span>
                 </p>
               </div>
             </div>
@@ -119,7 +143,7 @@ export function Hero() {
                   <span className="absolute inline-flex h-full w-full rounded-full bg-brand opacity-60 animate-ping" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-brand" />
                 </span>
-                Open to new opportunities
+                Actively looking for my next role
               </div>
               <button
                 onClick={() => scrollToSection("contact")}

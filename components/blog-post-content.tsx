@@ -79,83 +79,68 @@ export function BlogPostContent({
               <span className="text-brand mr-2">Blog</span>Back to index
             </span>
           </Link>
-          <span className="hidden sm:block">
-            {formatDate(publishedAt)} · {readingTime} min read
-          </span>
+          <button
+            onClick={handleShare}
+            className="inline-flex items-center gap-2 hover:text-brand transition-colors"
+          >
+            {copied ? (
+              <>
+                <Check className="h-3 w-3" />
+                Copied
+              </>
+            ) : (
+              <>
+                Share
+                <ArrowUpRight className="h-3 w-3" />
+              </>
+            )}
+          </button>
         </motion.div>
 
-        {/* Article header */}
-        <header className="grid lg:grid-cols-12 gap-8 lg:gap-0 mb-16">
-          <motion.div
-            {...fadeUp}
-            transition={{ duration: 0.7 }}
-            className="lg:col-span-8 lg:pr-12"
-          >
-            <h1 className="font-display text-[clamp(2rem,4.5vw,3.75rem)] leading-[1.05] tracking-tight text-balance mb-6">
-              {title}
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
-              {description}
-            </p>
-          </motion.div>
-
-          <motion.div
-            {...fadeUp}
-            transition={{ duration: 0.7, delay: 0.15 }}
-            className="lg:col-span-4 lg:border-l border-border lg:pl-8 flex flex-col justify-end gap-8"
-          >
-            <div className="space-y-4">
-              <div>
-                <div className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-1">
-                  <span className="text-brand mr-2">Published</span>
-                </div>
-                <div className="text-sm">{formatDate(publishedAt)}</div>
-              </div>
-              <div>
-                <div className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-1">
-                  <span className="text-brand mr-2">Length</span>
-                </div>
-                <div className="text-sm">{readingTime} min read</div>
-              </div>
-              {tags && tags.length > 0 && (
-                <div>
-                  <div className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-1">
-                    <span className="text-brand mr-2">Filed under</span>
-                  </div>
-                  <p className="font-mono text-xs text-muted-foreground tracking-wide leading-relaxed">
-                    {tags.join(" · ")}
-                  </p>
-                </div>
-              )}
-            </div>
-
-            <button
-              onClick={handleShare}
-              className="inline-flex items-center gap-2 self-start font-mono text-[0.65rem] uppercase tracking-[0.15em] px-5 py-2.5 border border-border hover:border-brand hover:text-brand transition-colors"
+        {/* Title, lede, and body share one reading column */}
+        <div className="max-w-3xl mx-auto">
+          <header className="mb-12">
+            <motion.h1
+              {...fadeUp}
+              transition={{ duration: 0.7 }}
+              className="font-display text-[clamp(2rem,4.5vw,3.75rem)] leading-[1.05] tracking-tight text-balance"
             >
-              {copied ? (
+              {title}
+            </motion.h1>
+
+            <motion.div
+              {...fadeUp}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[0.65rem] uppercase tracking-[0.15em] text-muted-foreground"
+            >
+              <span>{formatDate(publishedAt)}</span>
+              <span className="text-border">·</span>
+              <span>{readingTime} min read</span>
+              {tags && tags.length > 0 && (
                 <>
-                  <Check className="h-3 w-3" />
-                  Copied
-                </>
-              ) : (
-                <>
-                  Share
-                  <ArrowUpRight className="h-3 w-3" />
+                  <span className="text-border">·</span>
+                  <span>{tags.join(" · ")}</span>
                 </>
               )}
-            </button>
-          </motion.div>
-        </header>
+            </motion.div>
 
-        {/* Article content */}
-        <motion.div
-          {...fadeUp}
-          transition={{ duration: 0.7, delay: 0.25 }}
-          className="border-t border-border pt-10"
-        >
-          <div className="blog-content max-w-3xl mx-auto">{children}</div>
-        </motion.div>
+            <motion.p
+              {...fadeUp}
+              transition={{ duration: 0.7, delay: 0.15 }}
+              className="mt-6 text-lg md:text-xl text-muted-foreground leading-relaxed"
+            >
+              {description}
+            </motion.p>
+          </header>
+
+          <motion.div
+            {...fadeUp}
+            transition={{ duration: 0.7, delay: 0.25 }}
+            className="border-t border-border pt-10"
+          >
+            <div className="blog-content">{children}</div>
+          </motion.div>
+        </div>
 
         {/* Contact form */}
         <BlogContactForm />

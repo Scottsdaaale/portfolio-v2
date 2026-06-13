@@ -18,13 +18,12 @@ export function LoadingScreen({ }: LoadingScreenProps) {
             <div className="flex flex-col items-center gap-6">
                 <div className="relative">
                     <Image
-                        src="/Me.gif"
-                        alt="Scotty Peterson - Loading"
+                        src="/scotty-peterson-headshot.jpg"
+                        alt="Scotty Peterson"
                         width={100}
                         height={100}
-                        className="rounded-lg"
+                        className="rounded-lg object-cover aspect-square"
                         priority
-                        unoptimized
                     />
                 </div>
 

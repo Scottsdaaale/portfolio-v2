@@ -103,7 +103,7 @@ export function Contact() {
           <span>
             <span className="text-brand mr-2">04</span>Contact
           </span>
-          <span className="hidden sm:block">Open to new opportunities</span>
+          <span className="hidden sm:block">Actively job searching</span>
         </motion.div>
 
         {/* Feature headline */}

@@ -80,6 +80,10 @@
   @apply border-border my-10;
 }
 
+.blog-content img {
+  @apply w-full max-w-2xl mx-auto my-8 block;
+}
+
 /* ============================================================
    ACTIVE THEME
    Change this one import to retheme the entire site.

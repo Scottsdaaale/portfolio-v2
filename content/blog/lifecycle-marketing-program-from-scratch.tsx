@@ -54,10 +54,9 @@ export default function LifecycleMarketingProgramFromScratch() {
         of manual steps and a lot of leaks. I rebuilt it as a single automated flow.
       </p>
 
-      <img 
-        src="/case-study-1/demo-nurture-flow.png" 
-        alt="B2B Lead Journey Flow Diagram" 
-        className="w-full max-w-2xl mx-auto my-8 rounded-lg shadow-lg"
+      <img
+        src="/case-study-1/demo-nurture-flow.png"
+        alt="B2B Lead Journey Flow Diagram"
       />
 
       <p>
@@ -98,10 +97,9 @@ export default function LifecycleMarketingProgramFromScratch() {
         designed to keep them engaged after their initial purchase.
       </p>
 
-      <img 
-        src="/case-study-1/b2c-flow.png" 
-        alt="B2C Purchase Flow Diagram" 
-        className="w-full max-w-2xl mx-auto my-8 rounded-lg shadow-lg"
+      <img
+        src="/case-study-1/b2c-flow.png"
+        alt="B2C Purchase Flow Diagram"
       />
 
       <p>
@@ -141,10 +139,9 @@ export default function LifecycleMarketingProgramFromScratch() {
         registrants, and attribution that flows through to demo bookings months later.
       </p>
 
-      <img 
-        src="/case-study-1/webinar-flow.png" 
-        alt="Webinar Registration System Flow Diagram" 
-        className="w-full max-w-2xl mx-auto my-8 rounded-lg shadow-lg"
+      <img
+        src="/case-study-1/webinar-flow.png"
+        alt="Webinar Registration System Flow Diagram"
       />
 
       <p>
