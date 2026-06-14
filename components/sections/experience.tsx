@@ -19,7 +19,7 @@ const projects = [
     num: "01",
     title: "Lifecycle Marketing Automation Program",
     description:
-      "The full lifecycle program connecting Brevo, Pipeline CRM, Stripe, and Calendly via API integration and webhook orchestration. B2B lead flows: demo nurture, cross-system attribution, and automated follow-up when someone clicks a booking link without finishing. B2B customer flows: retention sequences with upsell campaigns, renewal reminders, billing touchpoints, and educational content through the contract year. B2C: post-purchase sequences with product recommendations and merge-not-retrigger logic so repeat buyers stay in one conversation instead of getting retriggered.",
+      "Built the automated journey from first touch through renewal by wiring Brevo, Pipeline CRM, Stripe, and Calendly to pass data on every key action. Form submissions create CRM records with source attribution, trigger nurture email, and keep that attribution intact when someone books a demo or checks out. B2B prospect flows handle demo nurture and automatic follow-up when someone clicks a booking link but doesn't finish. B2B customer flows run retention sequences with upsells, renewal reminders, billing touchpoints, and contract-year education. B2C flows send post-purchase onboarding with merge-not-retrigger logic so repeat buyers stay in one sequence instead of restarting.",
     impact:
       "Thousands of users through lead nurture, customer retention, and post-purchase flows",
     tech: "Brevo · Pipeline CRM · Stripe · Calendly · Webhooks · REST APIs",
@@ -49,15 +49,18 @@ const projects = [
     impact: "Live production SaaS, built end to end by one person",
     tech: "Next.js · PostgreSQL · AWS Amplify · AI Document Analysis",
   },
+  {
+    num: "05",
+    title: "YourTrainingProvider.com",
+    href: "https://yourtrainingprovider.com",
+    description:
+      "Built yourtrainingprovider.com from scratch (React + Flask): blog, lead capture forms, and expert directory. Built a custom in-house CMS with blog publishing, ad injection, tag-based content recommendations, and expert profile management.",
+    impact: "Generates hundreds of qualified leads per year",
+    tech: "React · Flask · Custom CMS · Lead Capture · SEO",
+  },
 ];
 
 const earlier = [
-  {
-    org: "Liquid XYZ",
-    role: "Contract Web Developer",
-    period: "Apr 2023 – Jul 2024",
-    note: "Built and maintained yourtrainingprovider.com full stack (React + Flask), including a custom CMS for blog, ads, and expert profiles so content ops never needed an engineer.",
-  },
   {
     org: "Flatiron School",
     role: "Software Engineering Certification",
@@ -79,7 +82,7 @@ export function Experience() {
           <span>
             <span className="text-brand mr-2">02</span>Experience
           </span>
-          <span className="hidden sm:block">Selected work, 2023–2026</span>
+          <span className="hidden sm:block">Selected work, 2022–2026</span>
         </motion.div>
 
         {/* Role header */}
@@ -90,7 +93,7 @@ export function Experience() {
             className="lg:col-span-7 lg:pr-12"
           >
             <h2 className="font-display text-[clamp(2.25rem,5vw,4.5rem)] leading-[1.02] tracking-tight mb-6">
-              Two years building the machine,{" "}
+              Three years building the machine,{" "}
               <em className="text-brand">end to end.</em>
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-lg">
@@ -110,12 +113,12 @@ export function Experience() {
               <span className="text-brand mr-2">Role</span>
             </div>
             <div className="font-display text-2xl tracking-tight mb-1">
-              Marketing Engineer
+              Technical Marketing &amp; Lifecycle Engineering
             </div>
             <div className="text-sm text-muted-foreground mb-6">
               Training &amp; eTracking Solutions · Remote
               <br />
-              Jul 2024 – Jun 2026
+              Apr 2023 – Jun 2026
             </div>
 
             <div className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-3">

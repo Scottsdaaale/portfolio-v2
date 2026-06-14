@@ -48,20 +48,19 @@ const experiences = [
     ],
   },
   {
-    title: "Contract Web Developer",
-    company: "Liquid XYZ",
+    title: "Marketing Developer",
+    company: "Training & eTracking Solutions",
     duration: "Apr 2023 – Jul 2024",
     location: "Remote",
     type: "Contract",
-    description:
-      "Built and maintained yourtrainingprovider.com full stack (React + Flask) as sole developer.",
+    description: "",
     groups: [
       {
-        label: "Highlights",
+        label: "Marketing site & CMS",
         items: [
-          "Built and maintained the full marketing site: blog, webinar registration pages, lead capture forms, and expert directory",
-          "Built a custom in-house CMS: blog post creation, ad creation and injection into blog content, tag-based training recommendations, and expert profile management",
-          "Implemented frontend functionality using React, JavaScript, HTML, and CSS",
+          "Built yourtrainingprovider.com from scratch (React + Flask): blog, lead capture forms, and expert directory",
+          "Built a custom in-house CMS with blog publishing, ad injection, tag-based content recommendations, and expert profile management",
+          "Created and published blog content regularly",
         ],
       },
     ],
@@ -296,7 +295,7 @@ export function Resume() {
           <div className="border-t border-border">
             {experiences.map((exp) => (
               <article
-                key={exp.company}
+                key={`${exp.company}-${exp.title}`}
                 className="py-8 border-b border-border print:py-4"
               >
                 {/* Role header */}
@@ -315,13 +314,16 @@ export function Resume() {
                     {exp.location} · {exp.type}
                   </div>
                 </div>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-6 max-w-3xl print:mb-3 print:text-xs">
-                  {exp.description}
-                </p>
+                {exp.description && (
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-6 max-w-3xl print:mb-3 print:text-xs">
+                    {exp.description}
+                  </p>
+                )}
 
                 {/* Achievement groups */}
-                <div className="border-t border-border">
-                  {exp.groups.map((group) => (
+                {exp.groups.length > 0 && (
+                  <div className="border-t border-border">
+                    {exp.groups.map((group) => (
                     <div
                       key={group.label}
                       className="grid md:grid-cols-12 gap-2 md:gap-0 py-5 border-b border-border last:border-b-0 last:pb-0 print:grid-cols-12 print:py-3 print:break-inside-avoid"
@@ -346,7 +348,8 @@ export function Resume() {
                       </div>
                     </div>
                   ))}
-                </div>
+                  </div>
+                )}
               </article>
             ))}
           </div>
