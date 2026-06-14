@@ -60,7 +60,7 @@ const projects = [
   },
 ];
 
-const earlier = [
+const education = [
   {
     org: "Flatiron School",
     role: "Software Engineering Certification",
@@ -152,7 +152,7 @@ export function Experience() {
           </div>
         </motion.div>
 
-        <div className="border-t border-border mb-20">
+        <div className="border-t border-border">
           {projects.map((project, i) => (
             <motion.article
               key={project.num}
@@ -160,7 +160,9 @@ export function Experience() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
               viewport={{ once: true }}
-              className="grid lg:grid-cols-12 gap-4 lg:gap-0 py-10 border-b border-border"
+              className={`grid lg:grid-cols-12 gap-4 lg:gap-0 py-10 ${
+                i < projects.length - 1 ? "border-b border-border" : ""
+              }`}
             >
               <div className="lg:col-span-4 lg:pr-8 flex items-start gap-4">
                 <span className="font-mono text-xs text-brand pt-1.5">
@@ -200,16 +202,15 @@ export function Experience() {
           ))}
         </div>
 
-        {/* Earlier */}
-        <motion.div {...fadeUp} transition={{ duration: 0.6 }}>
+        <motion.div {...fadeUp} transition={{ duration: 0.6 }} className="mt-10">
           <div className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-2">
-            <span className="text-brand mr-2">Prior</span>Earlier work
+            <span className="text-brand mr-2">Edu</span>Education
           </div>
           <div className="border-t border-border">
-            {earlier.map((item) => (
+            {education.map((item) => (
               <div
                 key={item.org}
-                className="grid md:grid-cols-12 gap-2 md:gap-0 py-6 border-b border-border"
+                className="grid md:grid-cols-12 gap-2 md:gap-0 py-6"
               >
                 <div className="md:col-span-4 md:pr-8 flex flex-col justify-center">
                   <div className="font-display text-xl tracking-tight">
