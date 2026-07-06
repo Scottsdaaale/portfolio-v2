@@ -9,6 +9,7 @@ import HealthcareComplianceBlogPost from '@/content/blog/heathcare-compliance';
 import GoogleDarkPatterns2FAEcosystemTrap from '@/content/blog/google-dark-patterns-2fa-ecosystem-trap';
 import LeetCodeInterviewsArePointless from '@/content/blog/leetcode-interviews-are-pointless';
 import LifecycleMarketingProgramFromScratch from '@/content/blog/lifecycle-marketing-program-from-scratch';
+import JobHuntingIsAFunnelProblem from '@/content/blog/job-hunting-is-a-funnel-problem';
 
 export interface BlogPost {
   slug: string;
@@ -24,6 +25,17 @@ export interface BlogPost {
 
 // This will store our blog posts - you can later move this to a CMS or markdown files
 const blogPosts: BlogPost[] = [
+  {
+    slug: 'job-hunting-is-a-funnel-problem',
+    title: 'Job Hunting Is a Funnel Problem, So I Automated It',
+    description:
+      'I built an AI agent that checks 98 company job boards every morning, scores new roles against my resume with a rubric that is not allowed to flatter me, and writes me a digest before I wake up. How it works, and which parts I kept human.',
+    publishedAt: '2026-07-06',
+    tags: ['AI', 'Job Search', 'Automation', 'Claude Code', 'Career', 'Python', 'Technical'],
+    readingTime: 9,
+    content: JobHuntingIsAFunnelProblem,
+    draft: false,
+  },
   {
     slug: 'lifecycle-marketing-program-from-scratch',
     title: 'How I Built a Lifecycle Marketing Program from Scratch',
