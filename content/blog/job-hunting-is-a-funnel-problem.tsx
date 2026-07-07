@@ -11,7 +11,7 @@ export default function JobHuntingIsAFunnelProblem() {
       <p>
         A job search is repetitive, rule-based work with a daily cadence. That's the exact
         profile of a process you automate. So I built a system that runs my search every
-        morning before I wake up, and this post is about how and whyit works, and which parts I still keep deliberately manual.
+        morning before I wake up, and this post is about how and why it works, and which parts I still keep deliberately manual.
       </p>
 
       <h3>The Repo</h3>
