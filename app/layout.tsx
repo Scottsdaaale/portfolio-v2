@@ -23,7 +23,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Scotty Peterson - Marketing Technologist | Lifecycle & GTM Engineer",
-  description: "Marketing technologist who builds the systems marketing teams run on: lifecycle automation, API and webhook orchestration, email programs, and internal tooling. 187 campaigns to 2M+ recipients last year, built and run by one person.",
+  description: "Marketing technologist who builds the systems marketing teams run on: lifecycle automation, API and webhook orchestration, email programs, and internal tooling. 187 campaigns totaling 2M+ sends last year, built and run by one person.",
   keywords: [
     "Marketing Technologist",
     "Lifecycle Marketing Engineer", 

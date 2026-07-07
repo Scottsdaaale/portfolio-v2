@@ -10,7 +10,7 @@ const fadeUp = {
 
 const programMetrics = [
   { metric: "187", label: "Campaigns I shipped in one year" },
-  { metric: "2M+", label: "Recipients reached by my program" },
+  { metric: "2M+", label: "Sends delivered by my program" },
   { metric: "01", label: "Person designing and running it" },
 ];
 

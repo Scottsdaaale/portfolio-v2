@@ -4,7 +4,7 @@ import { Download } from "lucide-react";
 
 const metrics = [
   { metric: "187", label: "Campaigns last year" },
-  { metric: "2M+", label: "Email recipients" },
+  { metric: "2M+", label: "Email sends" },
   { metric: "1,900+", label: "Webinar registrations" },
   { metric: "1,200+", label: "Leads through recovery flows" },
 ];
@@ -31,7 +31,7 @@ const experiences = [
       {
         label: "Email & campaigns",
         items: [
-          "Program delivered 187 campaigns to 2M+ recipients last year",
+          "Program delivered 187 campaigns totaling 2M+ sends last year",
           "Built webinar registration system handling 7 webinars and 1,900+ registrations, with audience segmentation, multi-webinar deduplication, and confirmation automation including calendar adds and progressive profiling surveys",
           "Built responsive email templates in MJML with dynamic personalization and variable-based content",
         ],
@@ -99,7 +99,7 @@ const projects = [
     title: "Lifecycle Automation Program",
     date: "2024 – 2026",
     description:
-      "Full B2B/B2C lifecycle program connecting four platforms via webhook and API orchestration: lead capture, demo nurture, booking recovery, post-purchase onboarding, and renewal flows. 187 campaigns to 2M+ recipients last year",
+      "Full B2B/B2C lifecycle program connecting four platforms via webhook and API orchestration: lead capture, demo nurture, booking recovery, post-purchase onboarding, and renewal flows. 187 campaigns totaling 2M+ sends last year",
     tech: "Brevo · Pipeline CRM · Stripe · Calendly · Webhooks · REST APIs",
     link: null,
   },
