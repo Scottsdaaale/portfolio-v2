@@ -10,6 +10,7 @@ import GoogleDarkPatterns2FAEcosystemTrap from '@/content/blog/google-dark-patte
 import LeetCodeInterviewsArePointless from '@/content/blog/leetcode-interviews-are-pointless';
 import LifecycleMarketingProgramFromScratch from '@/content/blog/lifecycle-marketing-program-from-scratch';
 import JobHuntingIsAFunnelProblem from '@/content/blog/job-hunting-is-a-funnel-problem';
+import HowToBuildAJobHuntSystemWithClaudeCode from '@/content/blog/how-to-build-a-job-hunt-system-with-claude-code';
 
 export interface BlogPost {
   slug: string;
@@ -25,6 +26,17 @@ export interface BlogPost {
 
 // This will store our blog posts - you can later move this to a CMS or markdown files
 const blogPosts: BlogPost[] = [
+  {
+    slug: 'how-to-build-a-job-hunt-system-with-claude-code',
+    title: 'How to Build a Job Hunt System with Claude Code',
+    description:
+      'The follow-up to my job search automation post, written so non-technical readers can actually build one: the repo structure, the CLAUDE.md that holds the scoring rubric, the public ATS APIs that replace scraping, and a month of real usage data, run times, token costs, and which model to actually run it on.',
+    publishedAt: '2026-07-08',
+    tags: ['AI', 'Job Search', 'Automation', 'Claude Code', 'Career', 'Python', 'Technical', 'Tutorial'],
+    readingTime: 20,
+    content: HowToBuildAJobHuntSystemWithClaudeCode,
+    draft: false,
+  },
   {
     slug: 'job-hunting-is-a-funnel-problem',
     title: 'Job Hunting Is a Funnel Problem, So I Automated It',
