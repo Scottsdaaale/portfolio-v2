@@ -8,8 +8,8 @@ export default function HowToBuildAJobHuntSystemWithClaudeCode() {
         day job was already building automated systems with AI, I pointed those same tools
         at the job search itself. It started small, just pasting job postings into Claude
         Code with a bare <code>CLAUDE.md</code> for tracking, no rubric, no watchlist, no
-        automation yet. Since building out the full system, it&apos;s evaluated 178
-        roles, helped me send 44 applications, and landed 4 interviews, running on its own
+        automation yet. All told, across both eras, it&apos;s evaluated 268 roles, helped
+        me send 44 applications, and landed 4 interviews. These days it runs on its own
         every morning in about 9 minutes.
       </p>
 
