@@ -129,7 +129,7 @@ const projects = [
   },
   {
     title: "Transactional Email Infrastructure",
-    date: "2024",
+    date: "2024 – 2025",
     description:
       "Built transactional email delivery infrastructure for the company LMS using AWS SES, SQS, and Lambda, supporting onboarding of the first 100 users",
     tech: "AWS SES · AWS SQS · AWS Lambda",
