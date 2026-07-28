@@ -93,7 +93,7 @@ export function Experience() {
             className="lg:col-span-7 lg:pr-12"
           >
             <h2 className="font-display text-[clamp(2.25rem,5vw,4.5rem)] leading-[1.02] tracking-tight mb-6">
-              Three years building the machine,{" "}
+              Two and a half years building the machine,{" "}
               <em className="text-brand">end to end.</em>
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-lg">
@@ -118,7 +118,7 @@ export function Experience() {
             <div className="text-sm text-muted-foreground mb-6">
               Training &amp; eTracking Solutions · Remote
               <br />
-              Apr 2023 – Jun 2026
+              Feb 2024 – Jun 2026
             </div>
 
             <div className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground mb-3">

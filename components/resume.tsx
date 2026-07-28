@@ -13,7 +13,7 @@ const experiences = [
   {
     title: "Technical Marketing & Lifecycle Engineering",
     company: "Training & eTracking Solutions",
-    duration: "Jul 2024 – Jun 2026",
+    duration: "Feb 2024 – Jun 2026",
     location: "Remote",
     type: "Full-time",
     description:
@@ -45,18 +45,8 @@ const experiences = [
           "Designed and documented full lifecycle architecture in Figma for cross-team reference",
         ],
       },
-    ],
-  },
-  {
-    title: "Marketing Developer",
-    company: "Training & eTracking Solutions",
-    duration: "Apr 2023 – Jul 2024",
-    location: "Remote",
-    type: "Contract",
-    description: "",
-    groups: [
       {
-        label: "Marketing site & CMS",
+        label: "Marketing site & content",
         items: [
           "Built yourtrainingprovider.com from scratch (React + Flask): blog, lead capture forms, and expert directory",
           "Built a custom in-house CMS with blog publishing, ad injection, tag-based content recommendations, and expert profile management",
@@ -121,7 +111,7 @@ const projects = [
   },
   {
     title: "Marketing Site + Custom CMS",
-    date: "2023 – 2024",
+    date: "2024",
     description:
       "Built yourtrainingprovider.com full stack with a custom in-house CMS: blog management, ad injection into blog content, tag-based training recommendations, and expert profile management",
     tech: "React · Flask · Custom CMS · Lead Capture · SEO",
