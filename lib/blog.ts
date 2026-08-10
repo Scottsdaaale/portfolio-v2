@@ -11,6 +11,7 @@ import LeetCodeInterviewsArePointless from '@/content/blog/leetcode-interviews-a
 import LifecycleMarketingProgramFromScratch from '@/content/blog/lifecycle-marketing-program-from-scratch';
 import JobHuntingIsAFunnelProblem from '@/content/blog/job-hunting-is-a-funnel-problem';
 import HowToBuildAJobHuntSystemWithClaudeCode from '@/content/blog/how-to-build-a-job-hunt-system-with-claude-code';
+import HowIKeptWebinarRegistrationsFromWreckingOurCRM from '@/content/blog/how-i-kept-1900-webinar-registrations-from-wrecking-our-crm';
 
 export interface BlogPost {
   slug: string;
@@ -26,6 +27,25 @@ export interface BlogPost {
 
 // This will store our blog posts - you can later move this to a CMS or markdown files
 const blogPosts: BlogPost[] = [
+  {
+    slug: 'how-i-kept-1900-webinar-registrations-from-wrecking-our-crm',
+    title: 'How I Kept 1,900 Webinar Registrations From Wrecking Our CRM',
+    description:
+      'The CRM dedup and fuzzy company-matching system behind 7 webinars and 1,900+ registrations, and why that unglamorous engineering is the real lifecycle marketing job.',
+    publishedAt: '2026-08-10',
+    tags: [
+      'Marketing Technology',
+      'Lifecycle Marketing',
+      'Automation',
+      'CRM',
+      'Python',
+      'AI-Assisted Development',
+      'Career',
+    ],
+    readingTime: 8,
+    content: HowIKeptWebinarRegistrationsFromWreckingOurCRM,
+    draft: false,
+  },
   {
     slug: 'how-to-build-a-job-hunt-system-with-claude-code',
     title: 'How to Build a Job Hunt System with Claude Code',

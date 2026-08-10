@@ -112,7 +112,7 @@ export function Contact() {
           transition={{ duration: 0.7 }}
           className="font-display text-[clamp(2.25rem,5vw,4.5rem)] leading-[1.02] tracking-tight max-w-4xl mb-16"
         >
-          Looking for lifecycle marketing, marketing ops, or GTM engineering.{" "}
+          Looking for lifecycle marketing, marketing ops, or GTM engineering?{" "}
           <em className="text-brand">Let&apos;s talk.</em>
         </motion.h2>
 
