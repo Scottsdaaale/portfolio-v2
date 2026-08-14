@@ -209,6 +209,56 @@
   }
 }
 
+/* Lab specimens */
+.lab-log-mask {
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 14%, black 86%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, black 14%, black 86%, transparent);
+}
+
+.lab-log-scroll {
+  animation: lab-log-scroll 34s linear infinite;
+}
+
+@keyframes lab-log-scroll {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lab-log-scroll {
+    animation: none;
+  }
+}
+
+.lab-recovery-fill {
+  width: 0%;
+  animation: lab-recovery-fill 6s ease-in-out infinite;
+}
+
+.lab-recovery-dot {
+  left: 0%;
+  animation: lab-recovery-dot 6s ease-in-out infinite;
+}
+
+@keyframes lab-recovery-fill {
+  0% { width: 0%; }
+  85%, 100% { width: 100%; }
+}
+
+@keyframes lab-recovery-dot {
+  0% { left: 0%; }
+  85%, 100% { left: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lab-recovery-fill,
+  .lab-recovery-dot {
+    animation: none;
+    width: 100%;
+    left: 100%;
+  }
+}
+
 /* Print Styles */
 @media print {
   @page {

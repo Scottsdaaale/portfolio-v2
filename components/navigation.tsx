@@ -27,6 +27,7 @@ export function Navigation() {
     { label: "Skills", href: "#skills", homeLink: "/#skills" },
     { label: "Contact", href: "#contact", homeLink: "/#contact" },
     { label: "Blog", href: "/blog", isLink: true },
+    { label: "Lab", href: "/lab", isLink: true },
   ];
 
   const scrollToSection = (sectionId: string) => {
@@ -123,6 +124,13 @@ export function Navigation() {
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Blog
+                  </Link>
+                  <Link
+                    href="/lab"
+                    className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Lab
                   </Link>
                   <Link
                     href="/resume"
