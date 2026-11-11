@@ -21,6 +21,8 @@ const contactSchema = z.object({
   company: z.string().optional(),
   subject: z.string().min(5, "Subject must be at least 5 characters"),
   message: z.string().min(10, "Message must be at least 10 characters"),
+  // Honeypot: hidden from people, bots tend to fill it in
+  website: z.string().optional(),
 });
 
 type ContactForm = z.infer<typeof contactSchema>;
@@ -63,6 +65,7 @@ export function Contact() {
         formData.append("company", data.company || "");
         formData.append("subject", data.subject);
         formData.append("message", data.message);
+        formData.append("website", data.website || "");
 
         const result = await submitContactForm(formData);
 
@@ -147,6 +150,10 @@ export function Contact() {
             )}
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+              <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
+                <label htmlFor="website">Website</label>
+                <input id="website" type="text" tabIndex={-1} autoComplete="off" {...register("website")} />
+              </div>
               <div className="grid sm:grid-cols-2 gap-5">
                 <div className="space-y-2">
                   <label htmlFor="name" className={labelClass}>
